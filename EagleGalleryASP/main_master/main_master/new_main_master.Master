@@ -1,13 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="new_main_master.master.cs" Inherits="main_master.new_main_master" %>
-
-
-<!DOCTYPE html>
-
+<!doctype html>
 <html>
 <head runat="server">
- 
-
-
 	
 <!--Comment-->
 	
@@ -27,12 +21,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../style.css">
-    <link href="style4.css" rel="stylesheet" type="text/css">
+    <link href="css/style4.css" rel="stylesheet" type="text/css">
+    <link href="css/style5.css" rel="stylesheet" type ="text/css"/>
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-       <asp:ContentPlaceHolder ID="content_place_holder_head" runat="server">
+    <asp:ContentPlaceHolder ID="content_place_holder_head" runat="server">
+
     </asp:ContentPlaceHolder>
 </head>
 
@@ -49,12 +45,12 @@
 
 
 	<div class="wrapper " >
-    <!-- Sidebar  -->
-    <nav id="sidebar" class="bg-danger">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="bg-danger">
         <div class="sidebar-header bg-danger" >
 			
-            <h3>Eagle Gallery</h3>
-            <strong>EG</strong>
+            <h3>EagleIntern</h3>
+            <strong>EI</strong>
 			
         </div>
 		
@@ -79,8 +75,8 @@
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-arrow-alt-circle-up"></i>
-                    Upload
+                    <i class="fas fa-edit"></i>
+                    Post
                 </a>
 				
 				
@@ -94,10 +90,13 @@
                         <a href="#" class="bg-danger">Eagle Blog</a>
                     </li>
                     <li>
-                        <a href="#" class="bg-danger">Eagle Sync</a>
+                        <a href="EagleGallery.aspx" class="bg-danger">Eagle Gallery</a>
                     </li>
                     <li>
-                        <a href="#" class="bg-danger">Eagle Connect</a>
+                        <a href="EagleIntern.aspx" class="bg-danger">Eagle Intern</a>
+                    </li>
+                    <li>
+                        <a href="EagleConnect.aspx" class="bg-danger">Eagle Connect</a>
                     </li>
                 </ul>
             </li>
@@ -105,11 +104,9 @@
 
     </nav>
 
-    <!-- Page Content  -->
-    <div id="content">
+        <!-- Page Content  -->
+        <div id="content">
 
-		
-		
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
 
@@ -120,33 +117,31 @@
             </div>
 			
 		<!-- Search form -->
-<input class="form-control" type="text" placeholder="Search" aria-label="Search">	
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">	
 			
         </nav>
-        <asp:ContentPlaceHolder ID="content_place_holder_body" runat="server">
-            </asp:ContentPlaceHolder>
-		<!--PUT BODY HERE! -->
-	
-		
+       <asp:ContentPlaceHolder ID="content_place_holder_body" runat="server">
+
+                <!--PUT BODY HERE! -->
+
+        </asp:ContentPlaceHolder>
+    
+     </div>
     </div>
-		
-</div>
-	
-	
 	    <script type="text/javascript">
-            $(document).ready(function () {
-                $('#sidebarCollapse').on('click', function () {
-                    $('#sidebar').toggleClass('active');
-                });
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
             });
+        });
     </script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 <script>
     baguetteBox.run('.tz-gallery');
 </script>
+
 </body>
 </html>
-
 
 
