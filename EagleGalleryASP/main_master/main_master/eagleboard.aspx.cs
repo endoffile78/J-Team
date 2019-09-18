@@ -52,7 +52,7 @@ namespace main_master
             string title;
             string table_string = @"<table class=""table"" id= ""test""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th></tr> </thead> <tbody>";
            
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 500; i++)
            {
                 title = "this is post " + Convert.ToString(i);
                table_string = table_string + create_row("nothing", title, "Poll", DateTime.Now );
