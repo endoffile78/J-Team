@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\style5.css" />
+    <Content Include="eagleboard.aspx" />
     <Content Include="images\1.jpg" />
     <Content Include="images\2.jpg" />
     <Content Include="images\3.jpg" />
@@ -90,6 +91,13 @@
     <Content Include="EagleConnect.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="eagleboard.aspx.cs">
+      <DependentUpon>eagleboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eagleboard.aspx.designer.cs">
+      <DependentUpon>eagleboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="new_main_master.Master.cs">
       <DependentUpon>new_main_master.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
