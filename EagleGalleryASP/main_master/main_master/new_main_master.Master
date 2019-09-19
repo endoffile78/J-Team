@@ -48,10 +48,8 @@
         <!-- Sidebar  -->
         <nav id="sidebar" class="bg-danger">
         <div class="sidebar-header bg-danger" >
-			
-            <h3>EagleIntern</h3>
-            <strong>EI</strong>
-			
+			<asp:ContentPlaceHolder ID="branding" runat="server">
+			</asp:ContentPlaceHolder>
         </div>
 		
 

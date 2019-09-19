@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="EagleGallery.aspx.cs" Inherits="main_master.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
 </asp:Content>
+
+<asp:Content ContentPlaceHolderID="branding" runat="server">
+    <h3>EagleGallery</h3>
+    <strong>EG</strong>
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <div class="tz-gallery">
 
