@@ -20,7 +20,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="css/style4.css" rel="stylesheet" type="text/css">
     <link href="css/style5.css" rel="stylesheet" type ="text/css"/>
 
@@ -87,7 +87,7 @@
                 </a>
                 <ul class="collapse list-unstyled bg-danger" id="pageSubmenu">
                     <li>
-                        <a href="#" class="bg-danger">Eagle Blog</a>
+                        <a href="Blog/Main.aspx" class="bg-danger">Eagle Blog</a>
                     </li>
                     <li>
                         <a href="EagleGallery.aspx" class="bg-danger">Eagle Gallery</a>
