@@ -54,30 +54,9 @@
 
 
             <ul class="list-unstyled components bg-danger">
-                <li class="active ">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
-                        <i class="fas fa-archive "></i>
-                        Archive
-                    </a>
-                    <ul class="collapse list-unstyled " id="homeSubmenu">
-                        <li>
-                            <a href="#" class="bg-danger">2019</a>
-                        </li>
-                        <li>
-                            <a href="#" class="bg-danger">2018</a>
-                        </li>
-                        <li>
-                            <a href="#" class="bg-danger">2017</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-edit"></i>
-                        Post
-                    </a>
-                </li>
 
+                <asp:ContentPlaceHolder ID="navigation" runat="server">
+                </asp:ContentPlaceHolder>
 
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
@@ -85,6 +64,7 @@
                         Share
                     </a>
                 </li>
+
                 <ul class="collapse list-unstyled bg-danger" id="pageSubmenu">
                     <li>
                         <a href="Blog/Main.aspx" class="bg-danger">Eagle Blog</a>

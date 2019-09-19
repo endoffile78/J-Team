@@ -8,6 +8,10 @@
     <strong>EC</strong>
 </asp:Content>
 
+<asp:Content ContentPlaceHolderID="navigation" runat="server">
+    
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <div class="card mb-3" style="max-width: 100%;">
         <div class="row no-gutters">

@@ -3,6 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
 </asp:Content>
 
+<asp:Content ContentPlaceHolderID="navigation" runat="server">
+    <li>
+        <a href="Post.aspx">
+            <i class="fas fa-edit"></i>
+            Post
+        </a>
+    </li>
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <div class="text-center">
         <h1>Featured Posts</h1>
