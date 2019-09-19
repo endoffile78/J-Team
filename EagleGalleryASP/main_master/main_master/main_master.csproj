@@ -103,6 +103,13 @@
     </Compile>
     <Compile Include="eagleboard.aspx.designer.cs">
       <DependentUpon>eagleboard.aspx</DependentUpon>
+    <Compile Include="Blog\BlogMaster.Master.cs">
+      <DependentUpon>BlogMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\BlogMaster.Master.designer.cs">
+      <DependentUpon>BlogMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="Blog\Followers.aspx.cs">
       <DependentUpon>Followers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -177,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="new_main_master.Master" />
+    <Content Include="Blog\BlogMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,15 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="main_master.Blog.Main" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="BlogMaster.Master" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="main_master.Blog.Main" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
-</asp:Content>
-
-<asp:Content ContentPlaceHolderID="navigation" runat="server">
-    <li>
-        <a href="Post.aspx">
-            <i class="fas fa-edit"></i>
-            Post
-        </a>
-    </li>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
