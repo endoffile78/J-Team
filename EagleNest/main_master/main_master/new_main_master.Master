@@ -67,16 +67,16 @@
 
                 <ul class="collapse list-unstyled bg-danger" id="pageSubmenu">
                     <li>
-                        <a href="~/Blog/Main.aspx" class="bg-danger">Eagle Blog</a>
+                        <a href='<%= ResolveUrl("~/Blog/Main.aspx") %>' class="bg-danger">Eagle Blog</a>
                     </li>
                     <li>
-                        <a href="~/Gallery/Main.aspx" class="bg-danger">Eagle Gallery</a>
+                        <a href='<%= ResolveUrl("~/Gallery/Main.aspx") %>' class="bg-danger">Eagle Gallery</a>
                     </li>
                     <li>
-                        <a href="~/Intern/Main.aspx" class="bg-danger">Eagle Intern</a>
+                        <a href='<%= ResolveUrl("~/Intern/Main.aspx") %>' class="bg-danger">Eagle Intern</a>
                     </li>
                     <li>
-                        <a href="~/Connect/Main.aspx" class="bg-danger">Eagle Connect</a>
+                        <a href='<%= ResolveUrl("~/Connect/Main.aspx") %>' class="bg-danger">Eagle Connect</a>
                     </li>
                 </ul>
             </ul>
