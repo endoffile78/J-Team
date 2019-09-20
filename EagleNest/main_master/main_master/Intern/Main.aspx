@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="EagleIntern.aspx.cs" Inherits="main_master.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="main_master.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
 </asp:Content>
 
@@ -15,7 +15,7 @@
     <div class="card mb-3" style="max-width: 100%;">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="Images/archie.jpg" class="card-img responsive" alt="Responsive image">
+                <img src="../images/archie.jpg" class="card-img responsive" alt="Responsive image">
             </div>
             <div class="col-md-8 intern-card">
                 <div class="card-body">
@@ -46,7 +46,7 @@
     <div class="card mb-3" style="max-width: 100%;">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="Images/archie.jpg" class="img-fluid" alt="Archibald's image">
+                <img src="../images/archie.jpg" class="img-fluid" alt="Archibald's image">
             </div>
             <div class="col-md-8 intern-card">
                 <div class="card-body">

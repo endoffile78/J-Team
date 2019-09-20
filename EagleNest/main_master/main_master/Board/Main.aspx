@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="eagleboard.aspx.cs" Inherits="main_master.eagleboard" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="main_master.eagleboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
     <style> </style>
     
