@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="eagleboard.aspx.designer.cs">
       <DependentUpon>eagleboard.aspx</DependentUpon>
+	  </Compile>
     <Compile Include="Blog\BlogMaster.Master.cs">
       <DependentUpon>BlogMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
