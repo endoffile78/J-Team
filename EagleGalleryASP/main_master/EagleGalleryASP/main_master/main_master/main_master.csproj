@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\style5.css" />
-    <Content Include="eagleboard.aspx" />
+    <Content Include="EagleConnect.aspx" />
     <Content Include="images\1.jpg" />
     <Content Include="images\2.jpg" />
     <Content Include="images\3.jpg" />
@@ -89,17 +89,16 @@
     <Content Include="css\style4.css" />
     <Content Include="css\thumbnail-gallery.css" />
     <Content Include="Web.config" />
-    <Content Include="EagleGallery.aspx" />
     <Content Include="EagleIntern.aspx" />
-    <Content Include="EagleConnect.aspx" />
+    <Content Include="EagleGallery.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="eagleboard.aspx.cs">
-      <DependentUpon>eagleboard.aspx</DependentUpon>
+    <Compile Include="EagleConnect.aspx.cs">
+      <DependentUpon>EagleConnect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eagleboard.aspx.designer.cs">
-      <DependentUpon>eagleboard.aspx</DependentUpon>
+    <Compile Include="EagleConnect.aspx.designer.cs">
+      <DependentUpon>EagleConnect.aspx</DependentUpon>
     </Compile>
     <Compile Include="new_main_master.Master.cs">
       <DependentUpon>new_main_master.Master</DependentUpon>
@@ -109,13 +108,6 @@
       <DependentUpon>new_main_master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EagleGallery.aspx.cs">
-      <DependentUpon>EagleGallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EagleGallery.aspx.designer.cs">
-      <DependentUpon>EagleGallery.aspx</DependentUpon>
-    </Compile>
     <Compile Include="EagleIntern.aspx.cs">
       <DependentUpon>EagleIntern.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,12 +115,12 @@
     <Compile Include="EagleIntern.aspx.designer.cs">
       <DependentUpon>EagleIntern.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EagleConnect.aspx.cs">
-      <DependentUpon>EagleConnect.aspx</DependentUpon>
+    <Compile Include="EagleGallery.aspx.cs">
+      <DependentUpon>EagleGallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EagleConnect.aspx.designer.cs">
-      <DependentUpon>EagleConnect.aspx</DependentUpon>
+    <Compile Include="EagleGallery.aspx.designer.cs">
+      <DependentUpon>EagleGallery.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
