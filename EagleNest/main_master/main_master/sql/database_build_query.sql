@@ -175,7 +175,7 @@ CREATE TABLE [Board_Post]
  [ID_Num]      uniqueidentifier NOT NULL ,
  [Title]       nvarchar(50) NOT NULL ,
  [Description] nvarchar(1000) NOT NULL ,
- [Board]        NOT NULL ,
+ [Board]       tinyint NOT NULL ,
  [Date]        datetime NOT NULL ,
  [Expiration]  datetime NOT NULL ,
  [Tags]        nvarchar(400) NULL ,
@@ -211,13 +211,13 @@ CREATE TABLE [Votes]
  [VoteID] uniqueidentifier NOT NULL ,
  [BpostID] uniqueidentifier NOT NULL,
  [Option] tinyint NOT NULL,
- [UserID] uniqueidentifier NOT NULL,
+ [ID_Num] uniqueidentifier NOT NULL,
  [Email]  nvarchar(50) NOT NULL,
 
 
  CONSTRAINT [PK_Vote] PRIMARY KEY CLUSTERED ([VoteID] ASC),
  CONSTRAINT [FK_222] FOREIGN KEY ([BpostID])  REFERENCES [Board_Post]([BpostID]),
- CONSTRAINT [UID] FOREIGN KEY ([UserID], [Email]) REFERENCES [User_Main]([ID_Num], [Email])
+ CONSTRAINT [UID] FOREIGN KEY ([Email],[ID_Num]) REFERENCES [dbo].[User_Main]([Email],[ID_Num])
 );
 GO
 
@@ -456,11 +456,3 @@ CREATE NONCLUSTERED INDEX [fkIdx_184] ON [Post_Comment]
  )
 
 GO
-
-
-
-
-
-
-
-.
