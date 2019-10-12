@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
     <style> </style>
     
-
+    <title>Eagle Board</title>
 
    
 
