@@ -19,6 +19,7 @@ CREATE TABLE [dbo].[User_Main]
  [User_Img]        image NOT NULL ,
  [Age]             tinyint NULL ,
  [Org_Affiliation] nvarchar(50) NULL ,
+ [Banned]          bit DEFAULT 0,
 
 
  CONSTRAINT [PK_table_3] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC)
