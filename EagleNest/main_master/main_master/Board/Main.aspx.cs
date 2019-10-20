@@ -6,13 +6,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Text;
+using main_master.sql;
 
 namespace main_master
 {
     public partial class eagleboard : System.Web.UI.Page
     {
-        private SqlConnectionStringBuilder builder;
-        private access_database access;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             List<data_row> all_rows = new List<data_row>();
@@ -66,7 +66,7 @@ namespace main_master
         string build_data()
         { // built for testing purposes. Soon will be rewritten for to read the database and build a data structure from it.
             string test_string = "";
-            make_connection();
+            SqlConnectionStringBuilder builder = SqlUtil.make_connection();
             string query = "select schema_name(t.schema_id) as schema_name, t.name as table_name, t.create_date, t.modify_date from sys.tables t order by schema_name, table_name; ";
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
@@ -91,19 +91,6 @@ namespace main_master
 
             //placeholder for reading database
         }
-
-        private void make_connection()
-        {
-            builder = new SqlConnectionStringBuilder();
-            access = new access_database();
-            builder.DataSource = access.get_server();
-            builder.UserID = access.get_username();
-            builder.Password = access.get_password();
-            builder.InitialCatalog = access.get_name();
-        }
-
-
-
 
 
         class data_row
