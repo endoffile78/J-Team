@@ -142,8 +142,8 @@ CREATE TABLE [Gallery_Post]
  [Date]        datetime NOT NULL ,
  [Image]       nvarchar(400) NOT NULL ,
  [Tags]        nvarchar(400) NULL ,
- [Hidden]      bit NOT NULL ,
- [Mod_Status]  nvarchar(50) NOT NULL ,
+ [Hidden]      bit DEFAULT 0 ,
+ [Mod_Status]  nvarchar(50) NULL ,
 
 
  CONSTRAINT [PK_Gallery_Post] PRIMARY KEY CLUSTERED ([GpostID] ASC),
@@ -180,8 +180,8 @@ CREATE TABLE [Board_Post]
  [Expiration]  datetime NOT NULL ,
  [Tags]        nvarchar(400) NULL ,
  [Attachments] nvarchar(400) NOT NULL ,
- [Hidden]      bit NOT NULL ,
- [Mod_Status]  nvarchar(50) NOT NULL ,
+ [Hidden]      bit DEFAULT 0 ,
+ [Mod_Status]  nvarchar(50) NULL ,
 
 
  CONSTRAINT [PK_Board_Post] PRIMARY KEY CLUSTERED ([BpostID] ASC),
@@ -248,8 +248,8 @@ CREATE TABLE [dbo].[Job_Posting]
  [Skills_Req]      nvarchar(200) NOT NULL ,
  [Pay_Est]         money NULL ,
  [Benifits]        nvarchar(400) NULL ,
- [Hidden]          bit NOT NULL ,
- [Mod_Status]      nvarchar(50) NOT NULL ,
+ [Hidden]          bit DEFAULT 0 ,
+ [Mod_Status]      nvarchar(50) NULL ,
 
 
  CONSTRAINT [PK_Job_Posting] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC, [CompanyID] ASC),
@@ -297,8 +297,8 @@ CREATE TABLE [dbo].[Intern_Posting]
  [Edu_Value]       varchar(200) NULL ,
  [Pay]             money NULL ,
  [Benifits]        varchar(400) NULL ,
- [Hidden]          bit NOT NULL ,
- [Mod_Status]      nvarchar(50) NOT NULL ,
+ [Hidden]          bit DEFAULT 0,
+ [Mod_Status]      nvarchar(50) NULL,
 
 
  CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC, [CompanyID] ASC),
