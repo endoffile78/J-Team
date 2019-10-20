@@ -11,3 +11,4 @@ drop table if exists dbo.Blog_Post;
 drop table if exists dbo.User_EBL;
 drop table if exists dbo.User_SAF;
 drop table if exists dbo.User_Main;
+drop table if exists dbo.Tags
