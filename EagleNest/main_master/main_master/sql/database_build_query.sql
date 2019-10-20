@@ -391,15 +391,12 @@ CREATE TABLE [Blog_Post]
 (
  [BlogID]     uniqueidentifier NOT NULL ,
  [Email]      nvarchar(50) NOT NULL ,
- [ID_Num]     uniqueidentifier NOT NULL ,
  [Title]      nvarchar(50) NOT NULL ,
  [Body]       text NOT NULL ,
  [Attachment] nvarchar(400) NULL ,
- [Tags]       nvarchar(400) NULL ,
  [Date]       datetime NOT NULL ,
- [Comments]   int NOT NULL ,
- [Hidden]     bit NOT NULL ,
- [Mod_Status] nvarchar(50) NOT NULL ,
+ [Hidden]     bit DEFAULT 0,
+ [Mod_Status] nvarchar(50) NULL ,
 
 
  CONSTRAINT [PK_Blog_Post] PRIMARY KEY CLUSTERED ([BlogID] ASC),
@@ -418,7 +415,15 @@ GO
 
 
 
+-- ************************************** [Tags]
 
+CREATE TABLE [Tags]
+(
+ [BlogID]     uniqueidentifier NOT NULL ,
+ [Tag]        nvarchar(20) NOT NULL,
+
+ CONSTRAINT [FK_BlogID] FOREIGN KEY ([BlogID]) REFERENCES [Blog_Post]([BlogID])
+)
 
 
 
@@ -431,8 +436,8 @@ CREATE TABLE [Post_Comment]
  [ID_Num]     uniqueidentifier NOT NULL ,
  [Date]       datetime NOT NULL ,
  [Comment]    nvarchar(300) NOT NULL ,
- [Hidden]     bit NOT NULL ,
- [Mod_Status] nvarchar(50) NOT NULL ,
+ [Hidden]     bit DEFAULT 0 ,
+ [Mod_Status] nvarchar(50) NULL ,
 
 
  CONSTRAINT [PK_Post_Comment] PRIMARY KEY CLUSTERED ([BlogID] ASC),
