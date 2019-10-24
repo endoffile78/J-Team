@@ -392,6 +392,7 @@ CREATE TABLE [Blog_Post]
 (
  [BlogID]     uniqueidentifier NOT NULL ,
  [Email]      nvarchar(50) NOT NULL ,
+ [ID_Num]     uniqueidentifier NOT NULL ,
  [Title]      nvarchar(50) NOT NULL ,
  [Body]       text NOT NULL ,
  [Attachment] nvarchar(400) NULL ,
