@@ -111,6 +111,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="sql\SqlUtil.cs" />
     <Compile Include="sql\access_database.cs" />
     <Compile Include="Board\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
