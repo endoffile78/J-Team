@@ -105,7 +105,7 @@
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/archie2.jpg">
+                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/2.jpg">
                     </div>
                     <div class="col-sm-9">
                         <div>
@@ -146,13 +146,10 @@
                     </div>
                 </div>    
             </div>
-       </div>
-
-        <div class="col-sm-6">
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/archie2.jpg">
+                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/1.jpg">
                     </div>
                     <div class="col-sm-9">
                         <div>
@@ -193,13 +190,10 @@
                     </div>
                 </div>    
             </div>
-       </div>
-
-        <div class="col-sm-6">
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/archie2.jpg">
+                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/2.jpg">
                     </div>
                     <div class="col-sm-9">
                         <div>
@@ -240,13 +234,10 @@
                     </div>
                 </div>    
             </div>
-       </div>
-
-        <div class="col-sm-6">
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/archie2.jpg">
+                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/3.jpg">
                     </div>
                     <div class="col-sm-9">
                         <div>
