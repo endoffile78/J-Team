@@ -100,6 +100,7 @@
                 <!-- card.// -->
             <!-- col.// -->
         </div>
+
         <div class="col-sm-6">
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
@@ -147,6 +148,147 @@
             </div>
        </div>
 
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/archie2.jpg">
+                    </div>
+                    <div class="col-sm-9">
+                        <div>
+                            <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
+                            <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="accordion">
+                            <div id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Read More/ Less
+                                    </button>
+                                </h5>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="text-center">
+                                <p>
+                                    I found out about the Brand Planning Intern through a job search platform called WayUp.com. 
+                After thoroughly reading through every requirement for the internship position, knew that the internship 
+                position was a perfect fit and phenomenal opportunity to gain hard skills in data analytics, BI tools, and 
+                learning soft skills in the corporate world.
+                <br />
+                                    <br />
+                                    During my time at Ralph Lauren, I had the opportunity to learn and use cutting edge technology in data analytics such as 
+                MicroStrategy and Edited. I also worked on big data projects that significantly improved my Excel, VBA, critical-thinking, 
+                analytical, and detail-orientated skills. I also had an opportunity to work on my confidence and presentation skills by presenting
+                my insightful findings to the merchandising and brand teams. 
+                <br />
+                                    <br />
+                                    In addition, I had the amazing opportunity to network, and foster new relationships that I will have for life. At Ralph Lauren, I
+                was valued, my work my impactful, I discovered a part of myself I never knew existed.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+       </div>
+
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/archie2.jpg">
+                    </div>
+                    <div class="col-sm-9">
+                        <div>
+                            <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
+                            <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="accordion">
+                            <div id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Read More/ Less
+                                    </button>
+                                </h5>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="text-center">
+                                <p>
+                                    I found out about the Brand Planning Intern through a job search platform called WayUp.com. 
+                After thoroughly reading through every requirement for the internship position, knew that the internship 
+                position was a perfect fit and phenomenal opportunity to gain hard skills in data analytics, BI tools, and 
+                learning soft skills in the corporate world.
+                <br />
+                                    <br />
+                                    During my time at Ralph Lauren, I had the opportunity to learn and use cutting edge technology in data analytics such as 
+                MicroStrategy and Edited. I also worked on big data projects that significantly improved my Excel, VBA, critical-thinking, 
+                analytical, and detail-orientated skills. I also had an opportunity to work on my confidence and presentation skills by presenting
+                my insightful findings to the merchandising and brand teams. 
+                <br />
+                                    <br />
+                                    In addition, I had the amazing opportunity to network, and foster new relationships that I will have for life. At Ralph Lauren, I
+                was valued, my work my impactful, I discovered a part of myself I never knew existed.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+       </div>
+
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/archie2.jpg">
+                    </div>
+                    <div class="col-sm-9">
+                        <div>
+                            <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
+                            <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="accordion">
+                            <div id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Read More/ Less
+                                    </button>
+                                </h5>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="text-center">
+                                <p>
+                                    I found out about the Brand Planning Intern through a job search platform called WayUp.com. 
+                After thoroughly reading through every requirement for the internship position, knew that the internship 
+                position was a perfect fit and phenomenal opportunity to gain hard skills in data analytics, BI tools, and 
+                learning soft skills in the corporate world.
+                <br />
+                                    <br />
+                                    During my time at Ralph Lauren, I had the opportunity to learn and use cutting edge technology in data analytics such as 
+                MicroStrategy and Edited. I also worked on big data projects that significantly improved my Excel, VBA, critical-thinking, 
+                analytical, and detail-orientated skills. I also had an opportunity to work on my confidence and presentation skills by presenting
+                my insightful findings to the merchandising and brand teams. 
+                <br />
+                                    <br />
+                                    In addition, I had the amazing opportunity to network, and foster new relationships that I will have for life. At Ralph Lauren, I
+                was valued, my work my impactful, I discovered a part of myself I never knew existed.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+       </div>
+    
         <div class="col-sm-3">
             <div class="card">
                 <article class="card-group-item">
