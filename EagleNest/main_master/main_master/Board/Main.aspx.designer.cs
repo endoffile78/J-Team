@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace main_master {
-    
-    
-    public partial class eagleboard {
-        
+namespace main_master
+{
+
+
+    public partial class eagleboard
+    {
+
         /// <summary>
         /// all_lit control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace main_master {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal all_lit;
-        
+
         /// <summary>
         /// gives_lit control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace main_master {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal gives_lit;
-        
+
         /// <summary>
         /// project_lit control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace main_master {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal project_lit;
-        
+
         /// <summary>
         /// poll_lit control.
         /// </summary>
@@ -47,5 +49,14 @@ namespace main_master {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal poll_lit;
+
+        /// <summary>
+        /// give_new_images_lit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal give_new_images_lit;
     }
 }
