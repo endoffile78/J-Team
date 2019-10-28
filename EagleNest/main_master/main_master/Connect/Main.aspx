@@ -17,95 +17,192 @@
     <!--PUT BODY HERE! -->
     <div class="row">
         <div class="col-sm-3">
-                <div class="card">
-                    <article class="card-group-item">
-                        <header class="card-header">
-                            <h6 class="title">Classification</h6>
-                        </header>
-                        <div class="filter-content">
-                            <div class="card-body">
-                                <form>
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-label">Freshman</span>
-                                    </label>
-                                    <!-- form-check.// -->
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-label">Sophomore  </span>
-                                    </label>
-                                    <!-- form-check.// -->
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-label">Junior</span>
-                                    </label>
-                                    <!-- form-check.// -->
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-label">Senior</span>
-                                    </label>
-                                    <!-- form-check.// -->
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-label">Graduate</span>
-                                    </label>
-                                    <!-- form-check.// -->
+            <div class="card">
+                <article class="card-group-item">
+                    <header class="card-header">
+                        <h6 class="title">Country</h6>
+                    </header>
+                    <div class="filter-content">
+                        <div class="card-body">
+                            <form>
+                                <div>     
+                                    <select class="form-control" id="country" name="country">
+                                        <option value="">Pick a country:</option>
+                                        <option value="AK">USA</option>
+                                        <option value="AL">Canada</option>
+                                        <option value="AR">Mexico</option>
+                                    </select>
+                                </div>
                                 </form>
-
-                            </div>
-                            <!-- card-body.// -->
                         </div>
-                    </article>
-                    <!-- card-group-item.// -->
+                        <!-- card-body.// -->
+                    </div>
+                </article>
 
-                    <article class="card-group-item">
-                        <header class="card-header">
-                            <h6 class="title">College</h6>
-                        </header>
-                        <div class="filter-content">
-                            <div class="card-body">
-                                <form>
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-label">Romain College Of Business</span>
-                                    </label>
-                                    <!-- form-check.// -->
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-label">Liberal Arts </span>
-                                    </label>
-                                    <!-- form-check.// -->
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-label">Pott College of Science, Engineering and Education</span>
-                                    </label>
-                                    <!-- form-check.// -->
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-label">Collge of Nursing and Health Professions</span>
-                                    </label>
-                                    <!-- form-check.// -->
-                                    <label class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="">
-                                        <span class="form-check-label">University Division</span>
-                                    </label>
-                                    <!-- form-check.// -->
+                <article class="card-group-item">
+                    <header class="card-header">
+                        <h6 class="title">States</h6>
+                    </header>
+                    <div class="filter-content">
+                        <div class="card-body">
+                            <form>
+                                <div>     
+                                    <select class="form-control" id="state" name="state">
+                                        <option value="">Pick a state:</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DC">District of Columbia</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NY">New York</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="PR">Puerto Rico</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
                                 </form>
-                            </div>
-                            <!-- card-body.// -->
                         </div>
-                    </article>
-                    <!-- card-group-item.// -->
-                </div>
-                <!-- card.// -->
+                        <!-- card-body.// -->
+                    </div>
+                </article>
+                
+                <article class="card-group-item">
+                    <header class="card-header">
+                        <h6 class="title">City</h6>
+                    </header>
+                    <div class="filter-content">
+                        <div class="card-body">
+                            <form>
+                                <div>     
+                                    <select class="form-control" id="state" name="state">
+                                        <option value="">Pick a city:</option>
+                                        <option value="AK">Evansvile</option>
+                                        <option value="AL">Chicago</option>
+                                        <option value="AR">Seattle</option>
+                                    </select>
+                                </div>
+                                </form>
+                        </div>
+                        <!-- card-body.// -->
+                    </div>
+                </article>
+
+                <article class="card-group-item">
+                    <header class="card-header">
+                        <h6 class="title">Company</h6>
+                    </header>
+                    <div class="filter-content">
+                        <div class="card-body">
+                            <form>
+                                <div>     
+                                    <select class="form-control" id="state" name="state">
+                                        <option value="">Pick a company:</option>
+                                        <option value="AK">OneMain</option>
+                                        <option value="AL">Google</option>
+                                        <option value="AR">Microsoft</option>
+                                    </select>
+                                </div>
+                                </form>
+                        </div>
+                        <!-- card-body.// -->
+                    </div>
+                </article>
+
+                <article class="card-group-item">
+                    <header class="card-header">
+                        <h6 class="title">Job Type</h6>
+                    </header>
+                    <div class="filter-content">
+                        <div class="card-body">
+                            <form>
+                                <div>     
+                                    <select class="form-control" id="job" name="job">
+                                        <option value="">Pick a job:</option>
+                                        <option value="RB">Musician</option>
+                                        <option value="PT">Software Developer</option>
+                                        <option value="NHP">Teacher</option>
+                                        <option value ="UD">Financial Advisor</option>
+                                    </select>
+                                </div>
+                                </form>
+                        </div>
+                        <!-- card-body.// -->
+                    </div>
+                </article>
+
+                <article class="card-group-item">
+                    <header class="card-header">
+                        <h6 class="title">College</h6>
+                    </header>
+                    <div class="filter-content">
+                        <div class="card-body">
+                            <form>
+                                <div>     
+                                    <select class="form-control" id="state" name="state">
+                                        <option value="">Pick a college:</option>
+                                        <option value="RB">Romain College Of Business</option>
+                                        <option value="PT">Pott College of Science, Engineering and Education</option>
+                                        <option value="NHP">Collge of Nursing and Health Professions</option>
+                                        <option value ="UD">University Division</option>
+                                    </select>
+                                </div>
+                                </form>
+                        </div>
+                        <!-- card-body.// -->
+                    </div>
+                </article>
+            </div>
+            <!-- card.// -->
             <!-- col.// -->
         </div>
-
         <div class="col-sm-6">
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/2.jpg">
+                        <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
                     </div>
                     <div class="col-sm-9">
                         <div>
@@ -144,12 +241,12 @@
                             </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/1.jpg">
+                        <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
                     </div>
                     <div class="col-sm-9">
                         <div>
@@ -188,12 +285,12 @@
                             </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/2.jpg">
+                        <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
                     </div>
                     <div class="col-sm-9">
                         <div>
@@ -232,12 +329,12 @@
                             </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/3.jpg">
+                        <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
                     </div>
                     <div class="col-sm-9">
                         <div>
@@ -276,10 +373,9 @@
                             </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
-       </div>
-    
+        </div>
         <div class="col-sm-3">
             <div class="card">
                 <article class="card-group-item">
@@ -289,7 +385,6 @@
                     <div class="filter-content">
                         <div class="card-body">
                             <form>
-                                
                             </form>
 
                         </div>
@@ -299,4 +394,5 @@
             </div>
         </div>
     </div>
+        
 </asp:Content>

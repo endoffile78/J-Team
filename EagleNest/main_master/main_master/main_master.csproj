@@ -88,6 +88,9 @@
     <Content Include="images\3.jpg" />
     <Content Include="images\4.jpg" />
     <Content Include="images\5.jpg" />
+    <Content Include="images\archie.jpg" />
+    <Content Include="images\archie2.jpg" />
+    <Content Include="images\archie3.jpg" />
     <Content Include="images\benches.jpg" />
     <Content Include="images\bridge.jpg" />
     <Content Include="images\coast.jpg" />

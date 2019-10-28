@@ -103,7 +103,7 @@
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/2.jpg">
+                        <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
                     </div>
                     <div class="col-sm-9">
                         <div>
@@ -147,7 +147,7 @@
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/1.jpg">
+                        <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
                     </div>
                     <div class="col-sm-9">
                         <div>
@@ -191,7 +191,7 @@
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/2.jpg">
+                        <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
                     </div>
                     <div class="col-sm-9">
                         <div>
@@ -235,7 +235,7 @@
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img class="img-fluid rounded-circle" alt="100x100"src="Images/3.jpg">
+                        <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
                     </div>
                     <div class="col-sm-9">
                         <div>
