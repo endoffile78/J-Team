@@ -27,9 +27,9 @@
                                 <div>
                                     <select class="form-control" id="country" name="country">
                                         <option value="">Pick a country:</option>
-                                        <option value="AK">USA</option>
-                                        <option value="AL">Canada</option>
-                                        <option value="AR">Mexico</option>
+                                        <option value="US">USA</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="MX">Mexico</option>
                                     </select>
                                 </div>
                             </form>
@@ -116,7 +116,7 @@
                         <div class="card-body">
                             <form>
                                 <div>
-                                    <select class="form-control" id="state" name="state">
+                                    <select class="form-control" id="city" name="city">
                                         <option value="">Pick a city:</option>
                                         <option value="AK">Evansvile</option>
                                         <option value="AL">Chicago</option>
@@ -137,7 +137,7 @@
                         <div class="card-body">
                             <form>
                                 <div>
-                                    <select class="form-control" id="state" name="state">
+                                    <select class="form-control" id="company" name="company">
                                         <option value="">Pick a company:</option>
                                         <option value="AK">OneMain</option>
                                         <option value="AL">Google</option>
@@ -180,7 +180,7 @@
                         <div class="card-body">
                             <form>
                                 <div>
-                                    <select class="form-control" id="state" name="state">
+                                    <select class="form-control" id="college" name="college">
                                         <option value="">Pick a college:</option>
                                         <option value="RB">Romain College Of Business</option>
                                         <option value="PT">Pott College of Science, Engineering and Education</option>
