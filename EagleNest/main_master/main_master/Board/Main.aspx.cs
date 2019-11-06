@@ -77,7 +77,7 @@ namespace main_master
                     {
                         int i = 0;
                         while (reader.Read()) {
-                            test_string += reader.GetString(0);
+                            //test_string += reader.GetString(0);
                             i++;
                         }
                         return test_string;

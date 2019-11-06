@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace main_master
 {
-	public partial class Main : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class Register : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-		}
-	}
+        }
+    }
 }

@@ -59,11 +59,58 @@
                 <li class = "nav-item"><a class="nav-link"  id="poll_pill" data-toggle="pill" href="#new_poll" role="tab" aria-controls="poll_pill" aria-selected="false"> New Poll </a></li>
                     </ul>
             <div class="tab-content" id="pills-tabContent">
+                <br /><br />
                 <div class = "tab-pane fade show active" id="new_gives" role="tabpanel" aria-labelledby="pills-gives-tab">
-                    NEW GIVES PAGE
-                   <div class="form-group">
-                        <textarea class="form-control rounded-0" id="gives_text_area" rows="10"></textarea>
+                    <div class="container">
+
+                        <div class="form-group">
+                            <label for="example-text-input" class="col-2 col-form-label">Title</label>
+                            <div class="col-10">
+                                <input class="form-control" type="text" value="" id="example-text-input">
+                            </div>
+
+                            <small class="form-text text-muted text-center">Write a brief but descriptive title for your listing.</small>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="col-2 col-form-label">Description</label>
+                            <div class="col-10">
+                                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                            </div>
+
+                            <small class="form-text text-muted text-center">Provide a description of your item. Keep in mind the item must be offered for free, and availible on campus.</small>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="col-2 col-form-label">Images</label>
+                            <div class="col-10">
+                                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                                <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                                    <asp:Literal ID="give_new_images_lit" runat="server" />
+                                </div>
+                                
+                                <br />
+                                <div class="text-center"><button id="give_new_images_button" class="text-center">add another file</button></div>
+                            </div>
+
+                            <small class="form-text text-muted text-center"> </small>
+
+                        </div>
+
+
+
+
                     </div>
+
+
+
+
+
+
+
+
+
+                   
                     </div>
                 <div class = "tab-pane fade" id = "new_project" role="tabpanel" aria-labelledby="pills-project-tab">
                     NEW PROJECT PAGE
