@@ -133,9 +133,10 @@
 
                             <small class="form-text text-muted text-center">Upload images of your item(optional).<br />
                                 Please keep file sizes less than 50MB.</small>
+                            <br />
+                            <input class="col" type='button' value='Preview Posting' id='preview_give_button' />
+
                         </div>
-                        <br />
-                                <input class="text-center" type='button' value='Preview Posting' id='preview__give_button' />
                     </div>
                 </div>
                 <!--    Above is the container for the new post page of Eagle Gives                    -->
@@ -168,9 +169,10 @@
                             </div>
                             <small class="form-text text-muted text-center">Upload images of your project(optional).<br />
                                 Please keep file sizes less than 50MB</small>
+                            <br />
+                            <input class="col" type='button' value='Preview Posting' id='preview_project_button' />
+
                         </div>
-                        <br />
-                                <input class="text-center" type='button' value='Preview Posting' id='preview_project_button' />
                     </div>
                 </div>
                 <!--    Above is the container for the new post page of Eagle Project                    -->
@@ -229,12 +231,13 @@
                                 <br />
                                 <input type='button' value='Add Option' id='addButton' />
                                 <input type='button' value='Remove Option' id='removeButton' />
-                                <br /><br />
-                                <input class="text-center" type='button' value='Preview Posting' id='preview_poll_button' />
+                                <br />
+                                <br />
+                                <input class="col" type='button' value='Preview Posting' id='preview_poll_button' />
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
                 </div>
                 <!--    Above is the container for the new post page of Eagle Poll                    -->
