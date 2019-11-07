@@ -56,8 +56,8 @@
 
             <br />
 
-           
-                
+
+
             <div class="container">
                 <div class="row">
 
@@ -65,31 +65,30 @@
                         Posting Type
                     </div>
                     <div class="col">
-                        <div class="nav nav-pills" id="pills-tab" role="tablist">
-                            <div class="form-check col">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="form-check col">
                                 <input class="form-check-input" type="radio" name="radios" id="gives_radio" value="option1" data-target="#new_gives" checked>
                                 <label class="form-check-label" for="gives_radio">
                                     Gives &nbsp 
                                 </label>
-                            </div>
-                            <div class="form-check col">
+                            </li>
+                            <li class="form-check col">
                                 <input class="form-check-input" type="radio" name="radios" id="project_radio" value="option1" data-target="#new_project">
                                 <label class="form-check-label" for="project_radio">
                                     Project &nbsp 
                                 </label>
-                            </div>
-                            <div class="form-check col">
+                            </li>
+                            <li class="form-check col">
                                 <input class="form-check-input" type="radio" name="radios" id="poll_radio" value="option1" data-target="#new_poll">
                                 <label class="form-check-label" for="poll_radio">
                                     Poll &nbsp 
                                 </label>
-                            </div>
-                            </div>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>
             </div>
-            
 
 
 
@@ -98,109 +97,82 @@
 
 
 
-    
+
+
             <div class="tab-content" id="pills-tabContent">
                 <br />
+
+
+
+                <!--    Below is the container for the new post page of Eagle Gives                    -->
                 <div class="tab-pane fade show active" id="new_gives" role="tabpanel" aria-labelledby="pills-gives-tab">
-
-
-
-
-
                     <div class="container">
-
                         <div class="form-group">
-                            <label for="example-text-input" class="col-2 col-form-label">Title</label>
+                            <label for="give_title_label" class="col-2 col-form-label">Title</label>
                             <div class="col">
-                                <input class="form-control" type="text" value="" id="example-text-input">
+                                <input class="form-control" type="text" value="" id="give_title_label">
                             </div>
 
                             <small class="form-text text-muted text-center">Write a brief but descriptive title for your listing.</small>
 
                         </div>
                         <div class="form-group">
-                            <label for="example-text-input" class="col-2 col-form-label">Description</label>
+                            <label for="give_desc_label" class="col-2 col-form-label">Description</label>
                             <div class="col">
-                                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                <textarea class="form-control" id="give_desc_label" rows="3"></textarea>
                             </div>
 
                             <small class="form-text text-muted text-center">Provide a description of your item. Keep in mind the item must be offered for free, and availible on campus.</small>
 
                         </div>
                         <div class="form-group">
-                            <label for="example-text-input" class="col-2 col-form-label">Images</label>
+                            <label for="give_image_label" class="col-2 col-form-label">Images</label>
                             <div class="col">
-                                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-                                    <asp:Literal ID="give_new_images_lit" runat="server" />
-                                </div>
-
-                                <br />
-                                <div class="text-center">
-                                    <button id="give_new_images_button" class="text-center">add another file</button></div>
+                                <input type="file" class="form-control-file" id="give_image_label" aria-describedby="fileHelp" multiple>
                             </div>
 
-                            <small class="form-text text-muted text-center"></small>
-
+                            <small class="form-text text-muted text-center">Upload images of your item(optional).<br /> Please keep file sizes less than 50MB.</small>
                         </div>
-
-
-
-
                     </div>
-
-
-
-
-
-
-
-
-
-
                 </div>
+                <!--    Above is the container for the new post page of Eagle Gives                    -->
+
+
+                <!--    Below is the container for the new post page of Eagle Project                    -->
                 <div class="tab-pane fade" id="new_project" role="tabpanel" aria-labelledby="pills-project-tab">
                     <div class="container">
 
                         <div class="form-group">
-                            <label for="example-text-input" class="col-2 col-form-label">Title</label>
+                            <label for="project_title_label" class="col-2 col-form-label">Title</label>
                             <div class="col">
-                                <input class="form-control" type="text" value="" id="example-text-input">
+                                <input class="form-control" type="text" value="" id="project_title_label">
                             </div>
-
-                            <small class="form-text text-muted text-center"> TEST TEST TESTWrite a brief but descriptive title for your listing.</small>
-
+                            <small class="form-text text-muted text-center">Write a brief but descriptive title for your listing.</small>
                         </div>
+
                         <div class="form-group">
-                            <label for="example-text-input" class="col-2 col-form-label">Description</label>
+                            <label for="project_desc_label" class="col-2 col-form-label">Description</label>
                             <div class="col">
-                                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                <textarea class="form-control" id="project_desc_label" rows="3"></textarea>
                             </div>
-
-                            <small class="form-text text-muted text-center">Provide a description of your item. Keep in mind the item must be offered for free, and availible on campus.</small>
-
+                            <small class="form-text text-muted text-center">Provide a description of your project. What are your goals? What skills are you seeking?</small>
                         </div>
+
                         <div class="form-group">
-                            <label for="example-text-input" class="col-2 col-form-label">Images</label>
+                            <label for="project_image_label" class="col-2 col-form-label">Images</label>
                             <div class="col">
-                                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-                                    <asp:Literal ID="Literal1" runat="server" />
+                                <input type="file" class="form-control-file" id="project_image_label" aria-describedby="fileHelp" multiple>
                                 </div>
-                                
-                                <br />
-                                <div class="text-center"><button id="give_new_images_button" class="text-center">add another file</button></div>
-                            </div>
-
-                            <small class="form-text text-muted text-center"> </small>
-
+                            <small class="form-text text-muted text-center">Upload images of your project(optional).<br /> Please keep file sizes less than 50MB</small>
                         </div>
-
-
-
-
                     </div>
                 </div>
+                <!--    Above is the container for the new post page of Eagle Project                    -->
+
+
+
+
+
                 <div class="tab-pane fade" id="new_poll" role="tabpanel" aria-labelledby="pills-poll-tab">
                     NEW POLL PAGE
                     <div class="form-group">
