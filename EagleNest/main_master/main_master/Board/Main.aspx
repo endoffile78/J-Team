@@ -134,6 +134,8 @@
                             <small class="form-text text-muted text-center">Upload images of your item(optional).<br />
                                 Please keep file sizes less than 50MB.</small>
                         </div>
+                        <br />
+                                <input class="text-center" type='button' value='Preview Posting' id='preview__give_button' />
                     </div>
                 </div>
                 <!--    Above is the container for the new post page of Eagle Gives                    -->
@@ -167,6 +169,8 @@
                             <small class="form-text text-muted text-center">Upload images of your project(optional).<br />
                                 Please keep file sizes less than 50MB</small>
                         </div>
+                        <br />
+                                <input class="text-center" type='button' value='Preview Posting' id='preview_project_button' />
                     </div>
                 </div>
                 <!--    Above is the container for the new post page of Eagle Project                    -->
@@ -194,6 +198,14 @@
                             </div>
                             <small class="form-text text-muted text-center">Provide a description of your poll(Your question).</small>
                         </div>
+                        <div class="form-group">
+                            <label for="ppoll_image_label" class="col-2 col-form-label">Images</label>
+                            <div class="col">
+                                <input type="file" class="form-control-file" id="ppoll_image_label" aria-describedby="fileHelp" multiple>
+                            </div>
+                            <small class="form-text text-muted text-center">Upload images relevant to your poll. If your images corrospond to a particular option, please upload them below on said option.
+                                Please keep file sizes less than 50MB</small><br />
+                        </div>
                         <div class="row">
                             <div class="col" style="margin-left: 20px">
                                 <div class="form-horizontal">
@@ -201,14 +213,14 @@
                                         <label class="control-label" for="poll_string">
                                             Option 1</label>
                                         <div class="controls">
-                                            <input type="text" id="poll_string" />
+                                            <input class="form-control" type="text" id="poll_string" />
                                             <input type="file" class="form-control-file" id="poll_image_label" aria-describedby="fileHelp">
                                             <br />
                                         </div>
                                         <label class="control-label" for="poll_string">
                                             Option 2</label>
                                         <div class="controls">
-                                            <input type="text" id="poll_string2" />
+                                            <input class="form-control" type="text" id="poll_string2" />
                                             <input type="file" class="form-control-file" id="poll_image_label2" aria-describedby="fileHelp">
                                             <br />
                                         </div>
@@ -217,9 +229,12 @@
                                 <br />
                                 <input type='button' value='Add Option' id='addButton' />
                                 <input type='button' value='Remove Option' id='removeButton' />
+                                <br /><br />
+                                <input class="text-center" type='button' value='Preview Posting' id='preview_poll_button' />
                             </div>
-                            <div class="col"></div>
+                            
                         </div>
+                        
                     </div>
                 </div>
                 <!--    Above is the container for the new post page of Eagle Poll                    -->
@@ -277,7 +292,7 @@
                     return false;
                 }
                 var id = ($('.form-horizontal .control-group').length + 2).toString();
-                $('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="poll_string' + id + '">Option ' + id + '</label><div class="controls' + id + '"><input type="text" id="poll_string' + id + '"/><input type="file" class="form-control-file" id="poll_image_label' + id + '" aria-describedby="fileHelp"><br /></div></div>');
+                $('.form-horizontal').append('<div class="control-group" id="control-group' + id + '"><label class="control-label" for="poll_string' + id + '">Option ' + id + '</label><div class="controls' + id + '"><input class="form-control" type="text" id="poll_string' + id + '"/><input type="file" class="form-control-file" id="poll_image_label' + id + '" aria-describedby="fileHelp"><br /></div></div>');
             });
 
             $("#removeButton").click(function () {
