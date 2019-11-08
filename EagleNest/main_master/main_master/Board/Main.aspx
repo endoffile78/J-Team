@@ -242,15 +242,7 @@
                 </div>
                 <!--    Above is the container for the new post page of Eagle Poll                    -->
 
-
-
             </div>
-
-
-
-
-
-
 
         </div>
 
