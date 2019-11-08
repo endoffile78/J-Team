@@ -4,6 +4,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="branding" runat="server">
+    <h3>EagleNest</h3>
+    <strong>EN</strong>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="navigation" runat="server">
@@ -20,6 +22,6 @@
             <label for="password">Password:</label>
             <asp:Textbox class="form-control" id="password" name="email" type="password" runat="server" />
         </div>
-        <asp:Button class="btn btn-primary" id="submit" Tsext="Submit" runat="server" />
+        <asp:Button class="btn btn-primary" id="submit" Tsext="Submit" runat="server" OnClick="submit_Click" />
     </form>
 </asp:Content>
