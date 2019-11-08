@@ -139,7 +139,7 @@ CREATE TABLE [Gallery_Post]
  [GpostID]     uniqueidentifier NOT NULL ,
  [Email]       nvarchar(50) NOT NULL ,
  [ID_Num]      uniqueidentifier NOT NULL ,
- [Titile]      nvarchar(50) NOT NULL ,
+ [Title]      nvarchar(50) NOT NULL ,
  [Discription] nvarchar(200) NOT NULL ,
  [Date]        datetime NOT NULL ,
  [Image]       nvarchar(400) NOT NULL ,
