@@ -411,65 +411,69 @@
         <div id="newtab" class="tab-pane fade">
             <br />
             <div class="container">
-                <form>
+                <form runat="server">
                     <div class="form-group">
-                        <label for="InputFirstName">First Name</label>
-                        <input type="firstname" class="form-control" id="InputFirstName" aria-describedby="firstname" placeholder="Enter first name">
+                        <label for="major">Major(s)</label>
+                        <asp:Textbox class="form-control" id="major" name="major" type="text" placeholder="Enter major" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputLastName">Last Name</label>
-                        <input type="lastname" class="form-control" id="InputLastName" aria-describedby="lastname" placeholder="Enter last name">
+                        <label for="classification">Classification</label>
+                        <asp:Textbox class="form-control" id="classification" name="classification" type="text" placeholder="Enter classification" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputMajor">Major(s)</label>
-                        <input type="major" class="form-control" id="InputMajor" aria-describedby="major" placeholder="Enter your major">
+                        <label for="term">Term</label>
+                        <asp:Textbox class="form-control" id="term" name="lastname" type="text" placeholder="Enter term e.g. Summer 2019" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputClassification">Classification</label>
-                        <input type="classification" class="form-control" id="InputClassification" placeholder="classification">
+                        <label for="company">Company</label>
+                        <asp:Textbox class="form-control" id="company" name="company" type="text" placeholder="Enter company" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputTerm">Term</label>
-                        <input type="term" class="form-control" id="InputTerm" aria-describedby="term" placeholder="Enter term e.g. Summer 2019">
+                        <label for="position">Position</label>
+                        <asp:Textbox class="form-control" id="position" name="position" type="text" placeholder="Enter position" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputCompany">Company</label>
-                        <input type="company" class="form-control" id="InputCompany" aria-describedby="company" placeholder="Enter company">
+                        <label for="country">Country</label>
+                        <asp:Textbox class="form-control" id="country" name="country" type="text" placeholder="Enter country" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputPosition">Position</label>
-                        <input type="position" class="form-control" id="InputPosition" aria-describedby="position" placeholder="Enter position">
+                        <label for="state">State/Province</label>
+                        <asp:Textbox class="form-control" id="state" name="state" type="text" placeholder="Enter state or province" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputCountry">Country</label>
-                        <input type="country" class="form-control" id="InputCountry" aria-describedby="country" placeholder="Enter country">
+                        <label for="city">City</label>
+                        <asp:Textbox class="form-control" id="city" name="city" type="text" placeholder="Enter city" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputState">State/Province</label>
-                        <input type="Firstname" class="form-control" id="InputState" aria-describedby="state" placeholder="Enter state or province">
+                        <label for="resources">What resources did you use to attain internship?</label>
+                        <asp:Textbox class="form-control" id="resources" name="resources" type="text" placeholder="max 50 words" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputCity">City</label>
-                        <input type="city" class="form-control" id="InputCity" aria-describedby="city" placeholder="Enter city">
+                        <label for="description">Job Description</label>
+                        <asp:Textbox class="form-control" id="description" name="description" type="text" placeholder="max 100 words" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputResources">What resources did you use to attain internship?</label>
-                        <textarea type="resources" class="form-control" id="InputResources" aria-describedby="resources" placeholder="max 50 words "></textarea>
+                        <label for="lessons">What was your biggest takeaways from your internship?</label>
+                        <asp:Textbox class="form-control" id="lessons" name="lessons" type="text" placeholder="max 50 words" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputDescription">Job Description</label>
-                        <textarea type="description" class="form-control" id="InputDescription" aria-describedby="description" placeholder="max 100 words "></textarea>
+                        <label for="email">Email</label>
+                        <asp:Textbox class="form-control" id="email" name="email" type="email" placeholder="Enter email" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="InputLessons">What was your biggest takeaways from your internship?</label>
-                        <textarea type="lessons" class="form-control" id="InputLessons" aria-describedby="lessons" placeholder="max 50 words "></textarea>
+                        <label for="twitter">Twitter</label>
+                        <asp:Textbox class="form-control" id="twitter" name="twitter" type="text" placeholder="Enter twitter username" runat="server" />
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedIn">LinkedIn</label>
+                        <asp:Textbox class="form-control" id="linkedIn" name="linkedIn" type="text" placeholder="Enter linkedIn url" runat="server" />
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-outline-primary" OnClick="post_Click">Post</button>
                 </form>
             </div>
-            
-        </div>
+            </div>
+        
     </div>
 
 
