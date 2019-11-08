@@ -24,6 +24,24 @@ namespace main_master.Utility
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// textbox_number_users control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl textbox_number_users;
+
+        /// <summary>
+        /// button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button2;
+
+        /// <summary>
         /// checkbox_gives_pop control.
         /// </summary>
         /// <remarks>
@@ -69,24 +87,6 @@ namespace main_master.Utility
         protected global::System.Web.UI.WebControls.Button button3;
 
         /// <summary>
-        /// textbox_number_users control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl textbox_number_users;
-
-        /// <summary>
-        /// button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button2;
-
-        /// <summary>
         /// button1 control.
         /// </summary>
         /// <remarks>
@@ -94,6 +94,24 @@ namespace main_master.Utility
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button button1;
+
+        /// <summary>
+        /// label_dump control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label_dump;
+
+        /// <summary>
+        /// button5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button5;
 
         /// <summary>
         /// button4 control.
