@@ -24,19 +24,10 @@ namespace main_master.Utility
             Boolean bool_pop_poll = checkbox_poll_pop.Checked;
             int number_to_pop = Convert.ToInt32(number_board_pop.Value);
 
-            
             if (number_to_pop > 0) {
                 
-            
-            
             }
             
-
-
-
-
-
-
         }
 
 
@@ -49,8 +40,6 @@ namespace main_master.Utility
             for (int i = 0; i < number_of_users; i++)
             {
                 SqlUtil.ExecuteNonQuery(pop_users[i]);
-            
-            
             }
             }
 
@@ -63,12 +52,7 @@ namespace main_master.Utility
 
 
 
-        protected string rand_email() {
-
-            return "";
-        
-        
-        }
+      
 
 
 
