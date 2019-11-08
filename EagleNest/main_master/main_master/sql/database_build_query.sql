@@ -46,6 +46,7 @@ GO
 INSERT INTO User_Type (Type, Description) VALUES (0, 'Admin');
 INSERT INTO User_Type (Type, Description) VALUES (1, 'Moderator');
 INSERT INTO User_Type (Type, Description) VALUES (2, 'User');
+GO
 
 
 
