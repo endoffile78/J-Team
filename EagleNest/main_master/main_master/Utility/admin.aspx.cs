@@ -61,7 +61,7 @@ namespace main_master.Utility
             }
             label_dump.Text = output;
 
-
+            reader.Close();
 
         }
         protected void button_query_Click(object sender, EventArgs e)
@@ -85,6 +85,8 @@ namespace main_master.Utility
             
             }
             label_dump.Text = output;
+
+            reader.Close();
         }
 
 
