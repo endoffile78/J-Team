@@ -18,7 +18,7 @@ CREATE TABLE [dbo].[User_Main]
  [Last_Login]      datetime NOT NULL ,
  [Phone]           varchar(15) NULL ,
  [User_Img]        image NULL ,
- [Age]             tinyint NULL ,
+ [Birthday]        date NULL ,
  [Org_Affiliation] nvarchar(50) NULL ,
  [Banned]          bit DEFAULT 0,
  [Password]        varchar(100) NOT NULL,
