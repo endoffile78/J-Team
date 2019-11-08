@@ -24,6 +24,33 @@
     </li>
 </asp:Content>
 
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
-    
-</asp:Content>
+
+    <form>
+<ul class="form-style-1">
+    <li><label>Title <span class="required">*</span></label><input type="text" name="field1" class="field-long" placeholder="Title" /></li>
+    <li>
+        <label>Image <span class="required">*</span></label>
+        <input type="file" id="picture" name="picture" class="field-long" accept="image/*"/>
+    </li>
+    <li>
+        <label>Tag</label>
+        <select name="field4" class="field-select">
+        <option value="Advertise">Advertise</option>
+        <option value="Partnership">Partnership</option>
+        <option value="General">General</option>
+        </select>
+    </li>
+    <li>
+        <label>Discription <span class="required">*</span></label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <li>
+        <input type="submit" value="Submit" />
+    </li>
+</ul>
+</form>
+
+    </asp:Content>
