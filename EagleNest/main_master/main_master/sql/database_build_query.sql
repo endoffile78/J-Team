@@ -10,9 +10,10 @@ CREATE TABLE [dbo].[User_Main]
 (
  [Email]           nvarchar(50) NOT NULL ,
  [ID_Num]          uniqueidentifier DEFAULT NEWSEQUENTIALID(),
- [Name]            varchar(50) NOT NULL ,
- [Major]           varchar(20) NOT NULL ,
- [Classification]  varchar(15) NOT NULL ,
+ [Fname]           varchar(20) NOT NULL ,
+ [Lnane]           varchar(20) NOT NULL ,
+ [Major]           varchar(20) NULL ,
+ [Classification]  varchar(15) NULL ,
  [User_Type]       tinyint NOT NULL ,
  [Last_Login]      datetime NOT NULL ,
  [Phone]           varchar(15) NULL ,
