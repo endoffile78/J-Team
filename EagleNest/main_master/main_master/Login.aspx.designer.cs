@@ -7,47 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace main_master
-{
-
-
-    public partial class eagleboard
-    {
-
+namespace main_master {
+    
+    
+    public partial class Login {
+        
         /// <summary>
-        /// all_lit control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal all_lit;
-
+        protected global::System.Web.UI.WebControls.TextBox email;
+        
         /// <summary>
-        /// gives_lit control.
+        /// password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal gives_lit;
-
+        protected global::System.Web.UI.WebControls.TextBox password;
+        
         /// <summary>
-        /// project_lit control.
+        /// submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal project_lit;
-
-        /// <summary>
-        /// poll_lit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal poll_lit;
+        protected global::System.Web.UI.WebControls.Button submit;
     }
 }

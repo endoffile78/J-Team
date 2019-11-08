@@ -10,8 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
-
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
@@ -28,6 +26,7 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    
     <asp:ContentPlaceHolder ID="content_place_holder_head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -78,6 +77,9 @@
                     <li>
                         <a href='<%= ResolveUrl("~/Connect/Main.aspx") %>' class="bg-danger">Eagle Connect</a>
                     </li>
+                    <li>
+                        <a href='<%= ResolveUrl("~/Board/Main.aspx") %>' class="bg-danger">Eagle Board</a>
+                    </li>
                 </ul>
             </ul>
 
@@ -117,6 +119,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
     <script>
         baguetteBox.run('.tz-gallery');
+    </script>
+
+    <script>
+        $(function () {
+            $('.view_details').click(function () {
+                if ($(this).is(':checked')) {
+                    $(this)
+                        .next('label')
+                        .html('&times;')
+                        .attr('title', 'tap here to close full profile');
+                    $(this)
+                        .parent()
+                        .next('main')
+                        .slideDown('normal');
+                } else {
+                    $(this)
+                        .next('label')
+                        .html('=')
+                        .attr('title', 'tap here to view full profile');
+                    $(this)
+                        .parent()
+                        .next('main')
+                        .slideUp('fast');
+                }
+            });
+        });
     </script>
 
 </body>

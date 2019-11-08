@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="main_master.WebForm1" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">'
+    <title>Eagle Gallery</title>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="branding" runat="server">
@@ -9,25 +10,14 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="navigation" runat="server">
-    <li class="active ">
-        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
-            <i class="fas fa-archive "></i>
+    <li>
+        <a href="Archive.aspx">
+            <i class="fas fa-edit"></i>
             Archive
         </a>
-        <ul class="collapse list-unstyled " id="homeSubmenu">
-            <li>
-                <a href="#" class="bg-danger">2019</a>
-            </li>
-            <li>
-                <a href="#" class="bg-danger">2018</a>
-            </li>
-            <li>
-                <a href="#" class="bg-danger">2017</a>
-            </li>
-        </ul>
     </li>
     <li>
-        <a href="#">
+        <a href="Post_Form.aspx">
             <i class="fas fa-edit"></i>
             Post
         </a>

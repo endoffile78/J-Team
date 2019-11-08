@@ -7,9 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace main_master {
-    
-    
-    public partial class Main {
+namespace main_master
+{
+
+
+    public partial class Logout
+    {
     }
 }

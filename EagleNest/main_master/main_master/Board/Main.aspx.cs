@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Text;
+using main_master.sql;
 
 namespace main_master
 {
     public partial class eagleboard : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             List<data_row> all_rows = new List<data_row>();
@@ -32,7 +36,8 @@ namespace main_master
 
         void convert_rows_to_string_and_publish(ref List<data_row> data_rows)
         {
-
+            
+            
             string table_string_all = @"<table class=""table"" id= ""all_board""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th></tr> </thead> <tbody>";
             string table_string_gives = @"<table class=""table"" id= ""gives_board""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th></tr> </thead> <tbody>";
             string table_string_project = @"<table class=""table"" id= ""project_board""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th></tr> </thead> <tbody>";
@@ -45,13 +50,12 @@ namespace main_master
                 else if (r.get_board_id().CompareTo("project_board") == 0) { table_string_project = table_string_project + r.get_row_string(); }
                 else if (r.get_board_id().CompareTo("poll_board") == 0) { table_string_poll = table_string_poll + r.get_row_string(); }
             }
-
             table_string_all = table_string_all + "</tbody></table>";
             table_string_gives = table_string_gives + "</tbody></table>";
             table_string_project = table_string_project + "</tbody></table>";
             table_string_poll = table_string_poll + "</tbody></table>";
 
-            all_lit.Text = table_string_all;
+            all_lit.Text = table_string_all + build_data();
             gives_lit.Text = table_string_gives;
             project_lit.Text = table_string_project;
             poll_lit.Text = table_string_poll;
@@ -59,49 +63,62 @@ namespace main_master
         }
 
 
-        void build_data()
-        {
+        string build_data()
+        { // built for testing purposes. Soon will be rewritten for to read the database and build a data structure from it.
+            string test_string = "";
+            string query = "select schema_name(t.schema_id) as schema_name, t.name as table_name, t.create_date, t.modify_date from sys.tables t order by schema_name, table_name; ";
 
+            SqlDataReader reader = SqlUtil.ExecuteReader(query);
+
+            int i = 0;
+            while (reader.Read())
+            {
+                test_string += reader.GetString(0);
+                i++;
+            }
+
+            reader.Close();
+
+            return test_string;
             //placeholder for reading database
         }
 
-    }
 
-    class data_row
-    {
-        const string poll_title = "Poll";
-        const string project_title = "Project";
-        const string gives_title = "Gives";
-        string board_id;
-        string board;
-        string title;
-        DateTime date;
-        string row_string = "";
-        string link;
-
-        public data_row(string in_board_id, string in_title, DateTime in_date, string in_link)
+        class data_row
         {
-            title = in_title;
-            date = in_date;
-            link = in_link;
-            board_id = in_board_id;
-            if (board_id.CompareTo("gives_board") == 0) { board = gives_title; }
-            else if (board_id.CompareTo("project_board") == 0) { board = project_title; }
-            else if (board_id.CompareTo("poll_board") == 0) { board = poll_title; }
+            const string poll_title = "Poll";
+            const string project_title = "Project";
+            const string gives_title = "Gives";
+            string board_id;
+            string board;
+            string title;
+            DateTime date;
+            string row_string = "";
+            string link;
+
+            public data_row(string in_board_id, string in_title, DateTime in_date, string in_link)
+            {
+                title = in_title;
+                date = in_date;
+                link = in_link;
+                board_id = in_board_id;
+                if (board_id.CompareTo("gives_board") == 0) { board = gives_title; }
+                else if (board_id.CompareTo("project_board") == 0) { board = project_title; }
+                else if (board_id.CompareTo("poll_board") == 0) { board = poll_title; }
+            }
+
+            public string get_row_string()
+            {
+                row_string = @"<tr> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
+                //creates a row of a bootstrap table in html
+                return row_string;
+            }
+
+            public string get_board_id()
+            {
+                return board_id;
+            }
+
         }
-
-        public string get_row_string()
-        {
-            row_string = @"<tr> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
-            //creates a row of a bootstrap table in html
-            return row_string;
-        }
-
-        public string get_board_id()
-        {
-            return board_id;
-        }
-
-
     }
 }
