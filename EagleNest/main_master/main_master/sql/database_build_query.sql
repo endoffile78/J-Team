@@ -34,7 +34,7 @@ GO
 
 -- ************************************** [dbo].[User_Type]
 
-CREATE TABLE [dbo].[User_Type]
+CREATE TABLE [User_Type]
 (
   [Type]         tinyint NOT NULL,
   [Description]  varchar(50) NULL,
