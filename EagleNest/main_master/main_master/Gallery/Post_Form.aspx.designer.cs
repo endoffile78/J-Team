@@ -7,9 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace main_master.Board {
-    
-    
-    public partial class Post_Form {
+namespace main_master.Board
+{
+
+
+    public partial class Post_Form
+    {
     }
 }

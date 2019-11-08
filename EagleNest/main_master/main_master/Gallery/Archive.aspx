@@ -20,5 +20,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
-    
+
+    <asp:ListView ID="ListView1" runat="server"></asp:ListView>
+
 </asp:Content>

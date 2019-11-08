@@ -10,10 +10,9 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="navigation" runat="server">
+    <% if (Session["loggedIn"] == null) { %>
     <li>
-        <a href="Login.aspx">
-            Login
-        </a>
+        <a href="Login.aspx">Login</a>
     </li>
     <li>
         <a href="Register.aspx">
@@ -21,6 +20,11 @@
             Register
         </a>
     </li>
+    <% } else { %>
+    <li>
+        <a href="Logout.aspx">Logout</a>
+    </li>
+    <% } %>
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="content_place_holder_body" runat="server">
