@@ -73,7 +73,6 @@ namespace main_master
             int i = 0;
             while (reader.Read())
             {
-                connection.Open();
                 test_string += reader.GetString(0);
                 i++;
             }
