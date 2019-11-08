@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.IO;
 using main_master.sql;
 
 namespace main_master.Utility
@@ -25,7 +26,7 @@ namespace main_master.Utility
 
             
             if (number_to_pop > 0) {
-                populate();
+                
             
             
             }
@@ -39,18 +40,21 @@ namespace main_master.Utility
         }
 
 
-        protected void populate() {
-            SqlConnectionStringBuilder builder = SqlUtil.make_connection();
-            string query = "insert into [dbo].[User_Main]  values ('testemail@email.com',default, 'My Name', 'Computers', 'Classification', 'user type', sysdatetime (), '8122222222', NULL, 25, 'org', default, 'iam4thousand');";
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+        protected void button_populate_users_Click(object sender, EventArgs e) {
+            int number_of_users = Convert.ToInt32(textbox_number_users.Value);
+            string path = System.Web.HttpContext.Current.Server.MapPath(@"~/sql/pop_users.sql");
+            //string pop_users = File.ReadAllText(path);
+            string[] pop_users = File.ReadAllLines(path);
+            if (number_of_users < 1000) { 
+            for (int i = 0; i < number_of_users; i++)
             {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
+                SqlUtil.ExecuteNonQuery(pop_users[i]);
+            
+            
+            }
             }
 
+           
 
         }
 
@@ -59,9 +63,9 @@ namespace main_master.Utility
 
 
 
-        protected string rand_email() { 
-        
-        
+        protected string rand_email() {
+
+            return "";
         
         
         }

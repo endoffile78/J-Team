@@ -93,12 +93,12 @@
                                 Number of user to generate:
                             </div>
                         <div class="col">
-                            <input type="number" runat="server" class="form-control" id="number1">
+                            <input type="number" runat="server" class="form-control" id="textbox_number_users">
                             
                         </div>
                             <div class="col"></div>
                         </div>
-                        <asp:Button ID="button2" runat="server" OnClick="button_populate_board_Click" Text="Submit" />
+                        <asp:Button ID="button2" runat="server" OnClick="button_populate_users_Click" Text="Submit" />
 
 
                     </div>

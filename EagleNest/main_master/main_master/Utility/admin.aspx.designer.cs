@@ -69,13 +69,13 @@ namespace main_master.Utility
         protected global::System.Web.UI.WebControls.Button button3;
 
         /// <summary>
-        /// number1 control.
+        /// textbox_number_users control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl number1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl textbox_number_users;
 
         /// <summary>
         /// button2 control.
