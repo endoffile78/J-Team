@@ -80,6 +80,7 @@
     <Content Include="Blog\Post.aspx" />
     <Content Include="Blog\User.aspx" />
     <Content Include="Blog\View.aspx" />
+    <Content Include="css\Gallery_Post_Form.css" />
     <Content Include="css\style5.css" />
     <Content Include="Board\Main.aspx" />
     <Content Include="Gallery\Archive.aspx" />
