@@ -66,29 +66,21 @@ namespace main_master
         string build_data()
         { // built for testing purposes. Soon will be rewritten for to read the database and build a data structure from it.
             string test_string = "";
-            SqlConnectionStringBuilder builder = SqlUtil.make_connection();
             string query = "select schema_name(t.schema_id) as schema_name, t.name as table_name, t.create_date, t.modify_date from sys.tables t order by schema_name, table_name; ";
-            using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+
+            SqlDataReader reader = SqlUtil.ExecuteReader(query);
+
+            int i = 0;
+            while (reader.Read())
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        int i = 0;
-                        while (reader.Read()) {
-                            //test_string += reader.GetString(0);
-                            i++;
-                        }
-                        return test_string;
-
-
-
-                    }
-                }
+                test_string += reader.GetString(0);
+                i++;
             }
-            
 
+            reader.Close();
+
+            return test_string;
             //placeholder for reading database
         }
 

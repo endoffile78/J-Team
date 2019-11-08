@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using main_master.sql;
 
 namespace main_master
 {
@@ -14,6 +15,7 @@ namespace main_master
         protected void Application_Start(object sender, EventArgs e)
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            SqlUtil.init();
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -43,7 +45,7 @@ namespace main_master
 
         protected void Application_End(object sender, EventArgs e)
         {
-
+            SqlUtil.destroy();
         }
     }
 }
