@@ -21,7 +21,7 @@
     </ul>
 
     <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
+        <div id="home" class="tab-pane fade show active">
             <!--PUT BODY HERE! -->
             <br />
             <div class="row">
@@ -233,13 +233,11 @@
                                     <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
                                     <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
                                 </div>
-                            </div>
-                            <div>
                                 <div id="accordion">
                                     <div id="headingOne">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Read More/ Less
+                                            <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Read More
                                             </button>
                                         </h5>
                                     </div>
@@ -277,18 +275,16 @@
                                     <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
                                     <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
                                 </div>
-                            </div>
-                            <div>
-                                <div id="accordion">
-                                    <div id="headingOne">
+                                <div id="accordion1">
+                                    <div id="headingTwo">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Read More/ Less
+                                            <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                Read More
                                             </button>
                                         </h5>
                                     </div>
                                 </div>
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion1">
                                     <div class="text-center">
                                         <p>
                                             I found out about the Brand Planning Intern through a job search platform called WayUp.com. 
@@ -321,18 +317,16 @@
                                     <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
                                     <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
                                 </div>
-                            </div>
-                            <div>
-                                <div id="accordion">
-                                    <div id="headingOne">
+                                <div id="accordion2">
+                                    <div id="heading3">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Read More/ Less
+                                            <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                                Read More
                                             </button>
                                         </h5>
                                     </div>
                                 </div>
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion2">
                                     <div class="text-center">
                                         <p>
                                             I found out about the Brand Planning Intern through a job search platform called WayUp.com. 
@@ -365,18 +359,16 @@
                                     <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
                                     <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
                                 </div>
-                            </div>
-                            <div>
-                                <div id="accordion">
-                                    <div id="headingOne">
+                                <div id="accordion3">
+                                    <div id="heading4">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Read More/ Less
+                                            <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                                                Read More
                                             </button>
                                         </h5>
                                     </div>
                                 </div>
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion3">
                                     <div class="text-center">
                                         <p>
                                             I found out about the Brand Planning Intern through a job search platform called WayUp.com. 
@@ -421,6 +413,7 @@
             </div>
         </div>
         <div id="newtab" class="tab-pane fade">
+            <br />
             <div class="container">
                 <form>
                     <div class="form-group">
