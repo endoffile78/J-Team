@@ -56,5 +56,17 @@ namespace main_master.Utility
 
 
 
+
+
+
+        protected string rand_email() { 
+        
+        
+        
+        
+        }
+
+
+
     }
 }
