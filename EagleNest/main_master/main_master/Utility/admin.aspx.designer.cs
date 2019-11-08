@@ -69,6 +69,15 @@ namespace main_master.Utility
         protected global::System.Web.UI.WebControls.Button button3;
 
         /// <summary>
+        /// number1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl number1;
+
+        /// <summary>
         /// button2 control.
         /// </summary>
         /// <remarks>
@@ -76,5 +85,23 @@ namespace main_master.Utility
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button button2;
+
+        /// <summary>
+        /// button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button1;
+
+        /// <summary>
+        /// button4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button4;
     }
 }

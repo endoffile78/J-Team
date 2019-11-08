@@ -9,14 +9,14 @@
 CREATE TABLE [dbo].[User_Main]
 (
  [Email]           nvarchar(50) NOT NULL ,
- [ID_Num]          uniqueidentifier NOT NULL ,
+ [ID_Num]          uniqueidentifier DEFAULT NEWSEQUENTIALID(),
  [Name]            varchar(50) NOT NULL ,
  [Major]           varchar(20) NOT NULL ,
  [Classification]  varchar(15) NOT NULL ,
  [User_Type]       varchar(15) NOT NULL ,
  [Last_Login]      datetime NOT NULL ,
  [Phone]           varchar(15) NULL ,
- [User_Img]        image NOT NULL ,
+ [User_Img]        image NULL ,
  [Age]             tinyint NULL ,
  [Org_Affiliation] nvarchar(50) NULL ,
  [Banned]          bit DEFAULT 0,

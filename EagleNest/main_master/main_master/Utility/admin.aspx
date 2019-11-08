@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Populate Board Database
                         </button>
                     </h2>
@@ -79,17 +79,63 @@
 
 
             <div class="card">
+                <div class="card-header" id="headingthree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
+                            Populate User Database
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#acc_pop_board">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                Number of user to generate:
+                            </div>
+                        <div class="col">
+                            <input type="number" runat="server" class="form-control" id="number1">
+                            
+                        </div>
+                            <div class="col"></div>
+                        </div>
+                        <asp:Button ID="button2" runat="server" OnClick="button_populate_board_Click" Text="Submit" />
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header" id="headingfour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
+                            Dump Database
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#acc_pop_board">
+                    <div class="card-body">
+
+                        <asp:Button ID="button1" runat="server" OnClick="button_populate_board_Click" Text="Submit" />
+
+
+                    </div>
+                </div>
+            </div>
+
+                        <div class="card">
                 <div class="card-header" id="headingtwo">
                     <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsetwo" aria-expanded="false" aria-controls="collapsetwo">
-                            Populate Board Database
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsetwo" aria-expanded="true" aria-controls="collapsetwo">
+                            SQL Query
                         </button>
                     </h2>
                 </div>
                 <div id="collapsetwo" class="collapse" aria-labelledby="headingtwo" data-parent="#acc_pop_board">
                     <div class="card-body">
 
-                        <asp:Button ID="button2" runat="server" OnClick="button_populate_board_Click" Text="Submit" />
+                        <asp:Button ID="button4" runat="server" OnClick="button_populate_board_Click" Text="Submit" />
 
 
                     </div>
