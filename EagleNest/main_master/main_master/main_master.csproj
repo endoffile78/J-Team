@@ -106,6 +106,7 @@
     <Content Include="Register.aspx" />
     <Content Include="sql\droptables.sql" />
     <Content Include="sql\database_build_query.sql" />
+    <Content Include="Utility\admin.aspx" />
     <Content Include="Web.config" />
     <Content Include="Gallery\Main.aspx" />
     <Content Include="Intern\Main.aspx" />
@@ -224,6 +225,13 @@
     <Compile Include="Connect\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utility\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utility\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="new_main_master.Master" />
@@ -239,7 +247,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NewFolder1\" />
-    <Folder Include="Utility\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
