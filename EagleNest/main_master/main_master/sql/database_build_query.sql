@@ -13,7 +13,7 @@ CREATE TABLE [dbo].[User_Main]
  [Name]            varchar(50) NOT NULL ,
  [Major]           varchar(20) NOT NULL ,
  [Classification]  varchar(15) NOT NULL ,
- [User_Type]       varchar(15) NOT NULL ,
+ [User_Type]       int NOT NULL ,
  [Last_Login]      datetime NOT NULL ,
  [Phone]           varchar(15) NULL ,
  [User_Img]        image NULL ,
@@ -23,14 +23,28 @@ CREATE TABLE [dbo].[User_Main]
  [Password]        varchar(100) NOT NULL,
 
 
- CONSTRAINT [PK_table_3] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC)
+ CONSTRAINT [PK_table_3] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
+ CONSTRAINT [FK_User_Type] FOREIGN KEY ([User_Type])  REFERENCES [User_Type]([Type])
 );
 GO
 
 
 
 
+-- ************************************** [dbo].[User_Type]
 
+CREATE TABLE [dbo].[User_Type]
+(
+  [Type]         int NOT NULL,
+  [Description]  varchar(50) NULL,
+
+  CONSTRAINT [PK_User_Type] PRIMARY KEY CLUSTERED ([Type] ASC)
+);
+GO
+
+INSERT INTO User_Type (Type, Description) VALUES (0, 'Admin');
+INSERT INTO User_Type (Type, Description) VALUES (1, 'Moderator');
+INSERT INTO User_Type (Type, Description) VALUES (2, 'User');
 
 
 
