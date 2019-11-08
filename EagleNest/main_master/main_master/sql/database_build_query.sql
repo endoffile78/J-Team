@@ -13,7 +13,7 @@ CREATE TABLE [dbo].[User_Main]
  [Name]            varchar(50) NOT NULL ,
  [Major]           varchar(20) NOT NULL ,
  [Classification]  varchar(15) NOT NULL ,
- [User_Type]       int NOT NULL ,
+ [User_Type]       tinyint NOT NULL ,
  [Last_Login]      datetime NOT NULL ,
  [Phone]           varchar(15) NULL ,
  [User_Img]        image NULL ,
@@ -35,7 +35,7 @@ GO
 
 CREATE TABLE [dbo].[User_Type]
 (
-  [Type]         int NOT NULL,
+  [Type]         tinyint NOT NULL,
   [Description]  varchar(50) NULL,
 
   CONSTRAINT [PK_User_Type] PRIMARY KEY CLUSTERED ([Type] ASC)
