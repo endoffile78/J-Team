@@ -23,7 +23,6 @@ namespace main_master
             parameters.Add(new SqlParameter("@term", term.Text));
             parameters.Add(new SqlParameter("@company", company.Text));
             parameters.Add(new SqlParameter("@position", position.Text));
-            parameters.Add(new SqlParameter("@company", company.Text));
             parameters.Add(new SqlParameter("@state", state.Text));
             parameters.Add(new SqlParameter("@city", city.Text));
             parameters.Add(new SqlParameter("@description", description.Text));
@@ -31,6 +30,9 @@ namespace main_master
             parameters.Add(new SqlParameter("@email", email.Text));
             parameters.Add(new SqlParameter("@twitter", twitter.Text));
             parameters.Add(new SqlParameter("@linkedIn", linkedIn.Text));
+            parameters.Add(new SqlParameter("@facebook", facebook.Text));
+            parameters.Add(new SqlParameter("@instagram", instagram.Text));
+            parameters.Add(new SqlParameter("@phone", phone.Text));
             int reader = SqlUtil.ExecuteNonQuery("INSERT INTO User_Company(country,state,city,email) VALUES (@country,@state,@city,@email)", parameters);
             int reader1 = SqlUtil.ExecuteNonQuery("INSERT INTO Job_Posting(position,Long_Disc,Skills_Req) VALUES (@position,@description,@lessons)", parameters);
             

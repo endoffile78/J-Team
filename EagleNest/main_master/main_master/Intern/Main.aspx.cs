@@ -35,5 +35,12 @@ namespace main_master
             int reader = SqlUtil.ExecuteNonQuery("INSERT INTO Intern-Posting(position,Long_Disc.,Resources_Used,Lessons_Learned) VALUES " +
                 "(@position,@description,@resources,@lessons)", parameters);
         }
+
+        protected void country_Click(object sender, EventArgs e)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@country", major.Text));
+            SqlDataReader reader = SqlUtil.ExecuteReader("SELECT country FROM User_Company", parameters);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="main_master.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
     <title>Eagle Intern</title>
+
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="branding" runat="server">
@@ -412,37 +413,67 @@
             <br />
             <div class="container">
                 <form runat="server">
-                    <div class="form-group">
-                        <label for="major">Major(s)</label>
-                        <asp:Textbox class="form-control" id="major" name="major" type="text" placeholder="Enter major" runat="server" />
+                    <div class="form-row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="major">Major(s)</label>
+                            <asp:TextBox class="form-control" ID="major" name="major" type="text" placeholder="Enter major" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label for="classification">Classification</label>
+                            <asp:TextBox class="form-control" ID="classification" name="classification" type="text" placeholder="Enter classification" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label for="term">Term</label>
+                            <asp:TextBox class="form-control" ID="term" name="lastname" type="text" placeholder="Enter term e.g. Summer 2019" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <asp:TextBox class="form-control" ID="company" name="company" type="text" placeholder="Enter company" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <asp:TextBox class="form-control" ID="email" name="email" type="email" placeholder="Enter email" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label for="linkedIn">LinkedIn</label>
+                            <asp:TextBox class="form-control" ID="linkedIn" name="linkedIn" type="text" placeholder="Enter linkedIn url" runat="server" />
+                        </div>
+                        <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <asp:Textbox class="form-control" id="phone" name="phone" type="text" placeholder="Enter phone number" runat="server" />
                     </div>
-                    <div class="form-group">
-                        <label for="classification">Classification</label>
-                        <asp:Textbox class="form-control" id="classification" name="classification" type="text" placeholder="Enter classification" runat="server" />
                     </div>
-                    <div class="form-group">
-                        <label for="term">Term</label>
-                        <asp:Textbox class="form-control" id="term" name="lastname" type="text" placeholder="Enter term e.g. Summer 2019" runat="server" />
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="position">Position</label>
+                            <asp:TextBox class="form-control" ID="position" name="position" type="text" placeholder="Enter position" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <asp:TextBox class="form-control" ID="country" name="country" type="text" placeholder="Enter country" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State/Province</label>
+                            <asp:TextBox class="form-control" ID="state" name="state" type="text" placeholder="Enter state or province" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <asp:TextBox class="form-control" ID="city" name="city" type="text" placeholder="Enter city" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label for="twitter">Twitter</label>
+                            <asp:TextBox class="form-control" ID="twitter" name="twitter" type="text" placeholder="Enter twitter url" runat="server" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Instagram">Instagram</label>
+                            <asp:TextBox class="form-control" ID="instagram" name="instagram" type="text" placeholder="Enter Instagram url" runat="server" />
+                        </div>
+                        <div class="form-group">
+                        <label for="facebook">Facebook</label>
+                        <asp:Textbox class="form-control" id="facebook" name="linkedIn" type="text" placeholder="Enter facebook url" runat="server" />
                     </div>
-                    <div class="form-group">
-                        <label for="company">Company</label>
-                        <asp:Textbox class="form-control" id="company" name="company" type="text" placeholder="Enter company" runat="server" />
                     </div>
-                    <div class="form-group">
-                        <label for="position">Position</label>
-                        <asp:Textbox class="form-control" id="position" name="position" type="text" placeholder="Enter position" runat="server" />
-                    </div>
-                    <div class="form-group">
-                        <label for="country">Country</label>
-                        <asp:Textbox class="form-control" id="country" name="country" type="text" placeholder="Enter country" runat="server" />
-                    </div>
-                    <div class="form-group">
-                        <label for="state">State/Province</label>
-                        <asp:Textbox class="form-control" id="state" name="state" type="text" placeholder="Enter state or province" runat="server" />
-                    </div>
-                    <div class="form-group">
-                        <label for="city">City</label>
-                        <asp:Textbox class="form-control" id="city" name="city" type="text" placeholder="Enter city" runat="server" />
                     </div>
                     <div class="form-group">
                         <label for="resources">What resources did you use to attain internship?</label>
@@ -450,29 +481,20 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Job Description</label>
-                        <asp:Textbox class="form-control" id="description" name="description" type="text" placeholder="max 100 words" runat="server" />
+                        <asp:Textbox class="form-control is-invalid" id="description" name="description" type="text" placeholder="max 100 words" runat="server" />
                     </div>
                     <div class="form-group">
                         <label for="lessons">What was your biggest takeaways from your internship?</label>
                         <asp:Textbox class="form-control" id="lessons" name="lessons" type="text" placeholder="max 50 words" runat="server" />
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <asp:Textbox class="form-control" id="email" name="email" type="email" placeholder="Enter email" runat="server" />
+                        <label>Image</label>
+                        <input type="file" id="picture" name="picture" class="field-long" required="required" accept="image/*" />
                     </div>
-                    <div class="form-group">
-                        <label for="twitter">Twitter</label>
-                        <asp:Textbox class="form-control" id="twitter" name="twitter" type="text" placeholder="Enter twitter username" runat="server" />
-                    </div>
-                    <div class="form-group">
-                        <label for="linkedIn">LinkedIn</label>
-                        <asp:Textbox class="form-control" id="linkedIn" name="linkedIn" type="text" placeholder="Enter linkedIn url" runat="server" />
-                    </div>
-
-                    <button type="submit" class="btn btn-outline-primary" OnClick="post_Click">Post</button>
+                    <button type="submit" class="btn btn-outline-dark" OnClick="post_Click">Post</button>
                 </form>
             </div>
-            </div>
+            
         
     </div>
 
