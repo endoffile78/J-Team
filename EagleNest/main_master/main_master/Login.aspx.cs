@@ -9,7 +9,10 @@ namespace main_master
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+            if (Session["loggedIn"] != null)
+            {
+                Response.Redirect("Main.aspx");
+            }
 		}
 
         protected void submit_Click(object sender, EventArgs e)
