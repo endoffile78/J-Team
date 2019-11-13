@@ -81,13 +81,13 @@
                 <% } %>
                 <% } %>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
+                    <a href="#exploreSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
                         <i class="fas fa-copy"></i>
-                        Share
+                        Explore
                     </a>
                 </li>
 
-                <ul class="collapse list-unstyled bg-danger" id="pageSubmenu">
+                <ul class="collapse list-unstyled bg-danger" id="exploreSubmenu">
                     <li>
                         <a href='<%= ResolveUrl("~/Blog/Main.aspx") %>' class="bg-danger">Eagle Blog</a>
                     </li>
