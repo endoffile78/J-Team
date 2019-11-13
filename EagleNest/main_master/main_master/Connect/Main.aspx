@@ -12,7 +12,6 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="navigation" runat="server">
-    
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
@@ -498,5 +497,29 @@
             </div>
         </div>
     </div>
-
+    <script>
+        $(function () {
+            $('.view_details').click(function () {
+                if ($(this).is(':checked')) {
+                    $(this)
+                        .next('label')
+                        .html('&times;')
+                        .attr('title', 'tap here to close full profile');
+                    $(this)
+                        .parent()
+                        .next('main')
+                        .slideDown('normal');
+                } else {
+                    $(this)
+                        .next('label')
+                        .html('=')
+                        .attr('title', 'tap here to view full profile');
+                    $(this)
+                        .parent()
+                        .next('main')
+                        .slideUp('fast');
+                }
+            });
+        });
+    </script>
 </asp:Content>

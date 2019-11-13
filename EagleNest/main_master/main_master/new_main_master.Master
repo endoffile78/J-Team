@@ -3,9 +3,6 @@
 <!doctype html>
 <html>
 <head runat="server">
-
-    <!--Comment-->
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +10,6 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-    <link rel="stylesheet" href="thumbnail-gallery.css">
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -143,37 +138,5 @@
             });
         });
     </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-    <script>
-        baguetteBox.run('.tz-gallery');
-    </script>
-
-    <script>
-        $(function () {
-            $('.view_details').click(function () {
-                if ($(this).is(':checked')) {
-                    $(this)
-                        .next('label')
-                        .html('&times;')
-                        .attr('title', 'tap here to close full profile');
-                    $(this)
-                        .parent()
-                        .next('main')
-                        .slideDown('normal');
-                } else {
-                    $(this)
-                        .next('label')
-                        .html('=')
-                        .attr('title', 'tap here to view full profile');
-                    $(this)
-                        .parent()
-                        .next('main')
-                        .slideUp('fast');
-                }
-            });
-        });
-    </script>
-
 </body>
 </html>
