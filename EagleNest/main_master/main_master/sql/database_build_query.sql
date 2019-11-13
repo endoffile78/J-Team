@@ -39,7 +39,8 @@ CREATE TABLE [dbo].[User_Main]
 
 
  CONSTRAINT [PK_table_3] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
- CONSTRAINT [FK_User_Type] FOREIGN KEY ([User_Type])  REFERENCES [dbo].[User_Type]([Type])
+ CONSTRAINT [FK_User_Type] FOREIGN KEY ([User_Type])  REFERENCES [dbo].[User_Type]([Type]),
+ CONSTRAINT [Unique_Email] UNIQUE (Email)
 );
 --GO
 
