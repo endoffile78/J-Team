@@ -114,31 +114,6 @@ CREATE NONCLUSTERED INDEX [fkIdx_93] ON [dbo].[User_SAF]
 
 
 
--- ************************************** [User_EBL]
-
-CREATE TABLE [User_EBL]
-(
- [Email]     nvarchar(50) NOT NULL ,
- [ID_Num]    uniqueidentifier NOT NULL ,
- [Following] int NOT NULL ,
- [Followers] int NOT NULL ,
- [Post_Amnt] int NOT NULL ,
-
-
- CONSTRAINT [PK_User_EBL] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
- CONSTRAINT [FK_136] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_Main]([Email], [ID_Num])
-);
---GO
-
-
-CREATE NONCLUSTERED INDEX [fkIdx_136] ON [User_EBL]
- (
-  [Email] ASC,
-  [ID_Num] ASC
- )
-
---GO
-
 
 
 
@@ -353,7 +328,7 @@ CREATE TABLE [Following]
 
 
  CONSTRAINT [PK_Following] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
- CONSTRAINT [FK_151] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_EBL]([Email], [ID_Num])
+ CONSTRAINT [FK_151] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
 );
 --GO
 
@@ -381,7 +356,7 @@ CREATE TABLE [Followers]
 
 
  CONSTRAINT [PK_Followers] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [Email] ASC),
- CONSTRAINT [FK_146] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_EBL]([Email], [ID_Num])
+ CONSTRAINT [FK_146] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
 );
 --GO
 
@@ -416,7 +391,7 @@ CREATE TABLE [Blog_Post]
 
 
  CONSTRAINT [PK_Blog_Post] PRIMARY KEY CLUSTERED ([BlogID] ASC),
- CONSTRAINT [FK_165] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_EBL]([Email], [ID_Num])
+ CONSTRAINT [FK_165] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
 );
 --GO
 
@@ -458,7 +433,7 @@ CREATE TABLE [Post_Comment]
 
  CONSTRAINT [PK_Post_Comment] PRIMARY KEY CLUSTERED ([BlogID] ASC),
  CONSTRAINT [FK_180] FOREIGN KEY ([BlogID])  REFERENCES [Blog_Post]([BlogID]),
- CONSTRAINT [FK_184] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_EBL]([Email], [ID_Num])
+ CONSTRAINT [FK_184] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
 );
 --GO
 
