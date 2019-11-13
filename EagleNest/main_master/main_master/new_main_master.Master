@@ -71,8 +71,20 @@
                 <li>
                     <a href='<%= ResolveUrl("~/Logout.aspx") %>'>Logout</a>
                 </li>
+                <% if (Convert.ToInt32(Session["type"]) == 2) { %>
+                <li>
+                    <a href="#adminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
+                        <i class="fas fa-copy"></i>
+                        Admin
+                    </a>
+                </li>
+                <ul class="collapse list-unstyled bg-danger" id="adminSubmenu">
+                    <li>
+                        <a href='<%= ResolveUrl("~/Utility/admin.aspx")%>' class="bg-danger">Admin Utilities</a>
+                    </li>
+                </ul>
                 <% } %>
-
+                <% } %>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
                         <i class="fas fa-copy"></i>
