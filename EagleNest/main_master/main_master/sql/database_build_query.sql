@@ -279,6 +279,8 @@ CREATE TABLE [dbo].[Intern_Posting]
  [ID_Num]          uniqueidentifier NOT NULL ,
  [CompanyID]       uniqueidentifier NOT NULL ,
  [College]         nvarchar(50) NOT NULL ,
+ [Major]           nvarchar(50) NOT NULL ,
+ [Classification]  nvarchar(50) NOT NULL ,
  [Term]            nvarchar(50) NOT NULL ,
  [Position]        nvarchar(50) NOT NULL ,
  [Short_Disc.]     varchar(100) NOT NULL ,
