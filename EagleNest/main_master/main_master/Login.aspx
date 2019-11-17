@@ -24,6 +24,6 @@
             </label>
             &nbsp;<asp:Textbox class="form-control" id="password" name="email" type="password" runat="server" />
         </div>
-        <asp:Button class="btn btn-primary" id="submit" Tsext="Submit" runat="server" OnClick="submit_Click" />
+        <asp:Button class="btn btn-primary" id="submit" Text="Submit" runat="server" OnClick="submit_Click" />
     </form>
 </asp:Content>
