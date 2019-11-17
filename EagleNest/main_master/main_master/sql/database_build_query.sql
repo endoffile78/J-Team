@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[User_SAF]
  [Twitter]  nvarchar(300) NULL ,
 
 
- CONSTRAINT [PK_User_SAF] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
+ CONSTRAINT [PK_User_SAF] PRIMARY KEY CLUSTERED ([ID_Num] ASC),
  CONSTRAINT [FK_93] FOREIGN KEY ([ID_Num]) REFERENCES [dbo].[User_Main]([ID_Num])
 );
 --GO
@@ -327,7 +327,7 @@ CREATE TABLE [Following]
  [ID_Num] uniqueidentifier NOT NULL ,
 
 
- CONSTRAINT [FK_151] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num])
+ CONSTRAINT [FK_151] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
  CONSTRAINT [FK_Following] FOREIGN KEY ([Following])  REFERENCES [User_Main]([ID_Num])
 );
 --GO
@@ -354,7 +354,7 @@ CREATE TABLE [Followers]
  [ID_Num] uniqueidentifier NOT NULL ,
 
 
- CONSTRAINT [FK_146] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num])
+ CONSTRAINT [FK_146] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
  CONSTRAINT [FK_Followers] FOREIGN KEY ([Followers])  REFERENCES [User_Main]([ID_Num])
 );
 --GO
