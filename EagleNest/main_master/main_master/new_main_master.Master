@@ -57,7 +57,7 @@
                     <a href='<%= ResolveUrl("~/Login.aspx") %>'>Login</a>
                 </li>
                 <li>
-                    <a href='<%= ResolveUrl("~/Register.aspx") %> %>'>
+                    <a href='<%= ResolveUrl("~/Register.aspx") %>'>
                         <i class="fas fa-user-plus"></i>
                         Register
                     </a>
