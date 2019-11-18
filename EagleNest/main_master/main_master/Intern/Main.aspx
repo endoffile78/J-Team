@@ -92,7 +92,7 @@
                     <article class="card-group-item">
                         <div class="filter-content">
                             <div>
-                                <asp:DropDownList ID="collegedrop" CssClass="form-control"  runat="server">
+                                <asp:DropDownList ID="collegedrop" CssClass="form-control" runat="server">
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -120,7 +120,10 @@
                             <div class="col-sm-9">
                                 <div>
                                     <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
+                                    <h6><asp:Label ID="classificationlabel" Cssclass="form-control" runat="server">
+                                    </asp:Label></h6>
                                     <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
+                                    <%--<h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>--%>
                                 </div>
                                 <div id="accordion">
                                     <div id="headingOne">
