@@ -108,7 +108,6 @@
     <Content Include="Logout.aspx" />
     <Content Include="Main.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="scripts\jquery-3.4.1.js" />
     <Content Include="sql\droptables.sql" />
     <Content Include="sql\database_build_query.sql" />
     <Content Include="sql\pop_users.sql" />

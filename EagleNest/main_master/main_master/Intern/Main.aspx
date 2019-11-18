@@ -13,17 +13,18 @@
      
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="content_place_holder_body" runat="server">
     
     <ul class="nav nav-tabs">
-        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#internhome">Home</a></li>
         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#newtab">New Post</a></li>
     </ul>
-
+ <form runat="server">
     <div class="tab-content">
-        <div id="home" class="tab-pane fade show active">
+        <div id="internhome" class="tab-pane fade show active">
             <!--PUT BODY HERE! -->
             <br />
+           
             <div class="row">
                 <div class="col-sm-3">
                     <article class="card-group-item">
@@ -183,15 +184,17 @@
                 <div class="col-sm-3">
                     <article class="card-group-item">
                         <div class="filter-content">
-                            <form>
+                            <form >
                                 <div>
-                                    <select class="form-control" id="college" name="college">
+                                    <asp:DropDownList id="collegedrop" Cssclass="form-control" runat="server">
+                                    </asp:DropDownList>
+                                   <%-- <select class="form-control" id="college" name="college">
                                         <option value="">Pick a college</option>
                                         <option value="RB">Romain College Of Business</option>
                                         <option value="PT">Pott College of Science, Engineering and Education</option>
                                         <option value="NHP">Collge of Nursing and Health Professions</option>
                                         <option value="UD">University Division</option>
-                                    </select>
+                                    </select>--%>
                                 </div>
                             </form>
                             <!-- card-body.// -->
@@ -408,11 +411,12 @@
                     </div>
                 </div>
             </div>
+                
         </div>
         <div id="newtab" class="tab-pane fade">
             <br />
             <div class="container">
-                <form runat="server">
+                <form>
                     <div class="form-row">
                     <div class="col-sm-6">
                         <div class="form-group">
@@ -497,6 +501,7 @@
             
         
     </div>
-
+    </div>
+     </form>
 
 </asp:Content>
