@@ -38,9 +38,9 @@ CREATE TABLE [dbo].[User_Main]
  [Password]        varchar(100) NOT NULL,
 
 
- CONSTRAINT [PK_table_3] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
+ CONSTRAINT [PK_table_3] PRIMARY KEY CLUSTERED ([ID_Num] ASC),
  CONSTRAINT [FK_User_Type] FOREIGN KEY ([User_Type])  REFERENCES [dbo].[User_Type]([Type]),
- CONSTRAINT [Unique_Email] UNIQUE (Email)
+ CONSTRAINT [Unique_Email] UNIQUE ([Email])
 );
 --GO
 
@@ -56,7 +56,7 @@ CREATE TABLE [dbo].[User_Company]
  [CompanyID]      uniqueidentifier NOT NULL ,
  [Name]           nvarchar(50) NOT NULL ,
  [Country]        nvarchar(50) NOT NULL ,
- [State/Province] nvarchar(50) NULL ,
+ [State]          nvarchar(50) NULL ,
  [City]           nvarchar(50) NULL ,
  [Address]        nvarchar(100) NULL ,
  [Industry]       nvarchar(50) NOT NULL ,
@@ -96,8 +96,8 @@ CREATE TABLE [dbo].[User_SAF]
  [Twitter]  nvarchar(300) NULL ,
 
 
- CONSTRAINT [PK_User_SAF] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
- CONSTRAINT [FK_93] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_Main]([Email], [ID_Num])
+ CONSTRAINT [PK_User_SAF] PRIMARY KEY CLUSTERED ([ID_Num] ASC),
+ CONSTRAINT [FK_93] FOREIGN KEY ([ID_Num]) REFERENCES [dbo].[User_Main]([ID_Num])
 );
 --GO
 
@@ -126,7 +126,6 @@ CREATE NONCLUSTERED INDEX [fkIdx_93] ON [dbo].[User_SAF]
 CREATE TABLE [Gallery_Post]
 (
  [GpostID]     uniqueidentifier NOT NULL ,
- [Email]       nvarchar(50) NOT NULL ,
  [ID_Num]      uniqueidentifier NOT NULL ,
  [Title]      nvarchar(50) NOT NULL ,
  [Discription] nvarchar(200) NOT NULL ,
@@ -138,14 +137,13 @@ CREATE TABLE [Gallery_Post]
 
 
  CONSTRAINT [PK_Gallery_Post] PRIMARY KEY CLUSTERED ([GpostID] ASC),
- CONSTRAINT [FK_240] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_Main]([Email], [ID_Num])
+ CONSTRAINT [FK_240] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num])
 );
 --GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_240] ON [Gallery_Post]
  (
-  [Email] ASC,
   [ID_Num] ASC
  )
 
@@ -162,7 +160,6 @@ CREATE NONCLUSTERED INDEX [fkIdx_240] ON [Gallery_Post]
 CREATE TABLE [Board_Post]
 (
  [BpostID]     uniqueidentifier NOT NULL ,
- [Email]       nvarchar(50) NOT NULL ,
  [ID_Num]      uniqueidentifier NOT NULL ,
  [Title]       nvarchar(50) NOT NULL ,
  [Description] nvarchar(1000) NOT NULL ,
@@ -176,14 +173,13 @@ CREATE TABLE [Board_Post]
 
 
  CONSTRAINT [PK_Board_Post] PRIMARY KEY CLUSTERED ([BpostID] ASC),
- CONSTRAINT [FK_193] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_Main]([Email], [ID_Num])
+ CONSTRAINT [FK_193] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num])
 );
 --GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_193] ON [Board_Post]
  (
-  [Email] ASC,
   [ID_Num] ASC
  )
 
@@ -203,12 +199,11 @@ CREATE TABLE [Votes]
  [BpostID] uniqueidentifier NOT NULL,
  [Option] tinyint NOT NULL,
  [ID_Num] uniqueidentifier NOT NULL,
- [Email]  nvarchar(50) NOT NULL,
 
 
  CONSTRAINT [PK_Vote] PRIMARY KEY CLUSTERED ([VoteID] ASC),
  CONSTRAINT [FK_222] FOREIGN KEY ([BpostID])  REFERENCES [Board_Post]([BpostID]),
- CONSTRAINT [UID] FOREIGN KEY ([Email],[ID_Num]) REFERENCES [dbo].[User_Main]([Email],[ID_Num])
+ CONSTRAINT [UID] FOREIGN KEY ([ID_Num]) REFERENCES [dbo].[User_Main]([ID_Num])
 );
 --GO
 
@@ -230,22 +225,21 @@ CREATE NONCLUSTERED INDEX [fkIdx_222] ON [Votes]
 
 CREATE TABLE [dbo].[Job_Posting]
 (
- [Email]           nvarchar(50) NOT NULL ,
  [ID_Num]          uniqueidentifier NOT NULL ,
  [CompanyID]       uniqueidentifier NOT NULL ,
- [Position(Title)] nvarchar(50) NOT NULL ,
+ [Position]        nvarchar(50) NOT NULL ,
  [Short_Disc]      varchar(80) NOT NULL ,
  [Long_Disc]       varchar(1000) NOT NULL ,
  [Skills_Req]      nvarchar(200) NOT NULL ,
- [Pay_Est]         money NULL ,
+ [Pay]             money NULL ,
  [Benifits]        nvarchar(400) NULL ,
  [Hidden]          bit DEFAULT 0 ,
  [Mod_Status]      nvarchar(50) NULL ,
 
 
- CONSTRAINT [PK_Job_Posting] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC, [CompanyID] ASC),
+ CONSTRAINT [PK_Job_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [CompanyID] ASC),
  CONSTRAINT [FK_109] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID]),
- CONSTRAINT [FK_99] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_SAF]([Email], [ID_Num])
+ CONSTRAINT [FK_99] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_SAF]([ID_Num])
 );
 --GO
 
@@ -259,7 +253,6 @@ CREATE NONCLUSTERED INDEX [fkIdx_109] ON [dbo].[Job_Posting]
 
 CREATE NONCLUSTERED INDEX [fkIdx_99] ON [dbo].[Job_Posting]
  (
-  [Email] ASC,
   [ID_Num] ASC
  )
 
@@ -275,25 +268,32 @@ CREATE NONCLUSTERED INDEX [fkIdx_99] ON [dbo].[Job_Posting]
 
 CREATE TABLE [dbo].[Intern_Posting]
 (
- [Email]           nvarchar(50) NOT NULL ,
  [ID_Num]          uniqueidentifier NOT NULL ,
  [CompanyID]       uniqueidentifier NOT NULL ,
- [Position(title)] nvarchar(50) NOT NULL ,
+ [College]         nvarchar(50) NOT NULL ,
+ [Major]           nvarchar(50) NOT NULL ,
+ [Classification]  nvarchar(50) NOT NULL ,
+ [Term]            nvarchar(50) NOT NULL ,
+ [Position]        nvarchar(50) NOT NULL ,
  [Short_Disc.]     varchar(100) NOT NULL ,
  [Long_Disc.]      varchar(1000) NOT NULL ,
  [Skills_Req]      nvarchar(200) NOT NULL ,
  [Skills_Learned]  nvarchar(200) NOT NULL ,
  [Resources_Used]  varchar(200) NOT NULL ,
  [Lessons_Learned] varchar(1000) NOT NULL ,
- [Edu_Value]       varchar(200) NULL ,
+ [Twitter]         nvarchar(100) NULL ,
+ [LinkedIn]        nvarchar(100) NULL ,
+ [Facebook]        nvarchar(100) NULL ,
+ [Instagram]       nvarchar(100) NULL ,
+ [Image]           nvarchar(400) NOT NULL ,
  [Pay]             money NULL ,
  [Benifits]        varchar(400) NULL ,
  [Hidden]          bit DEFAULT 0,
  [Mod_Status]      nvarchar(50) NULL,
 
 
- CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC, [CompanyID] ASC),
- CONSTRAINT [FK_104] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [dbo].[User_SAF]([Email], [ID_Num]),
+ CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [CompanyID] ASC),
+ CONSTRAINT [FK_104] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_SAF]([ID_Num]),
  CONSTRAINT [FK_112] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID])
 );
 --GO
@@ -301,7 +301,6 @@ CREATE TABLE [dbo].[Intern_Posting]
 
 CREATE NONCLUSTERED INDEX [fkIdx_104] ON [dbo].[Intern_Posting]
  (
-  [Email] ASC,
   [ID_Num] ASC
  )
 
@@ -324,19 +323,18 @@ CREATE NONCLUSTERED INDEX [fkIdx_112] ON [dbo].[Intern_Posting]
 
 CREATE TABLE [Following]
 (
- [Email]  nvarchar(50) NOT NULL ,
+ [Following] uniqueidentifier NOT NULL,
  [ID_Num] uniqueidentifier NOT NULL ,
 
 
- CONSTRAINT [PK_Following] PRIMARY KEY CLUSTERED ([Email] ASC, [ID_Num] ASC),
- CONSTRAINT [FK_151] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
+ CONSTRAINT [FK_151] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
+ CONSTRAINT [FK_Following] FOREIGN KEY ([Following])  REFERENCES [User_Main]([ID_Num])
 );
 --GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_151] ON [Following]
  (
-  [Email] ASC,
   [ID_Num] ASC
  )
 
@@ -352,19 +350,18 @@ CREATE NONCLUSTERED INDEX [fkIdx_151] ON [Following]
 
 CREATE TABLE [Followers]
 (
+ [Followers] uniqueidentifer NOT NULL ,
  [ID_Num] uniqueidentifier NOT NULL ,
- [Email]  nvarchar(50) NOT NULL ,
 
 
- CONSTRAINT [PK_Followers] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [Email] ASC),
- CONSTRAINT [FK_146] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
+ CONSTRAINT [FK_146] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
+ CONSTRAINT [FK_Followers] FOREIGN KEY ([Followers])  REFERENCES [User_Main]([ID_Num])
 );
 --GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_146] ON [Followers]
  (
-  [Email] ASC,
   [ID_Num] ASC
  )
 
@@ -381,7 +378,6 @@ CREATE NONCLUSTERED INDEX [fkIdx_146] ON [Followers]
 CREATE TABLE [Blog_Post]
 (
  [BlogID]     uniqueidentifier NOT NULL ,
- [Email]      nvarchar(50) NOT NULL ,
  [ID_Num]     uniqueidentifier NOT NULL ,
  [Title]      nvarchar(50) NOT NULL ,
  [Body]       text NOT NULL ,
@@ -392,14 +388,13 @@ CREATE TABLE [Blog_Post]
 
 
  CONSTRAINT [PK_Blog_Post] PRIMARY KEY CLUSTERED ([BlogID] ASC),
- CONSTRAINT [FK_165] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
+ CONSTRAINT [FK_165] FOREIGN KEY ([ID_Num]) REFERENCES [User_Main]([ID_Num])
 );
 --GO
 
 
 CREATE NONCLUSTERED INDEX [fkIdx_165] ON [Blog_Post]
  (
-  [Email] ASC,
   [ID_Num] ASC
  )
 
@@ -424,7 +419,6 @@ CREATE TABLE [Tags]
 CREATE TABLE [Post_Comment]
 (
  [BlogID]     uniqueidentifier NOT NULL ,
- [Email]      nvarchar(50) NOT NULL ,
  [ID_Num]     uniqueidentifier NOT NULL ,
  [Date]       datetime NOT NULL ,
  [Comment]    nvarchar(300) NOT NULL ,
@@ -434,7 +428,7 @@ CREATE TABLE [Post_Comment]
 
  CONSTRAINT [PK_Post_Comment] PRIMARY KEY CLUSTERED ([BlogID] ASC),
  CONSTRAINT [FK_180] FOREIGN KEY ([BlogID])  REFERENCES [Blog_Post]([BlogID]),
- CONSTRAINT [FK_184] FOREIGN KEY ([Email], [ID_Num])  REFERENCES [User_Main]([Email], [ID_Num])
+ CONSTRAINT [FK_184] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num])
 );
 --GO
 
@@ -442,14 +436,6 @@ CREATE TABLE [Post_Comment]
 CREATE NONCLUSTERED INDEX [fkIdx_180] ON [Post_Comment]
  (
   [BlogID] ASC
- )
-
---GO
-
-CREATE NONCLUSTERED INDEX [fkIdx_184] ON [Post_Comment]
- (
-  [Email] ASC,
-  [ID_Num] ASC
  )
 
 --GO

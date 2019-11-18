@@ -9,17 +9,19 @@
     </div>
     <form runat="server">
         <div class="form-group">
-            <label for="title">Title</label>
-            <input class="form-control" type="text" name="title" />
+            <label for="title">Title<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="title" ErrorMessage="Title is required." ForeColor="Red"></asp:RequiredFieldValidator>
+            </label>
+            &nbsp;<asp:Textbox ID="title" class="form-control" type="text" name="title" runat="server" />
         </div>
         <div class="form-group">
-            <label for="body">Body</label>
-            <textarea class="form-control" rows="8" name="body"></textarea>
+            <label for="body">Body<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="body" ErrorMessage="Body is required." ForeColor="Red"></asp:RequiredFieldValidator>
+            </label>
+            &nbsp;<asp:Textbox ID="body" class="form-control" rows="8" name="body" runat="server" />
         </div>
         <div class="form-group">
             <label for="tags">Tags</label>
-            <input class="form-control" type="text" name="tags" />
+            <asp:Textbox ID="tags" class="form-control" type="text" name="tags" runat="server" />
         </div>
-        <input id="submit" type="submit" value="Submit" class="btn btn-primary" />
+        <asp:Button id="submit" type="submit" text="Submit" class="btn btn-primary" OnClick="submit_Click" runat="server" />
     </form>
 </asp:Content>

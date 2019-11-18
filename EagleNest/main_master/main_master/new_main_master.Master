@@ -66,6 +66,9 @@
                 <li>
                     <a href='<%= ResolveUrl("~/Logout.aspx") %>'>Logout</a>
                 </li>
+                <li>
+                    <a href='<%= ResolveUrl("~/Profile.aspx") %>'>Profile</a>
+                </li>
                 <% if (Convert.ToInt32(Session["type"]) == 2) { %>
                 <li>
                     <a href="#adminSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
