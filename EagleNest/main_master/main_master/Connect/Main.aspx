@@ -29,17 +29,10 @@
                 <div class="col-sm-3">
                     <article class="card-group-item">
                         <div class="filter-content">
-                            <form>
-                                <div>
-                                    <select class="form-control" id="country" name="country">
-                                        <option value="">Pick a country</option>
-                                        <option value="US">USA</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="MX">Mexico</option>
-                                    </select>
-                                </div>
-                            </form>
-                            <!-- card-body.// -->
+                            <div>
+                                <asp:DropDownList ID="countryCDrop" CssClass="form-control" runat="server">
+                                </asp:DropDownList>
+                            </div>
                         </div>
                     </article>
                 </div>

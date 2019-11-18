@@ -29,117 +29,40 @@
                 <div class="col-sm-3">
                     <article class="card-group-item">
                         <div class="filter-content">
-                            <form>
-                                <div>
-                                    <select class="form-control" id="country" name="country">
-                                        <option value="">Pick a country</option>
-                                        <option value="US">USA</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="MX">Mexico</option>
-                                    </select>
-                                </div>
-                            </form>
-                            <!-- card-body.// -->
+                            <div>
+                                <asp:DropDownList ID="countryDrop" CssClass="form-control" runat="server">
+                                </asp:DropDownList>
+                            </div>
                         </div>
                     </article>
                 </div>
                 <div class="col-sm-3">
                     <article class="card-group-item">
                         <div class="filter-content">
-                            <form>
-                                <div>
-                                    <select class="form-control" id="state" name="state">
-                                        <option value="">Pick a state</option>
-                                        <option value="AK">Alaska</option>
-                                        <option value="AL">Alabama</option>
-                                        <option value="AR">Arkansas</option>
-                                        <option value="AZ">Arizona</option>
-                                        <option value="CA">California</option>
-                                        <option value="CO">Colorado</option>
-                                        <option value="CT">Connecticut</option>
-                                        <option value="DC">District of Columbia</option>
-                                        <option value="DE">Delaware</option>
-                                        <option value="FL">Florida</option>
-                                        <option value="GA">Georgia</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="IA">Iowa</option>
-                                        <option value="ID">Idaho</option>
-                                        <option value="IL">Illinois</option>
-                                        <option value="IN">Indiana</option>
-                                        <option value="KS">Kansas</option>
-                                        <option value="KY">Kentucky</option>
-                                        <option value="LA">Louisiana</option>
-                                        <option value="MA">Massachusetts</option>
-                                        <option value="MD">Maryland</option>
-                                        <option value="ME">Maine</option>
-                                        <option value="MI">Michigan</option>
-                                        <option value="MN">Minnesota</option>
-                                        <option value="MO">Missouri</option>
-                                        <option value="MS">Mississippi</option>
-                                        <option value="MT">Montana</option>
-                                        <option value="NC">North Carolina</option>
-                                        <option value="ND">North Dakota</option>
-                                        <option value="NE">Nebraska</option>
-                                        <option value="NH">New Hampshire</option>
-                                        <option value="NJ">New Jersey</option>
-                                        <option value="NM">New Mexico</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="NY">New York</option>
-                                        <option value="OH">Ohio</option>
-                                        <option value="OK">Oklahoma</option>
-                                        <option value="OR">Oregon</option>
-                                        <option value="PA">Pennsylvania</option>
-                                        <option value="PR">Puerto Rico</option>
-                                        <option value="RI">Rhode Island</option>
-                                        <option value="SC">South Carolina</option>
-                                        <option value="SD">South Dakota</option>
-                                        <option value="TN">Tennessee</option>
-                                        <option value="TX">Texas</option>
-                                        <option value="UT">Utah</option>
-                                        <option value="VA">Virginia</option>
-                                        <option value="VT">Vermont</option>
-                                        <option value="WA">Washington</option>
-                                        <option value="WI">Wisconsin</option>
-                                        <option value="WV">West Virginia</option>
-                                        <option value="WY">Wyoming</option>
-                                    </select>
-                                </div>
-                            </form>
-                            <!-- card-body.// -->
+                            <div>
+                                <asp:DropDownList ID="stateDrop" CssClass="form-control" runat="server">
+                                </asp:DropDownList>
+                            </div>
                         </div>
                     </article>
                 </div>
                 <div class="col-sm-3">
                     <article class="card-group-item">
                         <div class="filter-content">
-                            <form>
-                                <div>
-                                    <select class="form-control" id="city" name="city">
-                                        <option value="">Pick a city</option>
-                                        <option value="AK">Evansvile</option>
-                                        <option value="AL">Chicago</option>
-                                        <option value="AR">Seattle</option>
-                                    </select>
-                                </div>
-                            </form>
-                            <!-- card-body.// -->
+                            <div>
+                                <asp:DropDownList ID="cityDrop" CssClass="form-control" runat="server">
+                                </asp:DropDownList>
+                            </div>
                         </div>
                     </article>
                 </div>
                 <div class="col-sm-3">
                     <article class="card-group-item">
                         <div class="filter-content">
-                            <form>
-                                <div>
-                                    <select class="form-control" id="company" name="company">
-                                        <option value="">Pick a company</option>
-                                        <option value="AK">OneMain</option>
-                                        <option value="AL">Google</option>
-                                        <option value="AR">Microsoft</option>
-                                    </select>
-                                </div>
-                            </form>
-                            <!-- card-body.// -->
+                            <div>
+                                <asp:DropDownList ID="companyDrop" CssClass="form-control" runat="server">
+                                </asp:DropDownList>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -148,74 +71,40 @@
                 <div class="col-sm-3">
                     <article class="card-group-item">
                         <div class="filter-content">
-                            <form>
-                                <div>
-                                    <select class="form-control" id="major" name="major">
-                                        <option value="">Pick a major</option>
-                                        <option value="RB">Computer Science</option>
-                                        <option value="PT">Economics</option>
-                                        <option value="NHP">History</option>
-                                        <option value="UD">Spanish</option>
-                                        <option value="UD">Mechanical Engineering</option>
-                                    </select>
-                                </div>
-                            </form>
+                            <div>
+                                <asp:DropDownList ID="majorDrop" CssClass="form-control" runat="server">
+                                </asp:DropDownList>
+                            </div>
                         </div>
                     </article>
                 </div>
                 <div class="col-sm-3">
                     <article class="card-group-item">
                         <div class="filter-content">
-                            <form>
-                                <div>
-                                    <select class="form-control" id="job" name="job">
-                                        <option value="">Pick a job</option>
-                                        <option value="RB">Musician</option>
-                                        <option value="PT">Software Developer</option>
-                                        <option value="NHP">Teacher</option>
-                                        <option value="UD">Financial Advisor</option>
-                                    </select>
-                                </div>
-                            </form>
-                            <!-- card-body.// -->
+                            <div>
+                                <asp:DropDownList ID="jobDrop" CssClass="form-control" runat="server">
+                                </asp:DropDownList>
+                            </div>
                         </div>
                     </article>
                 </div>
                 <div class="col-sm-3">
                     <article class="card-group-item">
                         <div class="filter-content">
-                            <form >
-                                <div>
-                                    <asp:DropDownList id="collegedrop" Cssclass="form-control" runat="server">
-                                    </asp:DropDownList>
-                                   <%-- <select class="form-control" id="college" name="college">
-                                        <option value="">Pick a college</option>
-                                        <option value="RB">Romain College Of Business</option>
-                                        <option value="PT">Pott College of Science, Engineering and Education</option>
-                                        <option value="NHP">Collge of Nursing and Health Professions</option>
-                                        <option value="UD">University Division</option>
-                                    </select>--%>
-                                </div>
-                            </form>
-                            <!-- card-body.// -->
+                            <div>
+                                <asp:DropDownList ID="collegedrop" CssClass="form-control"  runat="server">
+                                </asp:DropDownList>
+                            </div>
                         </div>
                     </article>
                 </div>
                 <div class="col-sm-3">
                     <article class="card-group-item">
                         <div class="filter-content">
-                            <form>
-                                <div>
-                                    <select class="form-control" id="classification" name="classification">
-                                        <option value="">Pick classification</option>
-                                        <option value="RB">Freshman</option>
-                                        <option value="PT">Sophomore</option>
-                                        <option value="NHP">Junior</option>
-                                        <option value="UD">Senior</option>
-                                        <option value="UD">Graduate</option>
-                                    </select>
-                                </div>
-                            </form>
+                            <div>
+                                <asp:DropDownList ID="classificationDrop" CssClass="form-control" runat="server">
+                                </asp:DropDownList>
+                            </div>
                         </div>
                     </article>
                 </div>

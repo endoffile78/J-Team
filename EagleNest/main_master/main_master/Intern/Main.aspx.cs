@@ -14,18 +14,19 @@ namespace main_master
         protected void Page_Load(object sender, EventArgs e)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
-            SqlDataReader reader = SqlUtil.ExecuteReader("SELECT College FROM Intern_Posting");
-            //while(reader.Read())
-            //{
-            collegedrop.DataSource = reader[0];
-            collegedrop.DataTextField = "college";
-            collegedrop.DataValueField = "college";
-            collegedrop.DataBind();
-            collegedrop.Items.Insert(0, new ListItem("Pick a college", "0"));
-            collegedrop.SelectedIndex = 0;
+            SqlDataReader reader = SqlUtil.ExecuteReader("SELECT Position FROM [dbo].[Intern_Posting]");
 
-            //}
-
+            if (reader.Read())
+            {
+                collegedrop.DataSource = reader;
+                collegedrop.DataTextField = "Position";
+                collegedrop.DataValueField = "Position";
+                collegedrop.DataBind();
+                collegedrop.Items.Insert(0, new ListItem("Pick a college", "0"));
+                collegedrop.SelectedIndex = 0;
+            }
+            reader.Close();
+           
         }
         protected void post_Click(object sender, EventArgs e)
         {
@@ -46,9 +47,9 @@ namespace main_master
             parameters.Add(new SqlParameter("@LinkedIn", linkedIn.Text));
             parameters.Add(new SqlParameter("@Facebook", facebook.Text));
             parameters.Add(new SqlParameter("@Instagram", instagram.Text));
-            int reader = SqlUtil.ExecuteNonQuery("INSERT INTO Intern-Posting(Major,Classification,Term,Position,Resources_Used,Long_Disc.," +
+            int reader = SqlUtil.ExecuteNonQuery("INSERT INTO [dbo].[Intern_Posting] (Major,Classification,Term,Position,Resources_Used,Long_Disc.," +
                 "Lessons_Learned,Email,Twitter, LinkedIn, Facebook, Instagram) " +
-                "VALUES(@Major, @Classification, @Term,@Position,@Resources_Used,@Long_Disc.,@Lessons_Learned, @Email, @Twitter, @LinkedIn, " +
+                "VALUES (@Major, @Classification, @Term,@Position,@Resources_Used,@Long_Disc.,@Lessons_Learned, @Email, @Twitter, @LinkedIn, " +
                 "@Facebook,@Instagram)", parameters);
             //int reader2 = SqlUtil.ExecuteNonQuery("INSERT INTO User_Company(Name,Country, State, City) " +
             //    "VALUES(@Name,@Country,@State,@City)", parameters);
@@ -59,6 +60,11 @@ namespace main_master
             ////List<SqlParameter> parameters = new List<SqlParameter>();
             ////parameters.Add(new SqlParameter("@country", major.Text));
             ////SqlDataReader reader = SqlUtil.ExecuteReader("SELECT country FROM User_Company", parameters);
+        }
+
+        protected void collegedrop_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
