@@ -350,7 +350,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_151] ON [Following]
 
 CREATE TABLE [Followers]
 (
- [Followers] uniqueidentifer NOT NULL ,
+ [Followers] uniqueidentifier NOT NULL ,
  [ID_Num] uniqueidentifier NOT NULL ,
 
 
