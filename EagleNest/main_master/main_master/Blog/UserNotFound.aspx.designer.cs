@@ -11,7 +11,7 @@ namespace main_master.Blog
 {
 
 
-    public partial class Following
+    public partial class UserNotFound
     {
     }
 }

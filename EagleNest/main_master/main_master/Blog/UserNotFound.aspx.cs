@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace main_master.Blog
 {
-    public partial class Following : System.Web.UI.Page
+    public partial class UserNotFound : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

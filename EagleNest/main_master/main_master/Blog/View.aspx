@@ -17,12 +17,14 @@
     <h2>Comment</h2>
     <form runat="server">
         <div class="form-group">
-            <label for="name">Name</label>
-            <asp:TextBox class="form-control" ID="Name" type="text" runat="server" />
+            <label for="name">Name<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Comment" ErrorMessage="Name is required." ForeColor="Red"></asp:RequiredFieldValidator>
+            </label>
+            &nbsp;<asp:TextBox class="form-control" ID="Name" type="text" runat="server" />
         </div>
         <div class="form-group">
-            <label for="comment">Comment</label>
-            <asp:TextBox class="form-control" Rows="10" ID="Comment" type="text" runat="server" />
+            <label for="comment">Comment<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Comment" ErrorMessage="Comment is required." ForeColor="Red"></asp:RequiredFieldValidator>
+            </label>
+            &nbsp;<asp:TextBox class="form-control" Rows="10" ID="Comment" type="text" runat="server" />
         </div>
         <asp:Button Id="Submit" class="btn btn-primary" Text="Submit" OnClick="Submit_Click" runat="server" />
     </form>

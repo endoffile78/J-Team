@@ -22,6 +22,7 @@
     <h1>Edit Profile</h1>
     <form runat="server">
         <h2>General Settings</h2>
+        UID: <asp:Label ID="Uid" runat="server" />
         <label for="FirstName">First Name:</label>
         <asp:Textbox class="form-control" ID="FirstName" name="FirstName" type="text" runat="server" />
         <label for="LastName">Last Name:</label>
