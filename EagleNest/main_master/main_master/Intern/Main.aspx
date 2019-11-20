@@ -320,6 +320,10 @@
                             <asp:TextBox class="form-control" ID="classification" name="classification" type="text" placeholder="Enter classification" runat="server" />
                         </div>
                         <div class="form-group">
+                            <label for="College">College</label>
+                            <asp:TextBox class="form-control" ID="college" name="college" type="text" placeholder="Enter College" runat="server" />
+                        </div>
+                        <div class="form-group">
                             <label for="term">Term</label>
                             <asp:TextBox class="form-control" ID="term" name="lastname" type="text" placeholder="Enter term e.g. Summer 2019" runat="server" />
                         </div>
@@ -335,10 +339,6 @@
                             <label for="linkedIn">LinkedIn</label>
                             <asp:TextBox class="form-control" ID="linkedIn" name="linkedIn" type="text" placeholder="Enter linkedIn url" runat="server" />
                         </div>
-                        <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <asp:Textbox class="form-control" id="phone" name="phone" type="text" placeholder="Enter phone number" runat="server" />
-                    </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
@@ -358,12 +358,12 @@
                             <asp:TextBox class="form-control" ID="city" name="city" type="text" placeholder="Enter city" runat="server" />
                         </div>
                         <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <asp:Textbox class="form-control" id="phone" name="phone" type="text" placeholder="Enter phone number" runat="server" />
+                    </div>
+                        <div class="form-group">
                             <label for="twitter">Twitter</label>
                             <asp:TextBox class="form-control" ID="twitter" name="twitter" type="text" placeholder="Enter twitter url" runat="server" />
-                        </div>
-                        <div class="form-group">
-                            <label for="Instagram">Instagram</label>
-                            <asp:TextBox class="form-control" ID="instagram" name="instagram" type="text" placeholder="Enter Instagram url" runat="server" />
                         </div>
                         <div class="form-group">
                         <label for="facebook">Facebook</label>
@@ -387,7 +387,7 @@
                         <label>Image</label>
                         <input type="file" id="picture" name="picture" class="field-long" required="required" accept="image/*" />
                     </div>
-                    <button type="submit" class="btn btn-outline-dark" OnClick="post_Click">Post</button>
+                    <asp:Button type="submit" Text="Post" class="btn btn-outline-dark" OnClick="post_Click" runat="server"/>
                 </form>
             </div>
             
