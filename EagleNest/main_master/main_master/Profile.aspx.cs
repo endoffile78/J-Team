@@ -29,6 +29,7 @@ namespace main_master
                 return;
             }
 
+            Uid.Text = reader["ID_Num"].ToString();
             FirstName.Text = reader["Fname"].ToString();
             LastName.Text = reader["Lname"].ToString();
             Major.Text = reader["Major"].ToString();
