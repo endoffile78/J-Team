@@ -16,6 +16,9 @@ namespace main_master.sql
             conn.Open();
         }
 
+        /*
+         * Build the connection string from the config file
+         */
         public static string make_connection()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
@@ -28,7 +31,7 @@ namespace main_master.sql
         }
 
         /*
-         * 
+         * Execute a query that doesnt return data such as INSERT and DELETE
          */
         public static int ExecuteNonQuery(string query, List<SqlParameter> parameters=null)
         {
@@ -44,6 +47,9 @@ namespace main_master.sql
             return rows;
         }
 
+        /*
+         * Execute a query that returns data like SELECT
+         */
         public static SqlDataReader ExecuteReader(string query, List<SqlParameter> parameters=null)
         {
             SqlDataReader reader = null;
