@@ -420,6 +420,7 @@ CREATE TABLE [Post_Comment]
 (
  [BlogID]     uniqueidentifier NOT NULL ,
  [ID_Num]     uniqueidentifier NOT NULL ,
+ [Name]       varchar(50) NOT NULL, -- display name
  [Date]       datetime NOT NULL ,
  [Comment]    nvarchar(300) NOT NULL ,
  [Hidden]     bit DEFAULT 0 ,
