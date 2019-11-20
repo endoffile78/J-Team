@@ -11,12 +11,12 @@ namespace main_master.sql
 
         public static void init()
         {
-            SqlConnectionStringBuilder builder = make_connection();
-            conn = new SqlConnection(builder.ToString());
+            string connectionString = make_connection();
+            conn = new SqlConnection(connectionString);
             conn.Open();
         }
 
-        public static SqlConnectionStringBuilder make_connection()
+        public static string make_connection()
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             access_database access = new access_database();
@@ -24,7 +24,7 @@ namespace main_master.sql
             builder.UserID = access.get_username();
             builder.Password = access.get_password();
             builder.InitialCatalog = access.get_name();
-            return builder;
+            return builder.ToString();
         }
 
         /*
