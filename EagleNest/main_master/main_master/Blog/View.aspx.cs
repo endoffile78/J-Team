@@ -16,6 +16,7 @@ namespace main_master.Blog
     public partial class View : System.Web.UI.Page
     {
 
+        protected string blogID;
         protected string title;
         protected string author;
         protected Guid author_uid;
@@ -25,7 +26,7 @@ namespace main_master.Blog
         protected void Page_Load(object sender, EventArgs e)
         {
             IList<string> segments = Request.GetFriendlyUrlSegments();
-            string blogID = segments[0];
+            blogID = segments[0];
 
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("blogid", blogID));
@@ -50,7 +51,13 @@ namespace main_master.Blog
 
         protected void Submit_Click(object sender, EventArgs e)
         {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("blogid", Guid.Parse(blogID)));
+            parameters.Add(new SqlParameter("uid", Session["uid"]));
+            parameters.Add(new SqlParameter("name", Name.Text));
+            parameters.Add(new SqlParameter("comment", Comment.Text));
 
+            SqlUtil.ExecuteNonQuery("INSERT INTO Post_Comment (BlogID, ID_Num, Name, Date, Comment) VALUES (@blogid, @name, @uid, GETDATE(), @comment)", parameters);
         }
     }
 }
