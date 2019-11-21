@@ -10,7 +10,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
-
+    <form runat="server">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
@@ -108,9 +108,12 @@
                 <div class="tab-pane fade show active" id="new_gives" role="tabpanel" aria-labelledby="pills-gives-tab">
                     <div class="container">
                         <div class="form-group">
-                            <label for="give_title_label" class="col-2 col-form-label">Title</label>
+                            <label for="give_title_textbox" class="col-2 col-form-label">Title</label>
                             <div class="col">
-                                <input class="form-control" type="text" value="" id="give_title_label">
+                               
+                                <asp:TextBox ID="give_title_textbox" class="col" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator  runat="server" ID="give_title_text_req" ControlToValidate="give_title_textbox" ErrorMessage="Posting require a Title." ForeColor="#CC3300"></asp:RequiredFieldValidator>
+                                
                             </div>
 
                             <small class="form-text text-muted text-center">Write a brief but descriptive title for your listing.</small>
@@ -119,7 +122,8 @@
                         <div class="form-group">
                             <label for="give_desc_label" class="col-2 col-form-label">Description</label>
                             <div class="col">
-                                <textarea class="form-control" id="give_desc_label" rows="3"></textarea>
+                                <asp:TextBox ID="give_desc_textbox" class="col" rows="3" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                <asp:RequiredFieldValidator  runat="server" ID="give_desc_text_req" ControlToValidate="give_desc_textbox" ErrorMessage="Posting require a description." ForeColor="#CC3300"></asp:RequiredFieldValidator>
                             </div>
 
                             <small class="form-text text-muted text-center">Provide a description of your item. Keep in mind the item must be offered for free, and availible on campus.</small>
@@ -127,14 +131,20 @@
                         </div>
                         <div class="form-group">
                             <label for="give_image_label" class="col-2 col-form-label">Images</label>
-                            <div class="col">
-                                <input type="file" class="form-control-file" id="give_image_label" aria-describedby="fileHelp" multiple>
-                            </div>
+                            
+                                <asp:FileUpload runat="server" ID="give_image_upload" class="col" />
+                              <asp:Literal runat="server" ID="test1"></asp:Literal>
+                            <asp:image runat="server" ID="test2"/>
+                            
+                            
 
                             <small class="form-text text-muted text-center">Upload images of your item(optional).<br />
                                 Please keep file sizes less than 50MB.</small>
                             <br />
-                            <input class="col" type='button' value='Preview Posting' id='preview_give_button' />
+                            
+                               
+                        <asp:Button ID="preview_give_button" class= "col" runat="server" OnClick="preview_give_button_click" Text="Submit" />
+                            
 
                         </div>
                     </div>
@@ -248,7 +258,7 @@
 
 
     </div>
-
+    </form>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></link>
     <script>

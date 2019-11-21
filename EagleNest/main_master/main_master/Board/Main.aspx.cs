@@ -7,12 +7,13 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Text;
 using main_master.sql;
+using System.Data;
 
 namespace main_master
 {
     public partial class eagleboard : System.Web.UI.Page
     {
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             List<data_row> all_rows = new List<data_row>();
@@ -34,10 +35,66 @@ namespace main_master
 
         }
 
+        protected void preview_give_button_click(object sender, EventArgs e)
+        {
+            if (Page.IsValid) {
+
+
+
+
+                System.IO.Stream fs = give_image_upload.PostedFile.InputStream;
+                System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
+                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                string str = Convert.ToBase64String(bytes, 0, bytes.Length);
+                //test2.ImageUrl = "data:image/png;base64," + str;
+                //test2.Visible = true;
+
+
+                Session.Add("title", give_title_textbox.Text);
+                Session.Add("description", give_desc_textbox.Text);
+                Session.Add("image", str);
+
+
+
+
+
+
+
+                Response.Redirect("new_post.aspx");
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
         void convert_rows_to_string_and_publish(ref List<data_row> data_rows)
         {
-            
-            
+
+
             string table_string_all = @"<table class=""table"" id= ""all_board""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th></tr> </thead> <tbody>";
             string table_string_gives = @"<table class=""table"" id= ""gives_board""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th></tr> </thead> <tbody>";
             string table_string_project = @"<table class=""table"" id= ""project_board""> <thead class=""thead-dark""> <tr> <th scope=""col"">Board</th> <th scope=""col"">Title</th> <th scope=""col"">Date</th></tr> </thead> <tbody>";
