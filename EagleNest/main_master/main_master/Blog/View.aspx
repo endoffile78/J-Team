@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <div class="text-center">
         <h1><%= title %></h1>
-        <h4><a class="text-muted" href="User/<%= author_uid.ToString() %>"><%= author %></a></h4>
+        <h4><a class="text-muted" href='<%= ResolveUrl("User/" + author_uid.ToString()) %>'><%= author %></a></h4>
         <h5>Tags: <a href="#">tag1</a> <a href="#">tag2</a></h5>
     </div>
     <p>
@@ -30,4 +30,12 @@
     </form>
     <% } %>
     <h2>Comments</h2>
+    <% foreach (var comment in comments) { %>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><%= comment.name %></h5>
+            <p class="card-text"><%= comment.comment %></p>
+        </div>
+    </div>
+    <% } %>
 </asp:Content>

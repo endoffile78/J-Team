@@ -121,6 +121,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Blog\BlogPost.cs" />
+    <Compile Include="Blog\Comment.cs" />
     <Compile Include="Blog\PostNotFound.aspx.cs">
       <DependentUpon>PostNotFound.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

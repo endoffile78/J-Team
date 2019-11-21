@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <div class="text-center">
         <h1><%= name %></h1>
-        <% if (Session["loggedIn"] != null && (string)Session["uid"] != uid) { %>
+        <% if (Session["loggedIn"] != null && Session["uid"].ToString() != uid) { %>
         <asp:Button ID="follow" CssClass="btn btn-primary" Text="Follow" OnClick="follow_Click" runat="server" />
         <% } %>
     </div>
@@ -21,7 +21,7 @@
                 <% foreach (var post in posts) { %>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="View/<%= post.blogID %>"><%= post.title %></a></h5>
+                        <h5 class="card-title"><a href='<%= ResolveUrl("View/" + post.blogID) %>'><%= post.title %></a></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><%= name %></h6>
                         <p class="card-text"><%= post.body %></p>
                     </div>
