@@ -17,12 +17,12 @@
         <div class="form-group">
             <label for="email">Email:<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="email" ErrorMessage="Email is required." ForeColor="#CC0000"></asp:RequiredFieldValidator>
             </label>
-            &nbsp;<asp:Textbox class="form-control" id="email" name="email" type="text" runat="server" />
+            &nbsp;<asp:Textbox class="form-control" id="email" name="email" type="text" placeholder="Email" runat="server" />
         </div>
         <div class="form-group">
             <label for="password">Password:<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="password" ErrorMessage="Password is required." ForeColor="#CC0000"></asp:RequiredFieldValidator>
             </label>
-            &nbsp;<asp:Textbox class="form-control" id="password" name="email" type="password" runat="server" />
+            &nbsp;<asp:Textbox class="form-control" id="password" name="email" type="password" placeholder="Password" runat="server" />
         </div>
         <asp:Button class="btn btn-primary" id="submit" Text="Submit" runat="server" OnClick="submit_Click" />
     </form>
