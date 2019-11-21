@@ -15,12 +15,13 @@ namespace main_master
         {
             if(!IsPostBack)
             {
-                List<SqlParameter> parameters = new List<SqlParameter>();
-                SqlDataReader reader = SqlUtil.ExecuteReader("SELECT College FROM [dbo].[Intern_Posting]", parameters);
                 SqlUtil.init();
+                List<SqlParameter> parameters = new List<SqlParameter>();
+                SqlDataReader reader = SqlUtil.ExecuteReader("SELECT College FROM Intern_Posting", parameters);
+                
                 if (reader.Read())
                 {
-                    collegedrop.DataSource = reader["College"];
+                    collegedrop.DataSource = reader;
                     collegedrop.DataTextField = "College";
                     collegedrop.DataValueField = "College";
                     collegedrop.DataBind();
@@ -28,11 +29,12 @@ namespace main_master
                     collegedrop.SelectedIndex = 0;
                 }
                 reader.Close();
+                SqlUtil.destroy();
             }           
         }
         protected void post_Click(object sender, EventArgs e)
         {
-            SqlUtil.init();
+            Console.WriteLine("inserting");
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@Major", major.Text));
             parameters.Add(new SqlParameter("@Classification", classification.Text));
@@ -50,7 +52,7 @@ namespace main_master
             parameters.Add(new SqlParameter("@Twitter", twitter.Text));
             parameters.Add(new SqlParameter("@LinkedIn", linkedIn.Text));
             parameters.Add(new SqlParameter("@Facebook", facebook.Text));
-            int reader = SqlUtil.ExecuteNonQuery("INSERT INTO [dbo].[Intern_Posting] (Major,Classification,College,Term,Position,Resources_Used,Long_Disc.," +
+            int reader = SqlUtil.ExecuteNonQuery("INSERT INTO Intern_Posting (Major,Classification,College,Term,Position,Resources_Used,Long_Disc.," +
                 "Lessons_Learned,Email,Twitter, LinkedIn, Facebook) " +
                 "VALUES (@Major, @Classification,@College, @Term,@Position,@Resources_Used,@Long_Disc.,@Lessons_Learned, @Email, @Twitter, @LinkedIn, " +
                 "@Facebook)",parameters);
