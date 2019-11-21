@@ -325,8 +325,8 @@ CREATE TABLE [BlogFollowers]
   [Following] uniqueidentifier NOT NULL ,
   [Follower]  uniqueidentifier NOT NULL ,
 
-  CONSTRAINT [FK_Following] FOREIGN KEY ([Following] REFERENCES [User_Main]([ID_Num])),
-  CONSTRAINT [FK_Follower] FOREIGN KEY ([Follower] REFERENCES [User_Main]([ID_Num]))
+  CONSTRAINT [FK_Following] FOREIGN KEY ([Following]) REFERENCES [User_Main]([ID_Num]),
+  CONSTRAINT [FK_Follower] FOREIGN KEY ([Follower]) REFERENCES [User_Main]([ID_Num])
 );
 
 
