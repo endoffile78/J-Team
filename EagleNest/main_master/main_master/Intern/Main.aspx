@@ -309,7 +309,6 @@
             <div id="newtab" class="tab-pane fade">
                 <br />
                 <div class="container">
-                    <form>
                         <div class="form-row">
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -388,8 +387,7 @@
                             <label>Image</label>
                             <input type="file" id="picture" name="picture" class="field-long" required="required" accept="image/*" />
                         </div>
-                        <asp:Button Text="Post" class="btn btn-outline-dark" runat="server" />
-                    </form>
+                        <asp:Button Text="Post" class="btn btn-outline-dark" runat="server" OnClick="post_Click" />
                 </div>
             </div>
         </div>
