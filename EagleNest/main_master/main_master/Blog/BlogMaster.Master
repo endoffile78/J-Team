@@ -19,6 +19,11 @@
             Post
         </a>
     </li>
+    <li>
+        <a href='User/<%= Session["uid"] %>'>
+            User Page
+        </a>
+    </li>
     <% } %>
 </asp:Content>
 

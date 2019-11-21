@@ -387,11 +387,9 @@
                         <label>Image</label>
                         <input type="file" id="picture" name="picture" class="field-long" required="required" accept="image/*" />
                     </div>
-                    <asp:Button type="submit" Text="Post" class="btn btn-outline-dark" OnClick="post_Click" runat="server"/>
+                    <asp:Button Text="Post" class="btn btn-outline-dark" OnClick="post_Click" runat="server"/>
                 </form>
             </div>
-            
-        
     </div>
     </div>
      </form>

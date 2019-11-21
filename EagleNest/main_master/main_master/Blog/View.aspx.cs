@@ -8,25 +8,27 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-/// <summary>
-/// https://localhost:44350/Blog/View/5fc83cc8-396a-439c-bee0-eb59b338f393
-/// </summary>
 namespace main_master.Blog
 {
     public partial class View : System.Web.UI.Page
     {
 
-        protected string blogID;
+        protected Guid blogID;
         protected string title;
         protected string author;
         protected Guid author_uid;
         protected string body;
         protected string[] tags;
+        protected List<Comment> comments = new List<Comment>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             IList<string> segments = Request.GetFriendlyUrlSegments();
-            blogID = segments[0];
+
+            if (!Guid.TryParse(segments[0], out blogID))
+            {
+                Response.Redirect(ResolveUrl("PostNotFound.aspx"));
+            }
 
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("blogid", blogID));
@@ -37,7 +39,7 @@ namespace main_master.Blog
             if (!reader.Read())
             {
                 reader.Close();
-                Response.Redirect("Main.aspx");
+                Response.Redirect("PostNotFound.aspx");
                 return;
             }
 
@@ -47,17 +49,31 @@ namespace main_master.Blog
             author_uid = Guid.Parse(reader["ID_Num"].ToString());
 
             reader.Close();
+
+            parameters.Clear();
+            parameters.Add(new SqlParameter("blogid", blogID));
+
+            SqlDataReader r = SqlUtil.ExecuteReader("SELECT * FROM Post_Comment WHERE BlogID = @blogid", parameters);
+            while (r.Read())
+            {
+                Comment comment = new Comment();
+                comment.name = r["Name"].ToString();
+                comment.comment = r["Comment"].ToString();
+                comments.Add(comment);
+            }
+
+            r.Close();
         }
 
         protected void Submit_Click(object sender, EventArgs e)
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("blogid", Guid.Parse(blogID)));
+            parameters.Add(new SqlParameter("blogid", blogID));
             parameters.Add(new SqlParameter("uid", Session["uid"]));
             parameters.Add(new SqlParameter("name", Name.Text));
             parameters.Add(new SqlParameter("comment", Comment.Text));
 
-            SqlUtil.ExecuteNonQuery("INSERT INTO Post_Comment (BlogID, ID_Num, Name, Date, Comment) VALUES (@blogid, @name, @uid, GETDATE(), @comment)", parameters);
+            SqlUtil.ExecuteNonQuery("INSERT INTO Post_Comment (BlogID, ID_Num, Name, Date, Comment) VALUES (@blogid, @uid, @name, GETDATE(), @comment)", parameters);
         }
     }
 }
