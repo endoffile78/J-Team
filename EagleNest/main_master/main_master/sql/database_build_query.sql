@@ -133,11 +133,12 @@ CREATE TABLE [Gallery_Post]
  [Image]       nvarchar(400) NOT NULL ,
  [Tags]        nvarchar(400) NULL ,
  [Hidden]      bit DEFAULT 0 ,
- [Mod_Status]  nvarchar(50) NULL ,
+ [Mod_Status]  int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Gallery_Post] PRIMARY KEY CLUSTERED ([GpostID] ASC),
- CONSTRAINT [FK_240] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num])
+ CONSTRAINT [FK_240] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num]),
+ CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -169,11 +170,12 @@ CREATE TABLE [Board_Post]
  [Tags]        nvarchar(400) NULL ,
  [Attachments] nvarchar(400) NOT NULL ,
  [Hidden]      bit DEFAULT 0 ,
- [Mod_Status]  nvarchar(50) NULL ,
+ [Mod_Status] int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Board_Post] PRIMARY KEY CLUSTERED ([BpostID] ASC),
- CONSTRAINT [FK_193] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num])
+ CONSTRAINT [FK_193] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num]),
+ CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -234,12 +236,13 @@ CREATE TABLE [dbo].[Job_Posting]
  [Pay]             money NULL ,
  [Benifits]        nvarchar(400) NULL ,
  [Hidden]          bit DEFAULT 0 ,
- [Mod_Status]      nvarchar(50) NULL ,
+ [Mod_Status] int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Job_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [CompanyID] ASC),
  CONSTRAINT [FK_109] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID]),
- CONSTRAINT [FK_99] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_SAF]([ID_Num])
+ CONSTRAINT [FK_99] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_SAF]([ID_Num]),
+ CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -289,12 +292,13 @@ CREATE TABLE [dbo].[Intern_Posting]
  [Pay]             money NULL ,
  [Benifits]        varchar(400) NULL ,
  [Hidden]          bit DEFAULT 0,
- [Mod_Status]      nvarchar(50) NULL,
+ [Mod_Status] int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [CompanyID] ASC),
  CONSTRAINT [FK_104] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_SAF]([ID_Num]),
- CONSTRAINT [FK_112] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID])
+ CONSTRAINT [FK_112] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID]),
+ CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -346,11 +350,12 @@ CREATE TABLE [Blog_Post]
  [Attachment] nvarchar(400) NULL ,
  [Date]       datetime NOT NULL ,
  [Hidden]     bit DEFAULT 0,
- [Mod_Status] nvarchar(50) NULL ,
+ [Mod_Status] int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Blog_Post] PRIMARY KEY CLUSTERED ([BlogID] ASC),
- CONSTRAINT [FK_165] FOREIGN KEY ([ID_Num]) REFERENCES [User_Main]([ID_Num])
+ CONSTRAINT [FK_165] FOREIGN KEY ([ID_Num]) REFERENCES [User_Main]([ID_Num]),
+ CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -386,12 +391,13 @@ CREATE TABLE [Post_Comment]
  [Date]       datetime NOT NULL ,
  [Comment]    nvarchar(300) NOT NULL ,
  [Hidden]     bit DEFAULT 0 ,
- [Mod_Status] nvarchar(50) NULL ,
+ [Mod_Status] int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Post_Comment] PRIMARY KEY CLUSTERED ([BlogID] ASC),
  CONSTRAINT [FK_180] FOREIGN KEY ([BlogID])  REFERENCES [Blog_Post]([BlogID]),
- CONSTRAINT [FK_184] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num])
+ CONSTRAINT [FK_184] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
+ CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -402,3 +408,17 @@ CREATE NONCLUSTERED INDEX [fkIdx_180] ON [Post_Comment]
  )
 
 --GO
+
+
+CREATE TABLE [Mod_Statuses]
+(
+  [Status] int NOT NULL ,
+  [Description] varchar(100) NOT NULL,
+
+  CONSTRAINT [PK_Status] PRIMARY KEY CLUSTERED ([Status] ASC)
+);
+
+INSERT INTO Mod_Statuses (Status, Description) VALUES (0, 'Ok');
+INSERT INTO Mod_Statuses (Status, Description) VALUES (1, 'Reported');
+INSERT INTO Mod_Statuses (Status, Description) VALUES (2, 'Reveiwing');
+INSERT INTO Mod_Statuses (Status, Description) VALUES (3, 'Removed');
