@@ -1,14 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="main_master.Profile" %>
 
-<script runat="server">
-
-    protected void SecuritySubmit_Click(object sender, EventArgs e)
-    {
-
-    }
-</script>
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
 </asp:Content>
 

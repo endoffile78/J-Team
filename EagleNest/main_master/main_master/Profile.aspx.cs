@@ -64,6 +64,7 @@ namespace main_master
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("uid", Session["uid"]));
             parameters.Add(new SqlParameter("password", Password.Text));
+
             SqlDataReader reader = SqlUtil.ExecuteReader("SELECT * FROM User_Main WHERE Password = @password AND ID_NUM = @uid", parameters);
             if (!reader.Read())
             {
