@@ -37,7 +37,7 @@ namespace main_master.Blog
             if (!reader.Read())
             {
                 reader.Close();
-                Response.Redirect("Main.aspx");
+                Response.Redirect("PostNotFound.aspx");
                 return;
             }
 
