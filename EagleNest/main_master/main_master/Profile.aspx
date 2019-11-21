@@ -13,6 +13,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="branding" runat="server">
+    <h3>EagleNest</h3>
+    <strong>EN</strong>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="navigation" runat="server">
