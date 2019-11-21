@@ -319,53 +319,15 @@ CREATE NONCLUSTERED INDEX [fkIdx_112] ON [dbo].[Intern_Posting]
 
 
 
--- ************************************** [Following]
 
-CREATE TABLE [Following]
+CREATE TABLE [BlogFollowers]
 (
- [Following] uniqueidentifier NOT NULL,
- [ID_Num] uniqueidentifier NOT NULL ,
+  [Following] uniqueidentifier NOT NULL ,
+  [Follower]  uniqueidentifier NOT NULL ,
 
-
- CONSTRAINT [FK_151] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
- CONSTRAINT [FK_Following] FOREIGN KEY ([Following])  REFERENCES [User_Main]([ID_Num])
+  CONSTRAINT [FK_Following] FOREIGN KEY ([Following] REFERENCES [User_Main]([ID_Num])),
+  CONSTRAINT [FK_Follower] FOREIGN KEY ([Follower] REFERENCES [User_Main]([ID_Num]))
 );
---GO
-
-
-CREATE NONCLUSTERED INDEX [fkIdx_151] ON [Following]
- (
-  [ID_Num] ASC
- )
-
---GO
-
-
-
-
-
-
-
--- ************************************** [Followers]
-
-CREATE TABLE [Followers]
-(
- [Followers] uniqueidentifier NOT NULL ,
- [ID_Num] uniqueidentifier NOT NULL ,
-
-
- CONSTRAINT [FK_146] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
- CONSTRAINT [FK_Followers] FOREIGN KEY ([Followers])  REFERENCES [User_Main]([ID_Num])
-);
---GO
-
-
-CREATE NONCLUSTERED INDEX [fkIdx_146] ON [Followers]
- (
-  [ID_Num] ASC
- )
-
---GO
 
 
 
