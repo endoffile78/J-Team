@@ -10,6 +10,7 @@ namespace main_master.Blog
         public Guid blogID;
         public string title;
         public Guid author_uid;
+        public string author_name;
         public string body;
         public string[] tags;
     }
