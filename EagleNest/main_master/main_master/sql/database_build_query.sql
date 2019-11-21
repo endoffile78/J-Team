@@ -409,7 +409,6 @@ CREATE TABLE [Post_Comment]
  [Mod_Status] int DEFAULT 0 ,
 
 
- CONSTRAINT [PK_Post_Comment] PRIMARY KEY CLUSTERED ([BlogID] ASC),
  CONSTRAINT [FK_180] FOREIGN KEY ([BlogID])  REFERENCES [Blog_Post]([BlogID]),
  CONSTRAINT [FK_184] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
  CONSTRAINT [FK_ModStatus5] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
