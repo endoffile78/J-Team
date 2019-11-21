@@ -190,7 +190,7 @@ CREATE TABLE [Board_Post]
 
  CONSTRAINT [PK_Board_Post] PRIMARY KEY CLUSTERED ([BpostID] ASC),
  CONSTRAINT [FK_193] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num]),
- CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
+ CONSTRAINT [FK_ModStatus1] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -257,7 +257,7 @@ CREATE TABLE [dbo].[Job_Posting]
  CONSTRAINT [PK_Job_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [CompanyID] ASC),
  CONSTRAINT [FK_109] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID]),
  CONSTRAINT [FK_99] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_SAF]([ID_Num]),
- CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
+ CONSTRAINT [FK_ModStatus2] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -313,7 +313,7 @@ CREATE TABLE [dbo].[Intern_Posting]
  CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [CompanyID] ASC),
  CONSTRAINT [FK_104] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_SAF]([ID_Num]),
  CONSTRAINT [FK_112] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID]),
- CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
+ CONSTRAINT [FK_ModStatus3] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -370,7 +370,7 @@ CREATE TABLE [Blog_Post]
 
  CONSTRAINT [PK_Blog_Post] PRIMARY KEY CLUSTERED ([BlogID] ASC),
  CONSTRAINT [FK_165] FOREIGN KEY ([ID_Num]) REFERENCES [User_Main]([ID_Num]),
- CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
+ CONSTRAINT [FK_ModStatus4] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -412,7 +412,7 @@ CREATE TABLE [Post_Comment]
  CONSTRAINT [PK_Post_Comment] PRIMARY KEY CLUSTERED ([BlogID] ASC),
  CONSTRAINT [FK_180] FOREIGN KEY ([BlogID])  REFERENCES [Blog_Post]([BlogID]),
  CONSTRAINT [FK_184] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
- CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
+ CONSTRAINT [FK_ModStatus5] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
