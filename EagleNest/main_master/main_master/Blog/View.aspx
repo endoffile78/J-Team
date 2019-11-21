@@ -19,12 +19,12 @@
         <div class="form-group">
             <label for="name">Name<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Comment" ErrorMessage="Name is required." ForeColor="Red"></asp:RequiredFieldValidator>
             </label>
-            &nbsp;<asp:TextBox class="form-control" ID="Name" type="text" runat="server" />
+            &nbsp;<asp:TextBox class="form-control" ID="Name" type="text" placeholder="Display Name" runat="server" />
         </div>
         <div class="form-group">
             <label for="comment">Comment<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Comment" ErrorMessage="Comment is required." ForeColor="Red"></asp:RequiredFieldValidator>
             </label>
-            &nbsp;<asp:TextBox class="form-control" Rows="10" ID="Comment" type="text" runat="server" />
+            &nbsp;<asp:TextBox class="form-control" Rows="10" ID="Comment" type="text" placeholder="Comment" runat="server" />
         </div>
         <asp:Button Id="Submit" class="btn btn-primary" Text="Submit" OnClick="Submit_Click" runat="server" />
     </form>

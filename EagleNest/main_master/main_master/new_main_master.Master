@@ -64,10 +64,10 @@
                 </li>
                 <% } else { %>
                 <li>
-                    <a href='<%= ResolveUrl("~/Logout.aspx") %>'>Logout</a>
+                    <a href='<%= ResolveUrl("~/Profile.aspx") %>'>Profile</a>
                 </li>
                 <li>
-                    <a href='<%= ResolveUrl("~/Profile.aspx") %>'>Profile</a>
+                    <a href='<%= ResolveUrl("~/Logout.aspx") %>'>Logout</a>
                 </li>
                 <% if (Convert.ToInt32(Session["type"]) == 2) { %>
                 <li>

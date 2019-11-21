@@ -5,69 +5,38 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <div class="text-center">
-        <h1>Featured Posts</h1>
+        <h1>Latest posts</h1>
     </div>
     <div class="card-columns">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Lorem Ipsum</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Anon</h6>
-                <p class="card-text">
-                    Text
-                </p>
-            </div>
-            <div class="card-footer text-muted">
-                Posted 5 days ago
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Lorem Ipsum</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Anon</h6>
-                <p class="card-text">
-                    Text
-                </p>
-            </div>
-            <div class="card-footer text-muted">
-                Posted 5 days ago
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Lorem Ipsum</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Anon</h6>
-                <p class="card-text">
-                    Text
-                </p>
-            </div>
-            <div class="card-footer text-muted">
-                Posted 5 days ago
-            </div>
-        </div>
+       <% foreach (var post in posts) { %>
+       <div class="card">
+           <div class="card-body">
+               <h5 class="card-title"><a href='<%= ResolveUrl("View/" + post.blogID) %>'><%= post.title %></a></h5>
+               <h6 class="card-subtitle mb-2 text-muted"><a href='<%= ResolveUrl("User/" + post.author_uid) %>'><%= post.author_name %></a></h6>
+               <p class="card-text"><%= post.body %></p>
+           </div>
+       </div>
+       <% } %>
     </div>
-    <div class="text-center">
-        <h1>New Users</h1>
-    </div>
-    <div class="card-columns">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title"><a href="User.aspx">New User</a></h5>
-                <p class="card-text">
-                    <img src="../images/1.jpg" width="100" height="100" />
-                </p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title"><a href="User.aspx">New User</a></h5>
-                <p class="card-text">
-                    <img src="../images/1.jpg" width="100" height="100" />
-                </p>
-            </div>
-        </div>
-    </div>
+    <% if (Session["loggedIn"] == null) { %>
     <div class="text-center">
         <h1>About Eagle Blog</h1>
     </div>
-    <p>Lorem ipsum</p>
+    <p>Eagle Blog is a place for USI students to post about their lifes, school, and extracuricial activities.</p>
+    <% } else{ %>
+    <div class="text-center">
+        <h1>Feed</h1>
+    </div>
+    <div class="card-columns">
+        <% foreach (var post in follow_posts) { %>
+       <div class="card">
+           <div class="card-body">
+               <h5 class="card-title"><a href='<%= ResolveUrl("View/" + post.blogID) %>'><%= post.title %></a></h5>
+               <h6 class="card-subtitle mb-2 text-muted"><a href='<%= ResolveUrl("User/" + post.author_uid) %>'><%= post.author_name %></a></h6>
+               <p class="card-text"><%= post.body %></p>
+           </div>
+       </div>
+       <% } %>
+    </div>
+    <% } %>
 </asp:Content>

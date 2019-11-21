@@ -12,6 +12,11 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="navigation" runat="server">
+    <li>
+        <a href="Main.aspx">
+            Blog Homepage
+        </a>
+    </li>
     <% if (Session["loggedIn"] != null) { %>
     <li>
         <a href="Post.aspx">
@@ -25,6 +30,11 @@
         </a>
     </li>
     <% } %>
+    <li>
+        <a href='<%= ResolveUrl("~/Main.aspx") %>'>
+            Eagle Nest
+        </a>
+    </li>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="content_place_holder_body" runat="server">
