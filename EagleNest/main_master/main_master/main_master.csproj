@@ -137,6 +137,7 @@
     <Compile Include="Blog\UserNotFound.aspx.designer.cs">
       <DependentUpon>UserNotFound.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Blog\UserProfile.cs" />
     <Compile Include="Board\new_post.aspx.cs">
       <DependentUpon>new_post.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
