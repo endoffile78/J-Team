@@ -18,6 +18,21 @@ INSERT INTO User_Type ([Type], [Description]) VALUES (0, 'Admin');
 INSERT INTO User_Type ([Type], [Description]) VALUES (1, 'Moderator');
 INSERT INTO User_Type ([Type], [Description]) VALUES (2, 'User');
 
+-- ************************************** [dbo].[Mod_Statuses]
+
+CREATE TABLE [Mod_Statuses]
+(
+  [Status] int NOT NULL ,
+  [Description] varchar(100) NOT NULL,
+
+  CONSTRAINT [PK_Status] PRIMARY KEY CLUSTERED ([Status] ASC)
+);
+
+INSERT INTO Mod_Statuses (Status, Description) VALUES (0, 'Ok');
+INSERT INTO Mod_Statuses (Status, Description) VALUES (1, 'Reported');
+INSERT INTO Mod_Statuses (Status, Description) VALUES (2, 'Reveiwing');
+INSERT INTO Mod_Statuses (Status, Description) VALUES (3, 'Removed');
+
 -- ************************************** [dbo].[User_Main]
 
 CREATE TABLE [dbo].[User_Main]
@@ -408,17 +423,3 @@ CREATE NONCLUSTERED INDEX [fkIdx_180] ON [Post_Comment]
  )
 
 --GO
-
-
-CREATE TABLE [Mod_Statuses]
-(
-  [Status] int NOT NULL ,
-  [Description] varchar(100) NOT NULL,
-
-  CONSTRAINT [PK_Status] PRIMARY KEY CLUSTERED ([Status] ASC)
-);
-
-INSERT INTO Mod_Statuses (Status, Description) VALUES (0, 'Ok');
-INSERT INTO Mod_Statuses (Status, Description) VALUES (1, 'Reported');
-INSERT INTO Mod_Statuses (Status, Description) VALUES (2, 'Reveiwing');
-INSERT INTO Mod_Statuses (Status, Description) VALUES (3, 'Removed');
