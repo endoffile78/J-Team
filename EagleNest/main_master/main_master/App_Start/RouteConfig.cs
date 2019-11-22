@@ -15,6 +15,7 @@ namespace main_master
             routes.EnableFriendlyUrls(settings);
             routes.MapPageRoute("ViewUser", "Blog/User/{UserId}", "~/Blog/User.aspx");
             routes.MapPageRoute("ViewPost", "Blog/View/{PostId}", "~/Blog/View.aspx");
+            routes.MapPageRoute("ViewBoardPost", "Board/View/{BpostID}", "~/Board/View.aspx");
         }
     }
 }

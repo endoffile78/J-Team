@@ -54,7 +54,7 @@ namespace main_master.Board
             //parameters.Add(new SqlParameter("@Hidden", default));
             //parameters.Add(new SqlParameter("@Mod_status", default));
             int reader = SqlUtil.ExecuteNonQuery("insert into board_post values (default,@ID_Num,@Title,@Description,@Board,@Date,@Expiration,null,@Attachments,default,default)", parameters);
-
+            
 
 
 

@@ -5,7 +5,7 @@
 
         .clickable-row:hover {
         background-color: lightpink;
-      
+        cursor: pointer;
         }
 
 
@@ -146,7 +146,7 @@
                             
 
                             <small class="form-text text-muted text-center">Upload images of your item(optional).<br />
-                                Please keep file sizes less than 50MB.</small>
+                                Please keep file sizes less than 5MB.</small>
                             <br />
                             
                                
@@ -185,7 +185,7 @@
                                 <input type="file" class="form-control-file" id="project_image_label" aria-describedby="fileHelp" multiple>
                             </div>
                             <small class="form-text text-muted text-center">Upload images of your project(optional).<br />
-                                Please keep file sizes less than 50MB</small>
+                                Please keep file sizes less than 5MB</small>
                             <br />
                             <input class="col" type='button' value='Preview Posting' id='preview_project_button' />
 
@@ -223,7 +223,7 @@
                                 <input type="file" class="form-control-file" id="ppoll_image_label" aria-describedby="fileHelp" multiple>
                             </div>
                             <small class="form-text text-muted text-center">Upload images relevant to your poll. If your images corrospond to a particular option, please upload them below on said option.
-                                Please keep file sizes less than 50MB</small><br />
+                                Please keep file sizes less than 5MB</small><br />
                         </div>
                         <div class="row">
                             <div class="col" style="margin-left: 20px">

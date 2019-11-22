@@ -81,6 +81,7 @@
     <Content Include="Blog\UserNotFound.aspx" />
     <Content Include="Blog\View.aspx" />
     <Content Include="Board\new_post.aspx" />
+    <Content Include="Board\View.aspx" />
     <Content Include="css\Gallery_Post_Form.css" />
     <Content Include="css\style5.css" />
     <Content Include="Board\Main.aspx" />
@@ -144,6 +145,13 @@
     </Compile>
     <Compile Include="Board\new_post.aspx.designer.cs">
       <DependentUpon>new_post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Board\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connect\Connect.cs" />
     <Compile Include="Gallery\Archive.aspx.cs">
