@@ -60,13 +60,13 @@ namespace main_master
         protected global::System.Web.UI.WebControls.DropDownList majorDrop;
 
         /// <summary>
-        /// jobDrop control.
+        /// termDrop control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList jobDrop;
+        protected global::System.Web.UI.WebControls.DropDownList termDrop;
 
         /// <summary>
         /// collegedrop control.

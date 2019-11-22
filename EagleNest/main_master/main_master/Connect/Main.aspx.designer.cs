@@ -60,13 +60,13 @@ namespace main_master
         protected global::System.Web.UI.WebControls.DropDownList majorCDrop;
 
         /// <summary>
-        /// jobCDrop control.
+        /// graduationCDrop control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList jobCDrop;
+        protected global::System.Web.UI.WebControls.DropDownList graduationCDrop;
 
         /// <summary>
         /// collegeCDrop control.
@@ -96,22 +96,22 @@ namespace main_master
         protected global::System.Web.UI.WebControls.TextBox major;
 
         /// <summary>
-        /// classification control.
+        /// college control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox classification;
+        protected global::System.Web.UI.WebControls.TextBox college;
 
         /// <summary>
-        /// term control.
+        /// graduation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox term;
+        protected global::System.Web.UI.WebControls.TextBox graduation;
 
         /// <summary>
         /// company control.
@@ -213,6 +213,15 @@ namespace main_master
         protected global::System.Web.UI.WebControls.TextBox facebook;
 
         /// <summary>
+        /// industry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox industry;
+
+        /// <summary>
         /// description control.
         /// </summary>
         /// <remarks>
@@ -222,6 +231,15 @@ namespace main_master
         protected global::System.Web.UI.WebControls.TextBox description;
 
         /// <summary>
+        /// resources control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox resources;
+
+        /// <summary>
         /// lessons control.
         /// </summary>
         /// <remarks>
@@ -229,5 +247,14 @@ namespace main_master
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lessons;
+
+        /// <summary>
+        /// CPost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CPost;
     }
 }

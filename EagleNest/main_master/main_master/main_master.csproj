@@ -145,6 +145,7 @@
     <Compile Include="Board\new_post.aspx.designer.cs">
       <DependentUpon>new_post.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Connect\Connect.cs" />
     <Compile Include="Gallery\Archive.aspx.cs">
       <DependentUpon>Archive.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

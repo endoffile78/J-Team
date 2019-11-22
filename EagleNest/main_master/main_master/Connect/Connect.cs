@@ -5,18 +5,18 @@ using System.Web;
 
 namespace main_master
 {
-    public class intern
+    public class Connect
     {
-        public string id;
         public string name;
-        public string classification;
+        public string college;
         public string major;
+        public string graduation;
         public string company;
         public string position;
         public string location;
         public string long_desc;
         public string resources;
         public string lessons;
-
+        public string image;
     }
 }
