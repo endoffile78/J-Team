@@ -16,77 +16,24 @@ namespace main_master
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<data_row> all_rows = new List<data_row>();
-            all_rows.Add(new data_row("poll_board", "are you happy?", DateTime.Now, "http:this"));
-            all_rows.Add(new data_row("gives_board", "want free happy?!?", DateTime.Now, "http:that"));
-            all_rows.Add(new data_row("gives_board", "free microwave", DateTime.Now, "http:that"));
-            all_rows.Add(new data_row("gives_board", "will test for free", DateTime.Now, "http:that"));
-            all_rows.Add(new data_row("gives_board", "smelly rug free", DateTime.Now, "http:that"));
-            all_rows.Add(new data_row("project_board", "lets make an app", DateTime.Now, "http:this"));
-            all_rows.Add(new data_row("project_board", "lets make a better app than him", DateTime.Now, "http:this"));
-            all_rows.Add(new data_row("poll_board", "do you like usi?", DateTime.Now, "http:this"));
-            all_rows.Add(new data_row("poll_board", "whats 5*5*5?", DateTime.Now, "http:this"));
-            all_rows.Add(new data_row("poll_board", "where the party at?", DateTime.Now, "http:this"));
-            all_rows.Add(new data_row("project_board", "#trashtag", DateTime.Now, "http:this"));
-
-
-            convert_rows_to_string_and_publish(ref all_rows);
-
+            build_data();
 
         }
 
         protected void preview_give_button_click(object sender, EventArgs e)
         {
             if (Page.IsValid) {
-
-
-
-
                 System.IO.Stream fs = give_image_upload.PostedFile.InputStream;
                 System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
                 Byte[] bytes = br.ReadBytes((Int32)fs.Length);
                 string str = Convert.ToBase64String(bytes, 0, bytes.Length);
-                //test2.ImageUrl = "data:image/png;base64," + str;
-                //test2.Visible = true;
-
-
                 Session.Add("title", give_title_textbox.Text);
                 Session.Add("description", give_desc_textbox.Text);
                 Session.Add("image", str);
-
-
-
-
-
-
-
                 Response.Redirect("new_post.aspx");
 
 
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         }
@@ -112,7 +59,7 @@ namespace main_master
             table_string_project = table_string_project + "</tbody></table>";
             table_string_poll = table_string_poll + "</tbody></table>";
 
-            all_lit.Text = table_string_all + build_data();
+            all_lit.Text = table_string_all;
             gives_lit.Text = table_string_gives;
             project_lit.Text = table_string_project;
             poll_lit.Text = table_string_poll;
@@ -120,24 +67,34 @@ namespace main_master
         }
 
 
-        string build_data()
-        { // built for testing purposes. Soon will be rewritten for to read the database and build a data structure from it.
-            string test_string = "";
-            //string query = "select schema_name(t.schema_id) as schema_name, t.name as table_name, t.create_date, t.modify_date from sys.tables t order by schema_name, table_name; ";
-            string query = "select * from board_post";
+        void build_data()
+        { 
+            string query = "select * from [Board_Post]";
             SqlDataReader reader = SqlUtil.ExecuteReader(query);
-
-            int i = 0;
+            List<data_row> all_rows = new List<data_row>();
+            string board = "";
             while (reader.Read())
             {
-                test_string += reader.GetString(0);
-                i++;
+                if (reader.GetByte(4)== 0) {
+                    board = "gives_board";
+                } else
+                if (reader.GetByte(4) == 1)
+                {
+                    board = "project_board";
+                } else
+                    if (reader.GetByte(4) == 2)
+                {
+                    board = "poll_board";
+                }
+
+                all_rows.Add(new data_row(board, reader.GetString(2), reader.GetDateTime(5), "http:this"));
+                
             }
 
             reader.Close();
+            convert_rows_to_string_and_publish(ref all_rows);
 
-            return test_string;
-            //placeholder for reading database
+
         }
 
 
