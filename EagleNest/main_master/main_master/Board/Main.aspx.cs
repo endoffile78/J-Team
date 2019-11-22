@@ -23,13 +23,22 @@ namespace main_master
         protected void preview_give_button_click(object sender, EventArgs e)
         {
             if (Page.IsValid) {
+
+               
+
+
+
+
+
                 System.IO.Stream fs = give_image_upload.PostedFile.InputStream;
                 System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
                 Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                Session.Add("image_array", bytes);
                 string str = Convert.ToBase64String(bytes, 0, bytes.Length);
                 Session.Add("title", give_title_textbox.Text);
                 Session.Add("description", give_desc_textbox.Text);
                 Session.Add("image", str);
+//              
                 Response.Redirect("new_post.aspx");
 
 
@@ -86,6 +95,11 @@ namespace main_master
                 {
                     board = "poll_board";
                 }
+
+
+                
+
+
 
                 all_rows.Add(new data_row(board, reader.GetString(2), reader.GetDateTime(5), "http:this"));
                 

@@ -51,6 +51,15 @@ namespace main_master
         protected global::System.Web.UI.WebControls.Literal poll_lit;
 
         /// <summary>
+        /// test22 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image test22;
+
+        /// <summary>
         /// give_title_textbox control.
         /// </summary>
         /// <remarks>
