@@ -64,6 +64,11 @@ namespace main_master
                         view.resources = reader["Resources_Used"].ToString();
                         view.lessons = reader["Lessons_Learned"].ToString();
                         view.image = reader["Image"].ToString();
+                        view.facebook = reader["Facebook"].ToString();
+                        view.twitter = reader["Twitter"].ToString();
+                        view.email = reader["Email"].ToString();
+                        view.linkedIn = reader["LinkedIn"].ToString();
+                        view.instagram = reader["Instagram"].ToString();
                         views.Add(view);
                     }
                     reader.Close();
@@ -74,8 +79,6 @@ namespace main_master
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@uid", Session["uid"]));
-            parameters.Add(new SqlParameter("@Fname", "Eagle"));
-            parameters.Add(new SqlParameter("@Lname", "Archibald"));
             parameters.Add(new SqlParameter("@Major", major.Text));
             parameters.Add(new SqlParameter("@College", college.Text));
             parameters.Add(new SqlParameter("@Graduation", graduation.Text));
@@ -88,12 +91,14 @@ namespace main_master
             parameters.Add(new SqlParameter("@Long_Disc", description.Text));
             parameters.Add(new SqlParameter("@Lessons_Learned", lessons.Text));
             parameters.Add(new SqlParameter("@Industry", industry.Text));
+            parameters.Add(new SqlParameter("@Email", email.Text));
+            parameters.Add(new SqlParameter("@Instagram", instagram.Text));
             parameters.Add(new SqlParameter("@Twitter", twitter.Text));
             parameters.Add(new SqlParameter("@LinkedIn", linkedIn.Text));
             parameters.Add(new SqlParameter("@Facebook", facebook.Text));
-            int row = SqlUtil.ExecuteNonQuery("INSERT INTO Job_Posting (ID_Num,Fname,Lname, Major,College, Graduation, " +
-                "Position, Resources_Used,Long_Disc,Lessons_Learned,Industry, Twitter, LinkedIn, Facebook,Company,Country,State,City,Date) VALUES (@uid,@Fname,@Lname, @Major, " +
-                "@College, @Graduation,@Position,@Resources_Used, @Long_Disc, @Lessons_Learned,@Industry, @Twitter, @LinkedIn, @Facebook,@Name,@Country,@State," +
+            int row = SqlUtil.ExecuteNonQuery("INSERT INTO Job_Posting (ID_Num, Major,College, Graduation, " +
+                "Position, Resources_Used,Long_Disc,Lessons_Learned,Industry,Email,Instagram, Twitter, LinkedIn, Facebook,Company,Country,State,City,Date) VALUES (@uid, @Major, " +
+                "@College, @Graduation,@Position,@Resources_Used, @Long_Disc, @Lessons_Learned,@Industry, @Email, @Instagram,@Twitter, @LinkedIn, @Facebook,@Name,@Country,@State," +
                 "@City,GETDATE())", parameters);
             
         }
