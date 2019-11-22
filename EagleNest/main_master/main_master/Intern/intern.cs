@@ -12,9 +12,7 @@ namespace main_master
         public string major;
         public string company;
         public string position;
-        public string city;
-        public string state;
-        public string country;
+        public string location;
 
     }
 }
