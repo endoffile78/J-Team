@@ -18,12 +18,12 @@
     <!--PUT BODY HERE! -->
     <form runat="server" style="font-family: Georgia,serif">
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#connecthome">Home</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#newtab">New Post</a></li>
         </ul>
 
         <div class="tab-content">
-            <div id="home" class="tab-pane fade show active">
+            <div id="connecthome" class="tab-pane fade show active">
                 <!--PUT BODY HERE! -->
                 <br />
                 <div class="row">
@@ -126,11 +126,11 @@
                                             <h5 class="card-title font-weight-bold"><%= view.name%></h5>
                                         </div>
                                         <div class="col-sm-3">
-                                            <a href="#" class="socicon-linkedin"></a>
-                                            <a href="#" class="socicon-facebook"></a>
-                                            <a href="#" class="socicon-twitter"></a>
-                                            <a href="#" class="socicon-instagram"></a>
-                                            <a href="#" class="socicon-mail"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.linkedIn) %>' class="socicon-linkedin" target="_blank"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.facebook) %>' class="socicon-facebook" target="_blank"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.twitter) %>' class="socicon-twitter" target="_blank"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.instagram) %>'class="socicon-instagram" target="_blank"></a>
+                                            <a href='mailto:<%=ResolveUrl("https://"+view.email) %>' class="socicon-mail" target="_blank" ></a>
                                         </div>
                                     </div>
                                     <div >
@@ -142,16 +142,17 @@
                             <br />
                             <div>
                                 <div id="accordion">
-                                    <div id="headingTwo">
+                                    <div id="headingOne">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#<%= view.id %>" aria-expanded="true" aria-controls="<%= view.id %>">
                                                 Read More
                                             </button>
                                         </h5>
                                     </div>
                                 </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div id="<%= view.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                     <div class="text-left">
+                                        <br />
                                         <%=view.long_desc %>
                                         <br />
                                         <br />
@@ -274,29 +275,4 @@
             </div>
         </div>
     </form>
-    <script>
-        $(function () {
-            $('.view_details').click(function () {
-                if ($(this).is(':checked')) {
-                    $(this)
-                        .next('label')
-                        .html('&times;')
-                        .attr('title', 'tap here to close full profile');
-                    $(this)
-                        .parent()
-                        .next('main')
-                        .slideDown('normal');
-                } else {
-                    $(this)
-                        .next('label')
-                        .html('=')
-                        .attr('title', 'tap here to view full profile');
-                    $(this)
-                        .parent()
-                        .next('main')
-                        .slideUp('fast');
-                }
-            });
-        });
-    </script>
 </asp:Content>

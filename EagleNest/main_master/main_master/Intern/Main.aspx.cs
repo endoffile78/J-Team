@@ -68,6 +68,7 @@ namespace main_master
                         view.email = reader["Email"].ToString();
                         view.linkedIn = reader["LinkedIn"].ToString();
                         view.instagram = reader["Instagram"].ToString();
+                        view.id = reader["ID_Num"].ToString();
                         views.Add(view);
                     }
 

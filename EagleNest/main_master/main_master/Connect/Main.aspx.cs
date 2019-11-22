@@ -52,6 +52,7 @@ namespace main_master
 
                     while (reader.Read())
                     {
+                        
                         Connect view = new Connect();
                         view.major = reader["Major"].ToString();
                         view.name = reader["MFname"] + " " + reader["MLname"];
@@ -69,6 +70,7 @@ namespace main_master
                         view.email = reader["Email"].ToString();
                         view.linkedIn = reader["LinkedIn"].ToString();
                         view.instagram = reader["Instagram"].ToString();
+                        view.id = reader["ID_Num"].ToString();
                         views.Add(view);
                     }
                     reader.Close();

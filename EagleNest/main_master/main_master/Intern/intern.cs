@@ -7,6 +7,7 @@ namespace main_master
 {
     public class intern
     {
+        public string id;
         public string name;
         public string classification;
         public string major;

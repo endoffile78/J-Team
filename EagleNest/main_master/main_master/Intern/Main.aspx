@@ -15,6 +15,7 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <form runat="server" style="font-family: Georgia,serif">
+
     <ul class="nav nav-tabs">
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#internhome">Home</a></li>
         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#newtab">New Post</a></li>
@@ -125,11 +126,11 @@
                                             <h5 class="card-title font-weight-bold" style="font-family: Georgia,serif"><%= view.name%></h5>
                                         </div>
                                         <div class="col-sm-3">
-                                            <a href="#" class="socicon-linkedin"></a>
-                                            <a href="#" class="socicon-facebook"></a>
-                                            <a href="#" class="socicon-twitter"></a>
-                                            <a href="#" class="socicon-instagram"></a>
-                                            <a href="#" class="socicon-mail"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.linkedIn)%>' class="socicon-linkedin" target="_blank"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.facebook)%>' class="socicon-facebook" target="_blank"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.twitter)%>' class="socicon-twitter" target="_blank"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.instagram)%>' class="socicon-instagram" target="_blank"></a>
+                                            <a href='mailto:<%=ResolveUrl(view.email)%>' class="socicon-mail" target="_blank"></a>
                                         </div>
                                     </div>
                                     <div style="font-family: Georgia,serif">
@@ -139,25 +140,25 @@
                                 </div>
                             </div>
                             <br />
-                            <div style="font-family: Georgia,serif">
+                            <div>
                                 <div id="accordion">
                                     <div id="headingOne">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <button class="btn btn-outline-dark" data-toggle="collapse" data-target='#<%=view.id %>' aria-expanded="true" aria-controls="<%=view.id %>">
                                                 Read More
                                             </button>
                                         </h5>
                                     </div>
                                 </div>
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div class="text-left" style="font-family: Georgia,serif">
-                                        <%=view.long_desc %>
+                                <div id="<%=view.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="text-left">
                                         <br />
+                                        <%=view.long_desc %>
                                         <br />
                                         <%=view.resources %>
                                         <br />
-                                        <br />
                                         <%=view.lessons %>
+                                        <br />
                                     </div>
                                 </div>
                             </div>
@@ -173,8 +174,6 @@
                                 </header>
                                 <div class="filter-content">
                                     <div class="card-body">
-                                        <form>
-                                        </form>
 
                                     </div>
                                     <!-- card-body.// -->

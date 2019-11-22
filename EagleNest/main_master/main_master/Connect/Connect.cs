@@ -7,6 +7,7 @@ namespace main_master
 {
     public class Connect
     {
+        public string id;
         public string name;
         public string college;
         public string major;
