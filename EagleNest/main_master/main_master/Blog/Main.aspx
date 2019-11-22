@@ -12,7 +12,7 @@
        <div class="card">
            <div class="card-body">
                <h5 class="card-title"><a href='<%= ResolveUrl("View/" + post.blogID) %>'><%= post.title %></a></h5>
-               <h6 class="card-subtitle mb-2 text-muted"><a href='<%= ResolveUrl("User/" + post.author_uid) %>'><%= post.author_name %></a></h6>
+               <h6 class="card-subtitle mb-2 text-muted"><a href='<%= ResolveUrl("User/"+ post.author_uid) %>'><%= post.author_name %></a></h6>
                <p class="card-text"><%= post.body %></p>
            </div>
        </div>

@@ -33,25 +33,27 @@
 
     <form>
 <ul class="form-style-1">
-    <li><label>Title <span class="required">*</span></label><input type="text" name="field1" class="field-long" placeholder="Title" /></li>
+    <li><label>Title <span class="required">*</span>
+
+        </label><asp:Textbox type="text" name="field1" class="field-long" placeholder="Title" id="title" runat="server"/></li>
     <li>
         <label>Image <span class="required">*</span></label>
-        <input type="file" id="picture" name="picture" class="field-long" accept="image/*"/>
+        <asp:Textbox type="file" id="Picture" name="picture" class="form-check-label" accept="image/*" runat="server" OnTextChanged="Picture_TextChanged"/>
     </li>
     <li>
         <label>Tag</label>
-        <select name="field4" class="field-select">
-        <option value="Advertise">Advertise</option>
-        <option value="Partnership">Partnership</option>
-        <option value="General">General</option>
-        </select>
+        <asp:DropDownList name="field4" class="field-select" runat="server" ID="Tags">
+        <asp:ListItem value="Advertise">Advertise</asp:ListItem>
+        <asp:ListItem value="Partnership">Partnership</asp:ListItem>
+        <asp:ListItem value="General">General</asp:ListItem>
+        </asp:DropDownList>
     </li>
     <li>
         <label>Discription <span class="required">*</span></label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <asp:Textbox name="field5" id="Description" class="field-long field-textarea" runat="server"></asp:Textbox>
     </li>
     <li>
-        <input type="submit" value="Submit" />
+        <asp:Button type="submit" value="Submit" id="Submit" class="btn btn-primary" OnClick="Submit_Click" runat="server"/>
     </li>
 </ul>
 </form>

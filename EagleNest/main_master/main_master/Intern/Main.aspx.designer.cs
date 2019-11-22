@@ -60,13 +60,13 @@ namespace main_master
         protected global::System.Web.UI.WebControls.DropDownList majorDrop;
 
         /// <summary>
-        /// jobDrop control.
+        /// termDrop control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList jobDrop;
+        protected global::System.Web.UI.WebControls.DropDownList termDrop;
 
         /// <summary>
         /// collegedrop control.
@@ -85,15 +85,6 @@ namespace main_master
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList classificationDrop;
-
-        /// <summary>
-        /// classificationlabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label classificationlabel;
 
         /// <summary>
         /// major control.
@@ -247,5 +238,14 @@ namespace main_master
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lessons;
+
+        /// <summary>
+        /// Post control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Post;
     }
 }

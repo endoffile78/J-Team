@@ -145,6 +145,7 @@
     <Compile Include="Board\new_post.aspx.designer.cs">
       <DependentUpon>new_post.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Connect\Connect.cs" />
     <Compile Include="Gallery\Archive.aspx.cs">
       <DependentUpon>Archive.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -162,6 +163,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Intern\intern.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

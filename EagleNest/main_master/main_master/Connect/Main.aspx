@@ -16,14 +16,14 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <!--PUT BODY HERE! -->
-    <form runat="server">
+    <form runat="server" style="font-family: Georgia,serif">
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#connecthome">Home</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#newtab">New Post</a></li>
         </ul>
 
         <div class="tab-content">
-            <div id="home" class="tab-pane fade show active">
+            <div id="connecthome" class="tab-pane fade show active">
                 <!--PUT BODY HERE! -->
                 <br />
                 <div class="row">
@@ -31,7 +31,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="countryCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="countryCDrop" OnLoad="countryCDrop_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -41,18 +41,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="stateCDrop" CssClass="form-control" runat="server">
-                                    </asp:DropDownList>
-                                </div>
-                                <!-- card-body.// -->
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sm-3">
-                        <article class="card-group-item">
-                            <div class="filter-content">
-                                <div>
-                                    <asp:DropDownList ID="cityCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="stateCDrop" OnLoad="stateCDrop_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -62,7 +51,17 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="companyCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="cityCDrop" OnLoad="cityCDrop_Load" CssClass="form-control" runat="server">
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-3">
+                        <article class="card-group-item">
+                            <div class="filter-content">
+                                <div>
+                                    <asp:DropDownList ID="companyCDrop" OnLoad="companyCDrop_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -74,7 +73,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="majorCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="majorCDrop" OnLoad="majorCDrop_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -84,7 +83,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="jobCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="graduationCDrop" OnLoad="graduationCDrop_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -94,7 +93,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                <div>
-                                    <asp:DropDownList ID="collegeCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="collegeCDrop" onLoad="collegeCDrop_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -104,7 +103,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="positionCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="positionCDrop" OnLoad="positionCDrop_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -114,174 +113,58 @@
                 <br />
                 <div class="row">
                     <div class="col-sm-9">
+                        <% foreach (var view in views)
+                            { %>
                         <div class="shadow-sm p-3 mb-5 bg-white rounded">
                             <div class="row">
-                                <div class="col-sm-3">
-                                    <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
+                                <div class="col-sm-2">
+                                    <img class="img-fluid rounded-circle" style="max-height:80px" src="../images/archie.jpg" />
                                 </div>
-                                <div class="col-sm-9">
-                                    <div>
-                                        <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
-                                        <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
-                                    </div>
-                                    <div id="accordion">
-                                        <div id="headingOne">
-                                            <h5 class="mb-0">
-                                                <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    Read More
-                                                </button>
-                                            </h5>
+                                <div class="col-sm-10">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <h5 class="card-title font-weight-bold"><%= view.name%></h5>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a href='<%=ResolveUrl("https://"+view.linkedIn) %>' class="socicon-linkedin" target="_blank"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.facebook) %>' class="socicon-facebook" target="_blank"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.twitter) %>' class="socicon-twitter" target="_blank"></a>
+                                            <a href='<%=ResolveUrl("https://"+view.instagram) %>'class="socicon-instagram" target="_blank"></a>
+                                            <a href='mailto:<%=ResolveUrl("https://"+view.email) %>' class="socicon-mail" target="_blank" ></a>
                                         </div>
                                     </div>
-                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="text-center">
-                                            <p>
-                                                I found out about the Brand Planning Intern through a job search platform called WayUp.com. 
-                After thoroughly reading through every requirement for the internship position, knew that the internship 
-                position was a perfect fit and phenomenal opportunity to gain hard skills in data analytics, BI tools, and 
-                learning soft skills in the corporate world.
-                <br />
-                                                <br />
-                                                During my time at Ralph Lauren, I had the opportunity to learn and use cutting edge technology in data analytics such as 
-                MicroStrategy and Edited. I also worked on big data projects that significantly improved my Excel, VBA, critical-thinking, 
-                analytical, and detail-orientated skills. I also had an opportunity to work on my confidence and presentation skills by presenting
-                my insightful findings to the merchandising and brand teams. 
-                <br />
-                                                <br />
-                                                In addition, I had the amazing opportunity to network, and foster new relationships that I will have for life. At Ralph Lauren, I
-                was valued, my work my impactful, I discovered a part of myself I never knew existed.
-                                            </p>
-                                        </div>
+                                    <div >
+                                        <h6 class="card-subtitle mb-2 text-muted"><% =view.college %> | <%= view.major%> | <%=view.graduation %> | <%= view.company%> |</h6>
+                                        <h6 class="card-subtitle mb-2 text-muted"><%= view.position%> | <%= view.location%></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div>
+                                <div id="accordion">
+                                    <div id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#<%= view.id %>" aria-expanded="true" aria-controls="<%= view.id %>">
+                                                Read More
+                                            </button>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div id="<%= view.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="text-left">
+                                        <br />
+                                        <%=view.long_desc %>
+                                        <br />
+                                        <br />
+                                        <%=view.resources %>
+                                        <br />
+                                        <br />
+                                        <%=view.lessons %>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="shadow-sm p-3 mb-5 bg-white rounded">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
-                                </div>
-                                <div class="col-sm-9">
-                                    <div>
-                                        <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
-                                        <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
-                                    </div>
-                                    <div id="accordion1">
-                                        <div id="headingTwo">
-                                            <h5 class="mb-0">
-                                                <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                                    Read More
-                                                </button>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion1">
-                                        <div class="text-center">
-                                            <p>
-                                                I found out about the Brand Planning Intern through a job search platform called WayUp.com. 
-                After thoroughly reading through every requirement for the internship position, knew that the internship 
-                position was a perfect fit and phenomenal opportunity to gain hard skills in data analytics, BI tools, and 
-                learning soft skills in the corporate world.
-                <br />
-                                                <br />
-                                                During my time at Ralph Lauren, I had the opportunity to learn and use cutting edge technology in data analytics such as 
-                MicroStrategy and Edited. I also worked on big data projects that significantly improved my Excel, VBA, critical-thinking, 
-                analytical, and detail-orientated skills. I also had an opportunity to work on my confidence and presentation skills by presenting
-                my insightful findings to the merchandising and brand teams. 
-                <br />
-                                                <br />
-                                                In addition, I had the amazing opportunity to network, and foster new relationships that I will have for life. At Ralph Lauren, I
-                was valued, my work my impactful, I discovered a part of myself I never knew existed.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="shadow-sm p-3 mb-5 bg-white rounded">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
-                                </div>
-                                <div class="col-sm-9">
-                                    <div>
-                                        <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
-                                        <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
-                                    </div>
-                                    <div id="accordion2">
-                                        <div id="heading3">
-                                            <h5 class="mb-0">
-                                                <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
-                                                    Read More
-                                                </button>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion2">
-                                        <div class="text-center">
-                                            <p>
-                                                I found out about the Brand Planning Intern through a job search platform called WayUp.com. 
-                After thoroughly reading through every requirement for the internship position, knew that the internship 
-                position was a perfect fit and phenomenal opportunity to gain hard skills in data analytics, BI tools, and 
-                learning soft skills in the corporate world.
-                <br />
-                                                <br />
-                                                During my time at Ralph Lauren, I had the opportunity to learn and use cutting edge technology in data analytics such as 
-                MicroStrategy and Edited. I also worked on big data projects that significantly improved my Excel, VBA, critical-thinking, 
-                analytical, and detail-orientated skills. I also had an opportunity to work on my confidence and presentation skills by presenting
-                my insightful findings to the merchandising and brand teams. 
-                <br />
-                                                <br />
-                                                In addition, I had the amazing opportunity to network, and foster new relationships that I will have for life. At Ralph Lauren, I
-                was valued, my work my impactful, I discovered a part of myself I never knew existed.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="shadow-sm p-3 mb-5 bg-white rounded">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
-                                </div>
-                                <div class="col-sm-9">
-                                    <div>
-                                        <h5 class="font-weight-bold">ARCHIBALD T. EAGLE</h5>
-                                        <h6>Senior | Computer Science | Ralph Lauren | Brand Planning Intern | Manhattan, New York</h6>
-                                    </div>
-                                    <div id="accordion3">
-                                        <div id="heading4">
-                                            <h5 class="mb-0">
-                                                <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
-                                                    Read More
-                                                </button>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion3">
-                                        <div class="text-center">
-                                            <p>
-                                                I found out about the Brand Planning Intern through a job search platform called WayUp.com. 
-                After thoroughly reading through every requirement for the internship position, knew that the internship 
-                position was a perfect fit and phenomenal opportunity to gain hard skills in data analytics, BI tools, and 
-                learning soft skills in the corporate world.
-                <br />
-                                                <br />
-                                                During my time at Ralph Lauren, I had the opportunity to learn and use cutting edge technology in data analytics such as 
-                MicroStrategy and Edited. I also worked on big data projects that significantly improved my Excel, VBA, critical-thinking, 
-                analytical, and detail-orientated skills. I also had an opportunity to work on my confidence and presentation skills by presenting
-                my insightful findings to the merchandising and brand teams. 
-                <br />
-                                                <br />
-                                                In addition, I had the amazing opportunity to network, and foster new relationships that I will have for life. At Ralph Lauren, I
-                was valued, my work my impactful, I discovered a part of myself I never knew existed.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <% } %>
                     </div>
 
                     <div class="col-sm-3">
@@ -292,8 +175,6 @@
                                 </header>
                                 <div class="filter-content">
                                     <div class="card-body">
-                                        <form>
-                                        </form>
 
                                     </div>
                                     <!-- card-body.// -->
@@ -314,12 +195,12 @@
                                     <asp:TextBox class="form-control" ID="major" name="major" type="text" placeholder="Enter major" runat="server" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="classification">Classification</label>
-                                    <asp:TextBox class="form-control" ID="classification" name="classification" type="text" placeholder="Enter classification" runat="server" />
+                                    <label for="classification">College</label>
+                                    <asp:TextBox class="form-control" ID="college" name="college" type="text" placeholder="Enter college" runat="server" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="term">Term</label>
-                                    <asp:TextBox class="form-control" ID="term" name="lastname" type="text" placeholder="Enter term e.g. Summer 2019" runat="server" />
+                                    <label for="term">Graduation Year</label>
+                                    <asp:TextBox class="form-control" ID="graduation" name="graduation" type="text" placeholder="Enter graduation year" runat="server" />
                                 </div>
                                 <div class="form-group">
                                     <label for="company">Company</label>
@@ -369,9 +250,17 @@
                                 </div>
                             </div>
                         </div>
+                    <div class="form-group">
+                        <label for="description">Company Industry</label>
+                        <asp:TextBox class="form-control" ID="industry" name="industry" type="text" placeholder="enter company industry" runat="server" />
+                    </div>
                         <div class="form-group">
                             <label for="description">Job Description</label>
                             <asp:TextBox class="form-control" ID="description" name="description" type="text" placeholder="max 100 words" runat="server" />
+                        </div>
+                    <div class="form-group">
+                            <label for="lessons">What resources have been helpful in your career?</label>
+                            <asp:TextBox class="form-control" ID="resources" name="resources" type="text" placeholder="max 100 words" runat="server" />
                         </div>
                         <div class="form-group">
                             <label for="lessons">What was your biggest takeaways from your career?</label>
@@ -381,34 +270,9 @@
                             <label>Image <span class="required">*</span></label>
                             <input type="file" id="picture" name="picture" class="field-long" accept="image/*" />
                         </div>
-                        <button type="submit" class="btn btn-outline-dark" onclick="post_Click">Post</button>
+                        <asp:Button ID="CPost" Text="Post" class="btn btn-outline-dark" runat="server" OnClick="Cpost_Click" />
                 </div>
             </div>
         </div>
     </form>
-    <script>
-        $(function () {
-            $('.view_details').click(function () {
-                if ($(this).is(':checked')) {
-                    $(this)
-                        .next('label')
-                        .html('&times;')
-                        .attr('title', 'tap here to close full profile');
-                    $(this)
-                        .parent()
-                        .next('main')
-                        .slideDown('normal');
-                } else {
-                    $(this)
-                        .next('label')
-                        .html('=')
-                        .attr('title', 'tap here to view full profile');
-                    $(this)
-                        .parent()
-                        .next('main')
-                        .slideUp('fast');
-                }
-            });
-        });
-    </script>
 </asp:Content>
