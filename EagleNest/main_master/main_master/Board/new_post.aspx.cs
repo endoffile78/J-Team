@@ -25,6 +25,7 @@ namespace main_master.Board
 
             //Response.Write(Session["uid"]);
             Response.Write(new_post_image.ImageUrl.Length);
+            
         }
 
 
@@ -46,8 +47,8 @@ namespace main_master.Board
             parameters.Add(new SqlParameter("@Date", DateTime.Now));
             parameters.Add(new SqlParameter("@Expiration", DateTime.MaxValue));
             //parameters.Add(new SqlParameter("@Tags", null));
-            
-            parameters.Add(new SqlParameter("@Attachments", new_post_image.ImageUrl));
+            parameters.Add(new SqlParameter("@Attachments", Session["imagetest"]));
+            //parameters.Add(new SqlParameter("@Attachments", new_post_image.ImageUrl));
             //parameters.Add(new SqlParameter("@Hidden", default));
             //parameters.Add(new SqlParameter("@Mod_status", default));
             int reader = SqlUtil.ExecuteNonQuery("insert into board_post values (default,@ID_Num,@Title,@Description,@Board,@Date,@Expiration,null,@Attachments,default,default)", parameters);
