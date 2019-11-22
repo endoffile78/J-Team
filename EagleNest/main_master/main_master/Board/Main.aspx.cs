@@ -123,8 +123,8 @@ namespace main_master
         string build_data()
         { // built for testing purposes. Soon will be rewritten for to read the database and build a data structure from it.
             string test_string = "";
-            string query = "select schema_name(t.schema_id) as schema_name, t.name as table_name, t.create_date, t.modify_date from sys.tables t order by schema_name, table_name; ";
-
+            //string query = "select schema_name(t.schema_id) as schema_name, t.name as table_name, t.create_date, t.modify_date from sys.tables t order by schema_name, table_name; ";
+            string query = "select * from board_post";
             SqlDataReader reader = SqlUtil.ExecuteReader(query);
 
             int i = 0;
