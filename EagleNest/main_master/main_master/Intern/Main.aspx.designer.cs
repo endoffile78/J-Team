@@ -87,15 +87,6 @@ namespace main_master
         protected global::System.Web.UI.WebControls.DropDownList classificationDrop;
 
         /// <summary>
-        /// classificationlabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label classificationlabel;
-
-        /// <summary>
         /// major control.
         /// </summary>
         /// <remarks>

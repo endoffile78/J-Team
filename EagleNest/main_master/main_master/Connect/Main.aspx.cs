@@ -13,7 +13,48 @@ namespace main_master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["loggedIn"] == null) //TODO: tell the user they need to login
+            {
+                Response.Redirect("../Login.aspx");
+            }
+            else
+            {
+                if (!IsPostBack)
+                {
+                    collegeCDrop.Items.Insert(0, new ListItem("Pick a college", "0"));
+                    collegeCDrop.SelectedIndex = 0;
 
+                    countryCDrop.Items.Insert(0, new ListItem("Pick a country", "0"));
+                    countryCDrop.SelectedIndex = 0;
+
+                    stateCDrop.Items.Insert(0, new ListItem("Pick a state", "0"));
+                    stateCDrop.SelectedIndex = 0;
+
+                    cityCDrop.Items.Insert(0, new ListItem("Pick a city", "0"));
+                    cityCDrop.SelectedIndex = 0;
+
+                    companyCDrop.Items.Insert(0, new ListItem("Pick a company", "0"));
+                    companyCDrop.SelectedIndex = 0;
+
+                    majorCDrop.Items.Insert(0, new ListItem("Pick a major", "0"));
+                    majorCDrop.SelectedIndex = 0;
+
+                    jobCDrop.Items.Insert(0, new ListItem("Pick a position", "0"));
+                    jobCDrop.SelectedIndex = 0;
+
+                    positionCDrop.Items.Insert(0, new ListItem("Pick a classification", "0"));
+                    positionCDrop.SelectedIndex = 0;
+
+                    SqlDataReader reader = SqlUtil.ExecuteReader("SELECT * FROM Job_Posting");
+
+                    while (reader.Read())
+                    {
+                        countryCDrop.DataSource = reader["Country"];
+                    }
+
+                    reader.Close();
+                }
+            }
         }
         protected void post_Click(object sender, EventArgs e)
         {
@@ -33,8 +74,10 @@ namespace main_master
             parameters.Add(new SqlParameter("@facebook", facebook.Text));
             parameters.Add(new SqlParameter("@instagram", instagram.Text));
             parameters.Add(new SqlParameter("@phone", phone.Text));
-            int reader = SqlUtil.ExecuteNonQuery("INSERT INTO User_Company(country,state,city,email) VALUES (@country,@state,@city,@email)", parameters);
-            int reader1 = SqlUtil.ExecuteNonQuery("INSERT INTO Job_Posting(position,Long_Disc,Skills_Req) VALUES (@position,@description,@lessons)", parameters);
+            int reader = SqlUtil.ExecuteNonQuery("INSERT INTO User_Company (country,state,city,email) " +
+                "VALUES (@country,@state,@city,@email)", parameters);
+            int reader1 = SqlUtil.ExecuteNonQuery("INSERT INTO Job_Posting (position,Long_Disc,Skills_Req) " +
+                "VALUES (@position,@description,@lessons)", parameters);
             
         }
     }

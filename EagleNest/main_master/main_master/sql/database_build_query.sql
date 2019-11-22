@@ -66,7 +66,7 @@ CREATE TABLE [dbo].[User_Main]
 
 -- ************************************** [dbo].[User_Company]
 
-CREATE TABLE [dbo].[User_Company]
+CREATE TABLE [User_Company]
 (
  [CompanyID]      uniqueidentifier NOT NULL ,
  [Name]           nvarchar(50) NOT NULL ,
@@ -74,8 +74,8 @@ CREATE TABLE [dbo].[User_Company]
  [State]          nvarchar(50) NULL ,
  [City]           nvarchar(50) NULL ,
  [Address]        nvarchar(100) NULL ,
- [Industry]       nvarchar(50) NOT NULL ,
- [Email]          nvarchar(50) NOT NULL ,
+ [Industry]       nvarchar(50) NULL ,
+ [Email]          nvarchar(50) NULL ,
  [Phone]          varchar(15) NULL ,
  [Cantact_Name]   nvarchar(50) NULL ,
 
@@ -240,7 +240,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_222] ON [Votes]
 
 -- ************************************** [dbo].[Job_Posting]
 
-CREATE TABLE [dbo].[Job_Posting]
+CREATE TABLE [Job_Posting]
 (
  [ID_Num]          uniqueidentifier NOT NULL ,
  [CompanyID]       uniqueidentifier NOT NULL ,
@@ -284,7 +284,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_99] ON [dbo].[Job_Posting]
 
 -- ************************************** [dbo].[Intern_Posting]
 
-CREATE TABLE [dbo].[Intern_Posting]
+CREATE TABLE [Intern_Posting]
 (
  [ID_Num]          uniqueidentifier NOT NULL ,
  [CompanyID]       uniqueidentifier NOT NULL ,
@@ -293,17 +293,17 @@ CREATE TABLE [dbo].[Intern_Posting]
  [Classification]  nvarchar(50) NOT NULL ,
  [Term]            nvarchar(50) NOT NULL ,
  [Position]        nvarchar(50) NOT NULL ,
- [Short_Disc.]     varchar(100) NOT NULL ,
- [Long_Disc.]      varchar(1000) NOT NULL ,
- [Skills_Req]      nvarchar(200) NOT NULL ,
- [Skills_Learned]  nvarchar(200) NOT NULL ,
- [Resources_Used]  varchar(200) NOT NULL ,
- [Lessons_Learned] varchar(1000) NOT NULL ,
+ [Short_Disc.]     varchar(100) NULL ,
+ [Long_Disc.]      varchar(1000) NULL ,
+ [Skills_Req]      nvarchar(200) NULL ,
+ [Skills_Learned]  nvarchar(200) NULL ,
+ [Resources_Used]  varchar(200) NULL ,
+ [Lessons_Learned] varchar(1000) NULL ,
  [Twitter]         nvarchar(100) NULL ,
  [LinkedIn]        nvarchar(100) NULL ,
  [Facebook]        nvarchar(100) NULL ,
  [Instagram]       nvarchar(100) NULL ,
- [Image]           nvarchar(400) NOT NULL ,
+ [Image]           nvarchar(400) NULL ,
  [Pay]             money NULL ,
  [Benifits]        varchar(400) NULL ,
  [Hidden]          bit DEFAULT 0,
@@ -311,8 +311,8 @@ CREATE TABLE [dbo].[Intern_Posting]
 
 
  CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [CompanyID] ASC),
- CONSTRAINT [FK_104] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_SAF]([ID_Num]),
- CONSTRAINT [FK_112] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID]),
+ CONSTRAINT [FK_104] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num]),
+ CONSTRAINT [FK_112] FOREIGN KEY ([CompanyID])  REFERENCES [User_Company]([CompanyID]),
  CONSTRAINT [FK_ModStatus3] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO

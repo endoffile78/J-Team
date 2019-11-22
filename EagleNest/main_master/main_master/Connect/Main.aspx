@@ -31,7 +31,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="countryCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="countryCDrop" OnLoad="Page_Load" CssClass="form-control" OnLoad="Page_Load" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -41,18 +41,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="stateCDrop" CssClass="form-control" runat="server">
-                                    </asp:DropDownList>
-                                </div>
-                                <!-- card-body.// -->
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sm-3">
-                        <article class="card-group-item">
-                            <div class="filter-content">
-                                <div>
-                                    <asp:DropDownList ID="cityCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="stateCDrop" OnLoad="Page_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -62,7 +51,17 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="companyCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="cityCDrop" OnLoad="Page_Load" CssClass="form-control" runat="server">
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-3">
+                        <article class="card-group-item">
+                            <div class="filter-content">
+                                <div>
+                                    <asp:DropDownList ID="companyCDrop" OnLoad="Page_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -74,7 +73,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="majorCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="majorCDrop" OnLoad="Page_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -84,7 +83,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="jobCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="jobCDrop" OnLoad="Page_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -94,7 +93,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                <div>
-                                    <asp:DropDownList ID="collegeCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="collegeCDrop" OnLoad="Page_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
@@ -104,7 +103,7 @@
                         <article class="card-group-item">
                             <div class="filter-content">
                                 <div>
-                                    <asp:DropDownList ID="positionCDrop" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="positionCDrop" OnLoad="Page_Load" CssClass="form-control" runat="server">
                                     </asp:DropDownList>
                                 </div>
                             </div>
