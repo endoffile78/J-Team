@@ -189,7 +189,7 @@ CREATE TABLE [Board_Post]
 
 
  CONSTRAINT [PK_Board_Post] PRIMARY KEY CLUSTERED ([BpostID] ASC),
- CONSTRAINT [FK_193] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num]),
+ CONSTRAINT [FK_193] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
  CONSTRAINT [FK_ModStatus1] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
@@ -255,21 +255,21 @@ CREATE TABLE [Job_Posting]
 
 
  CONSTRAINT [PK_Job_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [CompanyID] ASC),
- CONSTRAINT [FK_109] FOREIGN KEY ([CompanyID])  REFERENCES [dbo].[User_Company]([CompanyID]),
- CONSTRAINT [FK_99] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_SAF]([ID_Num]),
+ CONSTRAINT [FK_109] FOREIGN KEY ([CompanyID])  REFERENCES [User_Company]([CompanyID]),
+ CONSTRAINT [FK_99] FOREIGN KEY ([ID_Num])  REFERENCES [User_SAF]([ID_Num]),
  CONSTRAINT [FK_ModStatus2] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
 
-CREATE NONCLUSTERED INDEX [fkIdx_109] ON [dbo].[Job_Posting]
+CREATE NONCLUSTERED INDEX [fkIdx_109] ON [Job_Posting]
  (
   [CompanyID] ASC
  )
 
 --GO
 
-CREATE NONCLUSTERED INDEX [fkIdx_99] ON [dbo].[Job_Posting]
+CREATE NONCLUSTERED INDEX [fkIdx_99] ON [Job_Posting]
  (
   [ID_Num] ASC
  )
@@ -288,15 +288,18 @@ CREATE TABLE [Intern_Posting]
 (
  [ID_Num]          uniqueidentifier NOT NULL ,
  [CompanyID]       uniqueidentifier NOT NULL ,
+ [Fname]           varchar(20) NOT NULL ,
+ [Lname]           varchar(20) NOT NULL ,
  [College]         nvarchar(50) NOT NULL ,
  [Major]           nvarchar(50) NOT NULL ,
  [Classification]  nvarchar(50) NOT NULL ,
  [Term]            nvarchar(50) NOT NULL ,
  [Position]        nvarchar(50) NOT NULL ,
- [Short_Disc.]     varchar(100) NULL ,
- [Long_Disc.]      varchar(1000) NULL ,
- [Skills_Req]      nvarchar(200) NULL ,
- [Skills_Learned]  nvarchar(200) NULL ,
+ [Company]           nvarchar(50) NOT NULL ,
+ [Country]        nvarchar(50) NOT NULL ,
+ [State]          nvarchar(50) NULL ,
+ [City]           nvarchar(50) NULL ,
+ [Long_Disc]       varchar(1000) NULL ,
  [Resources_Used]  varchar(200) NULL ,
  [Lessons_Learned] varchar(1000) NULL ,
  [Twitter]         nvarchar(100) NULL ,
@@ -304,28 +307,26 @@ CREATE TABLE [Intern_Posting]
  [Facebook]        nvarchar(100) NULL ,
  [Instagram]       nvarchar(100) NULL ,
  [Image]           nvarchar(400) NULL ,
- [Pay]             money NULL ,
- [Benifits]        varchar(400) NULL ,
  [Hidden]          bit DEFAULT 0,
  [Mod_Status] int DEFAULT 0 ,
 
 
- CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC, [CompanyID] ASC),
- CONSTRAINT [FK_104] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num]),
+ CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC),
+ CONSTRAINT [FK_104] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
  CONSTRAINT [FK_112] FOREIGN KEY ([CompanyID])  REFERENCES [User_Company]([CompanyID]),
  CONSTRAINT [FK_ModStatus3] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
 
-CREATE NONCLUSTERED INDEX [fkIdx_104] ON [dbo].[Intern_Posting]
+CREATE NONCLUSTERED INDEX [fkIdx_104] ON [Intern_Posting]
  (
   [ID_Num] ASC
  )
 
 --GO
 
-CREATE NONCLUSTERED INDEX [fkIdx_112] ON [dbo].[Intern_Posting]
+CREATE NONCLUSTERED INDEX [fkIdx_112] ON [Intern_Posting]
  (
   [CompanyID] ASC
  )
