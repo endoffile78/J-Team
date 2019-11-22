@@ -23,7 +23,7 @@ namespace main_master.Board
             
             }
 
-            Response.Write(Session["uid"]);
+            //Response.Write(Session["uid"]);
             Response.Write(new_post_image.ImageUrl.Length);
         }
 
