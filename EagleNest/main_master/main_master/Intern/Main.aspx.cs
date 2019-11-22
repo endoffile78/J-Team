@@ -48,13 +48,14 @@ namespace main_master
 
 
 
-                    SqlDataReader reader = SqlUtil.ExecuteReader("SELECT * FROM Intern_Posting As a, Intern_Posting As b WHERE a.ID_Num != b.ID_Num");
+                    SqlDataReader reader = SqlUtil.ExecuteReader("SELECT *, User_Main.Fname AS MFname, User_Main.Lname AS MLname FROM Intern_Posting LEFT JOIN User_Main ON " +
+                        "Intern_Posting.ID_Num = User_Main.ID_Num");
 
                     while (reader.Read())
                     {
                         intern view = new intern();
                         view.major = reader["Major"].ToString();
-                        view.name = reader["Fname"]+" "+reader["Lname"];
+                        view.name = reader["MFname"]+" "+reader["MLname"];
                         view.classification = reader["Classification"].ToString();
                         view.position = reader["Position"].ToString();
                         view.company = reader["Company"].ToString();
@@ -62,6 +63,11 @@ namespace main_master
                         view.long_desc = reader["Long_Disc"].ToString();
                         view.resources = reader["Resources_Used"].ToString();
                         view.lessons = reader["Lessons_Learned"].ToString();
+                        view.facebook = reader["Facebook"].ToString();
+                        view.twitter = reader["Twitter"].ToString();
+                        view.email = reader["Email"].ToString();
+                        view.linkedIn = reader["LinkedIn"].ToString();
+                        view.instagram = reader["Instagram"].ToString();
                         views.Add(view);
                     }
 
