@@ -18,5 +18,10 @@ namespace main_master
         public string resources;
         public string lessons;
         public string image;
+        public string facebook;
+        public string linkedIn;
+        public string email;
+        public string twitter;
+        public string instagram;
     }
 }
