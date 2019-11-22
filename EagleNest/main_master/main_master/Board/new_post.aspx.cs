@@ -19,7 +19,10 @@ namespace main_master.Board
            new_post_description.Text = Session["description"].ToString();
             if ((Session["image"].ToString().Length>0)) {
                 new_post_image_label.Text = "Image";
-                new_post_image.ImageUrl = "data:image/png;base64," + Session["image"];
+               
+                Byte[] bytes = (Byte[])Session["image_array"];
+                string str = Convert.ToBase64String(bytes, 0, bytes.Length);
+                new_post_image.ImageUrl = "data:image/png;base64," + str;
             
             }
 
@@ -32,11 +35,10 @@ namespace main_master.Board
         protected void new_post_submit_click(object sender, EventArgs e) {
 
             int board = Convert.ToInt32(Session["board"]);
+
+
+
             
-
-
-
-
 
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@ID_Num", Session["uid"]));
@@ -47,7 +49,7 @@ namespace main_master.Board
             parameters.Add(new SqlParameter("@Date", DateTime.Now));
             parameters.Add(new SqlParameter("@Expiration", DateTime.MaxValue));
             //parameters.Add(new SqlParameter("@Tags", null));
-            parameters.Add(new SqlParameter("@Attachments", Session["imagetest"]));
+            parameters.Add(new SqlParameter("@Attachments", (Byte[])Session["image_array"]));
             //parameters.Add(new SqlParameter("@Attachments", new_post_image.ImageUrl));
             //parameters.Add(new SqlParameter("@Hidden", default));
             //parameters.Add(new SqlParameter("@Mod_status", default));
