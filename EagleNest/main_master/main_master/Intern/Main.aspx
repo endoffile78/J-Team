@@ -14,12 +14,12 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="content_place_holder_body" runat="server">
-
+    <form runat="server" style="font-family: Georgia,serif">
     <ul class="nav nav-tabs">
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#internhome">Home</a></li>
         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#newtab">New Post</a></li>
     </ul>
-    <form runat="server">
+    
         <div class="tab-content">
             <div id="internhome" class="tab-pane fade show active">
                 <!--PUT BODY HERE! -->
@@ -116,34 +116,48 @@
                             { %>
                         <div class="shadow-sm p-3 mb-5 bg-white rounded">
                             <div class="row">
-                                <div class="col-sm-3">
-                                    <img class="img-fluid rounded-circle" src="../images/archie.jpg" />
+                                <div class="col-sm-2">
+                                    <img class="img-fluid rounded-circle" style="max-height:80px" src="../images/archie.jpg" />
                                 </div>
-                                <div class="col-sm-9">
-                                    <div>
-                                        <h5 class="card-title font-weight-bold" style="font-family: Georgia,serif"><%= view.name%></h5>
-                                        <h6 class="card-subtitle mb-2 text-muted" style="font-family: Georgia,serif"><% =view.classification %> | <%= view.major%> | <%= view.company%> |</h6>
-                                        <h6 class="card-subtitle mb-2 text-muted" style="font-family: Georgia,serif"><%= view.position%> | <%= view.location%></h6>
-                                    </div>
-                                    <div id="accordion">
-                                        <div id="headingOne">
-                                            <h5 class="mb-0">
-                                                <button class="toggle-text-button btn btn-outline-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                   Read More
-                                                </button>
-                                            </h5>
+                                <div class="col-sm-10">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <h5 class="card-title font-weight-bold" style="font-family: Georgia,serif"><%= view.name%></h5>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a href="#" class="socicon-linkedin"></a>
+                                            <a href="#" class="socicon-facebook"></a>
+                                            <a href="#" class="socicon-twitter"></a>
+                                            <a href="#" class="socicon-instagram"></a>
+                                            <a href="#" class="socicon-mail"></a>
                                         </div>
                                     </div>
-                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="text-left" style="font-family: Georgia,serif">
-                                                <%=view.long_desc %>
-                                                <br />
-                                                <br />
-                                                <%=view.resources %>
-                                                <br />
-                                                <br />
-                                                <%=view.lessons %>
-                                        </div>
+                                    <div style="font-family: Georgia,serif">
+                                        <h6 class="card-subtitle mb-2 text-muted"><% =view.classification %> | <%= view.major%> | <%= view.company%> |</h6>
+                                        <h6 class="card-subtitle mb-2 text-muted"><%= view.position%> | <%= view.location%></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div style="font-family: Georgia,serif">
+                                <div id="accordion">
+                                    <div id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-outline-dark" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Read More
+                                            </button>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="text-left" style="font-family: Georgia,serif">
+                                        <%=view.long_desc %>
+                                        <br />
+                                        <br />
+                                        <%=view.resources %>
+                                        <br />
+                                        <br />
+                                        <%=view.lessons %>
                                     </div>
                                 </div>
                             </div>
