@@ -243,8 +243,6 @@ CREATE NONCLUSTERED INDEX [fkIdx_222] ON [Votes]
 CREATE TABLE [Job_Posting]
 (
  [ID_Num]          uniqueidentifier NOT NULL ,
- [Fname]		   nvarchar(50) NOT NULL,
- [Lname]			nvarchar(50) NOT NULL,
  [Position]        nvarchar(50) NOT NULL ,
  [College]			nvarchar(50) NOT NULL,
  [Company]			nvarchar(50) NOT NULL,
@@ -257,6 +255,7 @@ CREATE TABLE [Job_Posting]
  [Country]        nvarchar(50) NOT NULL ,
  [State]          nvarchar(50) NULL ,
  [City]           nvarchar(50) NULL ,
+ [Email]		  nvarchar(100) NULL ,
  [Twitter]         nvarchar(100) NULL ,
  [LinkedIn]        nvarchar(100) NULL ,
  [Facebook]        nvarchar(100) NULL ,
@@ -301,8 +300,6 @@ CREATE NONCLUSTERED INDEX [fkIdx_99] ON [Job_Posting]
 CREATE TABLE [Intern_Posting]
 (
  [ID_Num]          uniqueidentifier NOT NULL ,
- [Fname]           varchar(20) NOT NULL ,
- [Lname]           varchar(20) NOT NULL ,
  [College]         nvarchar(50) NOT NULL ,
  [Major]           nvarchar(50) NOT NULL ,
  [Classification]  nvarchar(50) NOT NULL ,
