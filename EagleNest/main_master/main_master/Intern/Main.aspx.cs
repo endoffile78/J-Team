@@ -80,8 +80,6 @@ namespace main_master
             //Guid CompanyID = Guid.NewGuid();
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@uid", Session["uid"]));
-            parameters.Add(new SqlParameter("@Fname", "Eagle"));
-            parameters.Add(new SqlParameter("@Lname", "Archibald"));
             parameters.Add(new SqlParameter("@Major", major.Text));
             parameters.Add(new SqlParameter("@Classification", classification.Text));
             parameters.Add(new SqlParameter("@College", college.Text));
@@ -97,8 +95,8 @@ namespace main_master
             parameters.Add(new SqlParameter("@Twitter", twitter.Text));
             parameters.Add(new SqlParameter("@LinkedIn", linkedIn.Text));
             parameters.Add(new SqlParameter("@Facebook", facebook.Text));
-            int row = SqlUtil.ExecuteNonQuery("INSERT INTO Intern_Posting (ID_Num,Fname,Lname, Major, Classification, College, Term, " +
-                "Position, Resources_Used,Long_Disc,Lessons_Learned, Twitter, LinkedIn, Facebook,Company,Country,State,City,Date) VALUES (@uid,@Fname,@Lname, @Major, " +
+            int row = SqlUtil.ExecuteNonQuery("INSERT INTO Intern_Posting (ID_Num,Major, Classification, College, Term, " +
+                "Position, Resources_Used,Long_Disc,Lessons_Learned, Twitter, LinkedIn, Facebook,Company,Country,State,City,Date) VALUES (@uid, @Major, " +
                 "@Classification,@College, @Term,@Position,@Resources_Used, @Long_Disc, @Lessons_Learned, @Twitter, @LinkedIn, @Facebook,@Name,@Country,@State," +
                 "@City,GETDATE())", parameters);
             
