@@ -35,6 +35,9 @@ namespace main_master
                 Byte[] bytes = br.ReadBytes((Int32)fs.Length);
                 Session.Add("image_array", bytes);
                 string str = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+
+
                 Session.Add("title", give_title_textbox.Text);
                 Session.Add("description", give_desc_textbox.Text);
                 Session.Add("image", str);
@@ -137,7 +140,7 @@ namespace main_master
 
             public string get_row_string()
             {
-                row_string = @"<tr> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
+                row_string = @"<tr class=""clickable-row"" data-href=""http://google.com""> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
                 //creates a row of a bootstrap table in html
                 return row_string;
             }
