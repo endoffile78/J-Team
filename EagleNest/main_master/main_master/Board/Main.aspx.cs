@@ -104,7 +104,7 @@ namespace main_master
 
 
 
-                all_rows.Add(new data_row(board, reader.GetString(2), reader.GetDateTime(5), "http:this"));
+                all_rows.Add(new data_row(board, reader.GetString(2), reader.GetDateTime(5), reader["BpostID"].ToString()));
                 
             }
 
@@ -125,13 +125,13 @@ namespace main_master
             string title;
             DateTime date;
             string row_string = "";
-            string link;
+            string bpostid;
 
-            public data_row(string in_board_id, string in_title, DateTime in_date, string in_link)
+            public data_row(string in_board_id, string in_title, DateTime in_date, string in_bpostid)
             {
                 title = in_title;
                 date = in_date;
-                link = in_link;
+                bpostid = in_bpostid;
                 board_id = in_board_id;
                 if (board_id.CompareTo("gives_board") == 0) { board = gives_title; }
                 else if (board_id.CompareTo("project_board") == 0) { board = project_title; }
@@ -140,7 +140,8 @@ namespace main_master
 
             public string get_row_string()
             {
-                row_string = @"<tr class=""clickable-row"" data-href=""http://google.com""> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
+                string link = "view/" + bpostid;
+                row_string = @"<tr class=""clickable-row"" data-href=" + link +  @"> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
                 //creates a row of a bootstrap table in html
                 return row_string;
             }
