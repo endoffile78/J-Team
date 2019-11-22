@@ -47,13 +47,14 @@ namespace main_master
                     positionCDrop.SelectedIndex = 0;
 
 
-                    SqlDataReader reader = SqlUtil.ExecuteReader("SELECT * FROM Job_Posting As a, Job_Posting As b WHERE a.ID_Num != b.ID_Num");
+                    SqlDataReader reader = SqlUtil.ExecuteReader("SELECT *, User_Main.Fname AS MFname, User_Main.Lname AS MLname FROM Job_Posting " +
+                        "LEFT JOIN User_Main ON Job_Posting.ID_Num = User_Main.ID_Num");
 
                     while (reader.Read())
                     {
                         Connect view = new Connect();
                         view.major = reader["Major"].ToString();
-                        view.name = reader["Fname"] + " " + reader["Lname"];
+                        view.name = reader["MFname"] + " " + reader["MLname"];
                         view.college = reader["College"].ToString();
                         view.position = reader["Position"].ToString();
                         view.graduation = reader["Graduation"].ToString();
