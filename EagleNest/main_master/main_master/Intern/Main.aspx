@@ -123,8 +123,8 @@
                                     <div>
                                         <div class="card">
                                             <div class="card-body">
-                                                <h5 class="card-title">views.name</h5>
-                                                <h6 class="card-subtitle mb-2 text-muted">views.classification | views.major | views.company | views.position | views.city, views.State, Views.country</h6>
+                                                <h5 class="card-title"><%= view.name%></h5>
+                                                <h6 class="card-subtitle mb-2 text-muted"><% =view.classification %> | <%= view.major%> | <%= view.company%> |<%= view.position%>  | <%= view.location%></h6>
                                                 <%--<p class="card-text"><%= post.body %></p>--%>
                                             </div>
                                         </div>
@@ -393,7 +393,7 @@
                         <label>Image</label>
                         <input type="file" id="picture" name="picture" class="field-long" required="required" accept="image/*" />
                     </div>
-                    <asp:Button Text="Post" class="btn btn-outline-dark" runat="server" OnClick="post_Click" />
+                    <asp:Button ID="Post" Text="Post" class="btn btn-outline-dark" runat="server" OnClick="post_Click" />
                 </div>
             </div>
         </div>
