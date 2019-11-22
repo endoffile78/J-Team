@@ -16,6 +16,8 @@ namespace main_master.Blog
         protected string uid = "";
         protected string name = "";
         protected List<BlogPost> posts = new List<BlogPost>();
+        protected List<UserProfile> following = new List<UserProfile>();
+        protected List<UserProfile> followers = new List<UserProfile>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,6 +55,32 @@ namespace main_master.Blog
                 post.title = r["Title"].ToString();
                 post.body = r["Body"].ToString();
                 posts.Add(post);
+            }
+
+            r.Close();
+
+            parameters.Clear();
+            parameters.Add(new SqlParameter("@uid", Session["uid"]));
+            r = SqlUtil.ExecuteReader("SELECT *, User_Main.Fname, User_Main.Lname, User_Main.ID_Num FROM BlogFollowers WHERE Following = @uid" +
+                " INNER JOIN User_Main ON BlogFollowers.Followers = User_Main.ID_Num");
+
+            while (r.Read()) {
+                UserProfile user = new UserProfile();
+                user.name = reader["Fname"] + " " + reader["Lname"];
+                user.uid = Guid.Parse(reader["ID_Num"].ToString());              
+            }
+
+            r.Close();
+
+            parameters.Clear();
+            parameters.Add(new SqlParameter("@uid", Session["uid"]));
+            r = SqlUtil.ExecuteReader("SELECT *, User_Main.Fname, User_Main.Lname, User_Main.ID_Num FROM BlogFollowers WHERE Follower = @uid" +
+                " INNER JOIN User_Main ON BlogFollowers.Following = User_Main.ID_Num");
+
+            while (r.Read()) {
+                UserProfile user = new UserProfile();
+                user.name = reader["Fname"] + " " + reader["Lname"];
+                user.uid = Guid.Parse(reader["ID_Num"].ToString());
             }
 
             r.Close();

@@ -175,7 +175,7 @@ CREATE NONCLUSTERED INDEX [fkIdx_240] ON [Gallery_Post]
 
 CREATE TABLE [Board_Post]
 (
- [BpostID]     uniqueidentifier NOT NULL ,
+ [BpostID]     uniqueidentifier DEFAULT NEWSEQUENTIALID(),
  [ID_Num]      uniqueidentifier NOT NULL ,
  [Title]       nvarchar(50) NOT NULL ,
  [Description] nvarchar(1000) NOT NULL ,

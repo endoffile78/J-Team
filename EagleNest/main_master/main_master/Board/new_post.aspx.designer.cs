@@ -24,15 +24,6 @@ namespace main_master.Board
         protected global::System.Web.UI.WebControls.Label new_post_title;
 
         /// <summary>
-        /// test3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl test3;
-
-        /// <summary>
         /// new_post_description control.
         /// </summary>
         /// <remarks>
@@ -40,5 +31,41 @@ namespace main_master.Board
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label new_post_description;
+
+        /// <summary>
+        /// new_post_image_label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label new_post_image_label;
+
+        /// <summary>
+        /// new_post_image control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image new_post_image;
+
+        /// <summary>
+        /// new_post_edit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button new_post_edit;
+
+        /// <summary>
+        /// new_post_submit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button new_post_submit;
     }
 }

@@ -30,8 +30,10 @@
             </div>
         </div>
         <div id="following" class="tab-pane fade">
+
         </div>
         <div id="followers" class="tab-pane fade">
+
         </div>
     </div>
 </asp:Content>
