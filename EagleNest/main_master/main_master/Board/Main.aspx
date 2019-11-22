@@ -2,6 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
     <style>
+
+        .clickable-row:hover {
+        background-color: lightpink;
+      
+        }
+
+
  </style>
 
     <title>Eagle Board</title>
@@ -309,6 +316,14 @@
                 $(".form-horizontal .control-group:last").remove();
             });
         });
+        $(document).ready(function ($) {
+            $(".clickable-row").click(function () {
+                window.location = $(this).data("href");
+            }
+            );
+
+        });
+
     </script>
 
 
