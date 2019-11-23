@@ -18,6 +18,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_place_holder_body" runat="server">
     <form runat="server">
+    
+
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
@@ -80,7 +82,7 @@
                                 </label>
                             </li>
                             <li class="form-check col">
-                                <input class="form-check-input" type="radio" name="radios" id="project_radio" value="option1" data-target="#new_project">
+                                <input class="form-check-input" type="radio" name="radios" id="project_radio" value="option1" data-target="new_project">
                                 <label class="form-check-label" for="project_radio">
                                     Project &nbsp 
                                 </label>
@@ -96,13 +98,6 @@
 
                 </div>
             </div>
-
-
-
-
-            <asp:Image runat="server" ID="test22" />
-
-
 
 
 
@@ -266,6 +261,12 @@
 
     </div>
     </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!--Not sure why, but having the jquery script refrences on this page(overriding the ones in master, fix a bug with the posting type radio buttons -->
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></link>
     <script>
@@ -323,8 +324,10 @@
             );
 
         });
+       
 
     </script>
+    
 
 
 

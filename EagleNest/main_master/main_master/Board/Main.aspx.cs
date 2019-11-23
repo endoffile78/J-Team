@@ -16,7 +16,37 @@ namespace main_master
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             build_data();
+
+            
+
+            if (Session["edit"] !=null) {
+                string loc = Session["last_tab"].ToString();
+                string loc2 = Session["last_radio"].ToString();
+
+                if (loc == "new-tab")
+                {
+                    give_title_textbox.Text = (string)Session["title"];
+                    give_desc_textbox.Text = (string)Session["description"];
+                    string s = "$(document).ready(function () {document.getElementById('" + loc + "').click();});";
+                    ClientScript.RegisterStartupScript(GetType(), "Javascript", s, true);
+                    loc = Session["last_radio"].ToString();
+                    string s2 = "$(document).ready(function () {document.getElementById('" + loc2 + "').click();});";
+                    ClientScript.RegisterStartupScript(GetType(), "Javascript", s2, true);
+
+                }
+                else {
+                    string s = "$(document).ready(function () {document.getElementById('" + loc + "').click();});";
+                    ClientScript.RegisterStartupScript(GetType(), "Javascript", s, true);
+                }
+                
+            }
+
+
+
+            
+
 
         }
 
@@ -41,7 +71,10 @@ namespace main_master
                 Session.Add("title", give_title_textbox.Text);
                 Session.Add("description", give_desc_textbox.Text);
                 Session.Add("image", str);
-//              
+                Session.Add("last_tab", "new-tab");
+                Session.Add("last_radio", "gives_radio");
+
+
                 Response.Redirect("new_post.aspx");
 
 
@@ -104,7 +137,7 @@ namespace main_master
 
 
 
-                all_rows.Add(new data_row(board, reader.GetString(2), reader.GetDateTime(5), reader["BpostID"].ToString()));
+                all_rows.Add(new data_row(board, reader.GetString(2), reader.GetDateTime(5), (Guid)reader["BpostID"]));
                 
             }
 
@@ -125,9 +158,9 @@ namespace main_master
             string title;
             DateTime date;
             string row_string = "";
-            string bpostid;
+            Guid bpostid;
 
-            public data_row(string in_board_id, string in_title, DateTime in_date, string in_bpostid)
+            public data_row(string in_board_id, string in_title, DateTime in_date, Guid in_bpostid)
             {
                 title = in_title;
                 date = in_date;
@@ -140,8 +173,8 @@ namespace main_master
 
             public string get_row_string()
             {
-                string link = "view/" + bpostid;
-                row_string = @"<tr class=""clickable-row"" data-href=" + link +  @"> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
+                string link = "view/" + bpostid.ToString();
+                row_string = @"<tr class=""clickable-row"" data-href=""" + link +  @"""> <th scope=""row"">" + board + "</th> <td>" + title + "</td> <td>" + Convert.ToString(date) + "</td> </tr>";
                 //creates a row of a bootstrap table in html
                 return row_string;
             }

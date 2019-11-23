@@ -34,18 +34,21 @@ namespace main_master.Board
 
         protected void new_post_submit_click(object sender, EventArgs e) {
 
-            int board = Convert.ToInt32(Session["board"]);
+            int board = (int)Session["board"];
 
 
 
             
 
             List<SqlParameter> parameters = new List<SqlParameter>();
+
+            Guid g = Guid.NewGuid();
+
+            parameters.Add(new SqlParameter("@BpostID", g));
             parameters.Add(new SqlParameter("@ID_Num", Session["uid"]));
             parameters.Add(new SqlParameter("@Title", new_post_title.Text));
             parameters.Add(new SqlParameter("@Description", new_post_description.Text));
-            //parameters.Add(new SqlParameter("@Board", board));
-            parameters.Add(new SqlParameter("@Board", 1));
+            parameters.Add(new SqlParameter("@Board", board));
             parameters.Add(new SqlParameter("@Date", DateTime.Now));
             parameters.Add(new SqlParameter("@Expiration", DateTime.MaxValue));
             //parameters.Add(new SqlParameter("@Tags", null));
@@ -53,20 +56,28 @@ namespace main_master.Board
             //parameters.Add(new SqlParameter("@Attachments", new_post_image.ImageUrl));
             //parameters.Add(new SqlParameter("@Hidden", default));
             //parameters.Add(new SqlParameter("@Mod_status", default));
-            int reader = SqlUtil.ExecuteNonQuery("insert into board_post values (default,@ID_Num,@Title,@Description,@Board,@Date,@Expiration,null,@Attachments,default,default)", parameters);
-            
+            int reader = SqlUtil.ExecuteNonQuery("insert into board_post values (@BpostID,@ID_Num,@Title,@Description,@Board,@Date,@Expiration,null,@Attachments,default,default)", parameters);
 
 
 
 
 
+            Session.Add("edit", null);
+            Session.Add("title", null);
+            Session.Add("description", null);
+            Session.Add("image", null);
+            Session.Add("last_tab", null);
+            Session.Add("last_radio",null);
+            string link = "view/" + g;
+            Response.Redirect(link);
 
         }
 
 
-        protected void new_post_edit_click(object sender, EventArgs e) { 
-        
-        
+        protected void new_post_edit_click(object sender, EventArgs e) {
+
+            Session.Add("edit", "edit");
+            Response.Redirect("Main.aspx");
         
         }
 

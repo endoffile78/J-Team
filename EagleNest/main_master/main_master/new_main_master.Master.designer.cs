@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace main_master {
-    
-    
-    public partial class new_main_master {
-        
+namespace main_master
+{
+
+
+    public partial class new_main_master
+    {
+
         /// <summary>
         /// content_place_holder_head control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace main_master {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder content_place_holder_head;
-        
+
         /// <summary>
         /// branding control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace main_master {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder branding;
-        
+
         /// <summary>
         /// navigation control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace main_master {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder navigation;
-        
+
         /// <summary>
         /// content_place_holder_body control.
         /// </summary>
