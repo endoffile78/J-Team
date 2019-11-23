@@ -52,6 +52,7 @@ namespace main_master
 
         protected void preview_give_button_click(object sender, EventArgs e)
         {
+
             if (Page.IsValid) {
 
                
@@ -73,12 +74,52 @@ namespace main_master
                 Session.Add("image", str);
                 Session.Add("last_tab", "new-tab");
                 Session.Add("last_radio", "gives_radio");
-
+                Session.Add("board", 0);
 
                 Response.Redirect("new_post.aspx");
 
 
             }
+
+
+        }
+
+        protected void preview_poll_button_click(object sender, EventArgs e) {
+
+
+            System.IO.Stream fs = poll_image_upload.PostedFile.InputStream;
+            System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
+            Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+            Session.Add("image_array", bytes);
+            string str = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+            List<string> options = new List<string>();
+
+            if (option_textbox_1.Text != null) { options.Add(option_textbox_1.Text); }
+            if (option_textbox_2.Text != null) { options.Add(option_textbox_2.Text); }
+            if (option_textbox_3.Text != null) { options.Add(option_textbox_3.Text); }
+            if (option_textbox_4.Text != null) { options.Add(option_textbox_4.Text); }
+            if (option_textbox_5.Text != null) { options.Add(option_textbox_5.Text); }
+            if (option_textbox_6.Text != null) { options.Add(option_textbox_6.Text); }
+            if (option_textbox_7.Text != null) { options.Add(option_textbox_7.Text); }
+            if (option_textbox_8.Text != null) { options.Add(option_textbox_8.Text); }
+            if (option_textbox_9.Text != null) { options.Add(option_textbox_9.Text); }
+            if (option_textbox_10.Text != null) { options.Add(option_textbox_10.Text); }
+
+
+
+
+
+            Session.Add("title", poll_title_textbox.Text);
+            Session.Add("description", poll_description_textbox.Text);
+            Session.Add("image", str);
+            Session.Add("last_tab", "new-tab");
+            Session.Add("last_radio", "poll_radio");
+            Session.Add("board", 2);
+            Session.Add("options", options);
+
+            Response.Redirect("new_post.aspx");
+
 
 
         }

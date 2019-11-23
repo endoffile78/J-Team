@@ -47,6 +47,54 @@
             </div>
         </div>
 
+
+
+
+        <div class="row  justify-content-center">
+            <div class="col-9 text-center">
+                <asp:RadioButton runat="server" Visible="false" id ="option1" GroupName="options" Checked="true"/>
+                </div></div>
+                <div class="row  justify-content-center">
+            <div class="col-9 text-center">
+                <asp:RadioButton runat="server" Visible="false" id ="option2" GroupName="options"/>
+                </div></div>
+                <div class="row  justify-content-center">
+            <div class="col-9 text-center">
+                <asp:RadioButton runat="server" Visible="false" id ="option3" GroupName="options"/>
+                </div></div>
+                <div class="row  justify-content-center">
+            <div class="col-9 text-center">
+                <asp:RadioButton runat="server" Visible="false" id ="option4" GroupName="options"/>
+                </div></div>
+                <div class="row  justify-content-center">
+            <div class="col-9 text-center">
+                <asp:RadioButton runat="server" Visible="false" id ="option5" GroupName="options"/>
+                </div></div>
+                <div class="row  justify-content-center">
+            <div class="col-9 text-center">
+                <asp:RadioButton runat="server" Visible="false" id ="option6" GroupName="options"/>
+                </div></div>
+                <div class="row  justify-content-center">
+            <div class="col-9 text-center">
+                <asp:RadioButton runat="server" Visible="false" id ="option7" GroupName="options"/>
+                </div></div>
+                <div class="row  justify-content-center">
+            <div class="col-9 text-center">
+                <asp:RadioButton runat="server" Visible="false" id ="option8" GroupName="options"/>
+                </div></div>
+                <div class="row  justify-content-center">
+            <div class="col-9 text-center">
+                <asp:RadioButton runat="server" Visible="false" id ="option9" GroupName="options"/>
+                </div></div>
+                <div class="row  justify-content-center">
+            <div class="col-9 text-center">
+                <asp:RadioButton runat="server" Visible="false" id ="option10" GroupName="options"/>
+                </div></div>
+                
+
+            </div>
+
+
         <div class="row  justify-content-center">
             <div class="col-9 text-center">
             <asp:Button ID="new_post_edit"  runat="server" OnClick="new_post_edit_click" Text="Edit" />

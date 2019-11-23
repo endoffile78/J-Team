@@ -14,7 +14,6 @@ namespace main_master.Board
         protected void Page_Load(object sender, EventArgs e)
         {
             
-
             new_post_title.Text = Session["title"].ToString();
            new_post_description.Text = Session["description"].ToString();
             if ((Session["image"].ToString().Length>0)) {
@@ -25,9 +24,11 @@ namespace main_master.Board
                 new_post_image.ImageUrl = "data:image/png;base64," + str;
             
             }
+            if (Session["options"] != null) {
+                build_poll_radios();
+            
+            }
 
-            //Response.Write(Session["uid"]);
-            Response.Write(new_post_image.ImageUrl.Length);
             
         }
 
@@ -44,6 +45,8 @@ namespace main_master.Board
 
             Guid g = Guid.NewGuid();
 
+
+
             parameters.Add(new SqlParameter("@BpostID", g));
             parameters.Add(new SqlParameter("@ID_Num", Session["uid"]));
             parameters.Add(new SqlParameter("@Title", new_post_title.Text));
@@ -53,15 +56,33 @@ namespace main_master.Board
             parameters.Add(new SqlParameter("@Expiration", DateTime.MaxValue));
             //parameters.Add(new SqlParameter("@Tags", null));
             parameters.Add(new SqlParameter("@Attachments", (Byte[])Session["image_array"]));
-            //parameters.Add(new SqlParameter("@Attachments", new_post_image.ImageUrl));
-            //parameters.Add(new SqlParameter("@Hidden", default));
-            //parameters.Add(new SqlParameter("@Mod_status", default));
             int reader = SqlUtil.ExecuteNonQuery("insert into board_post values (@BpostID,@ID_Num,@Title,@Description,@Board,@Date,@Expiration,null,@Attachments,default,default)", parameters);
 
+            if (board == 2) {
+                List<string> options = (List<string>)Session["options"];
 
 
 
+                foreach (string o in options) {
+                    parameters.Clear();
+                    parameters.Add(new SqlParameter("@Text", o));
+                    parameters.Add(new SqlParameter("@BpostID", g));
+                    parameters.Add(new SqlParameter("@option_id", Guid.NewGuid()));
+                    SqlUtil.ExecuteNonQuery(("insert into [poll_options] values (@option_id, @BpostID, @Text)"), parameters);
+                }
+            
+            
+            
+            
+            
+            
+            
+            
+            }
 
+
+
+            Session.Add("options", null);
             Session.Add("edit", null);
             Session.Add("title", null);
             Session.Add("description", null);
@@ -79,6 +100,30 @@ namespace main_master.Board
             Session.Add("edit", "edit");
             Response.Redirect("Main.aspx");
         
+        }
+
+        protected void build_poll_radios() {
+
+            List<string> option_list = (List<string>)Session["options"];
+
+            if (option_list[0] != "") { option1.Text = option_list[0]; option1.Visible = true; }
+            if (option_list[1] != "") { option2.Text = option_list[1]; option2.Visible = true; }
+            if (option_list[2] != "") { option3.Text = option_list[2]; option3.Visible = true; }
+            if (option_list[3] != "") { option4.Text = option_list[3]; option4.Visible = true; }
+            if (option_list[4] != "") { option5.Text = option_list[4]; option5.Visible = true; }
+            if (option_list[5] != "") { option6.Text = option_list[5]; option6.Visible = true; }
+            if (option_list[6] != "") { option7.Text = option_list[6]; option7.Visible = true; }
+            if (option_list[7] != "") { option8.Text = option_list[7]; option8.Visible = true; }
+            if (option_list[8] != "") { option9.Text = option_list[8]; option9.Visible = true; }
+            if (option_list[9] != "") { option10.Text = option_list[9]; option10.Visible = true; }
+
+
+
+
+
+
+
+
         }
 
 
