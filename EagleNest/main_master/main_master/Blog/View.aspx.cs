@@ -15,10 +15,11 @@ namespace main_master.Blog
 
         protected Guid blogID;
         protected string title;
-        protected string author;
+        protected string author_name;
         protected Guid author_uid;
         protected string body;
         protected string[] tags;
+        protected bool author = false;
         protected List<Comment> comments = new List<Comment>();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -45,8 +46,16 @@ namespace main_master.Blog
 
             title = reader["Title"].ToString();
             body = reader["Body"].ToString();
-            author = reader["Fname"] +  " " + reader["Lname"];
+            author_name = reader["Fname"] +  " " + reader["Lname"];
             author_uid = Guid.Parse(reader["ID_Num"].ToString());
+
+            if (Session["uid"] != null)
+            {
+                if (Session["uid"].ToString() == reader["ID_Num"].ToString())
+                {
+                    author = true;
+                }
+            }
 
             reader.Close();
 
