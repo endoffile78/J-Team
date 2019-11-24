@@ -202,7 +202,16 @@ CREATE NONCLUSTERED INDEX [fkIdx_193] ON [Board_Post]
 
 --GO
 
+create table [poll_options]
+  (
+    [Option_ID] uniqueidentifier DEFAULT NEWSEQUENTIALID(),
+    [BpostID]  uniqueidentifier NOT NULL ,
+    [Text]     nvarchar(200) NOT NULL,
 
+    CONSTRAINT [PK_poll_options] PRIMARY KEY CLUSTERED ([Option_ID] ASC),
+    CONSTRAINT [FK_1010] FOREIGN KEY ([BpostID]) REFERENCES [Board_Post]([BpostID])
+
+  );
 
 
 
@@ -213,13 +222,12 @@ CREATE NONCLUSTERED INDEX [fkIdx_193] ON [Board_Post]
 CREATE TABLE [Votes]
 (
  [VoteID] uniqueidentifier NOT NULL ,
- [BpostID] uniqueidentifier NOT NULL,
- [Option] tinyint NOT NULL,
+ [Option_ID] uniqueidentifier NOT NULL,
  [ID_Num] uniqueidentifier NOT NULL,
 
 
  CONSTRAINT [PK_Vote] PRIMARY KEY CLUSTERED ([VoteID] ASC),
- CONSTRAINT [FK_222] FOREIGN KEY ([BpostID])  REFERENCES [Board_Post]([BpostID]),
+ CONSTRAINT [FK_222] FOREIGN KEY ([Option_ID])  REFERENCES [poll_options]([Option_ID]),
  CONSTRAINT [UID] FOREIGN KEY ([ID_Num]) REFERENCES [dbo].[User_Main]([ID_Num])
 );
 --GO

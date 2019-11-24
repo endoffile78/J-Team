@@ -1,4 +1,5 @@
 drop table if exists dbo.Votes;
+drop table if exists dbo.poll_options;
 drop table if exists dbo.Board_Post;
 drop table if exists dbo.Post_Comment;
 drop table if exists dbo.Gallery_Post;
