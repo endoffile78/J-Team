@@ -16,7 +16,7 @@
         <div class="form-group">
             <label for="body">Body<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="body" ErrorMessage="Body is required." ForeColor="Red"></asp:RequiredFieldValidator>
             </label>
-            &nbsp;<asp:Textbox ID="body" class="form-control" rows="8" name="body" placeholder="Body" runat="server" />
+            &nbsp;<asp:Textbox ID="body" class="form-control" TextMode="MultiLine" rows="8" name="body" placeholder="Body" runat="server" />
         </div>
         <div class="form-group">
             <label for="tags">Tags</label>

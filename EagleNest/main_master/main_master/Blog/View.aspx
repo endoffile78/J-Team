@@ -31,7 +31,7 @@
             <label for="comment">
                 Comment<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Comment" ErrorMessage="Comment is required." ForeColor="Red"></asp:RequiredFieldValidator>
             </label>
-            &nbsp;<asp:TextBox class="form-control" Rows="10" ID="Comment" type="text" placeholder="Comment" runat="server" />
+            &nbsp;<asp:TextBox class="form-control" TextMode="MultiLine" Rows="10" ID="Comment" type="text" placeholder="Comment" runat="server" />
         </div>
         <asp:Button ID="Submit" class="btn btn-primary" Text="Submit" OnClick="Submit_Click" runat="server" />
     </form>

@@ -10,7 +10,7 @@
         <label for="Title">Title:</label>
         <asp:Textbox class="form-control" ID="title" type="text" placeholder="Title" runat="server" />
         <label for="Body">Body</label>
-        <asp:Textbox class="form-control" ID="Body" Rows="8" type="text" placeholder="Body" runat="server" />
+        <asp:Textbox class="form-control" ID="Body" TextMode="MultiLine" Rows="8" type="text" placeholder="Body" runat="server" />
         <asp:Button class="btn btn-primary" ID="Submit" Text="Submit" OnClick="Submit_Click" runat="server" />
     </form>
 </asp:Content>
