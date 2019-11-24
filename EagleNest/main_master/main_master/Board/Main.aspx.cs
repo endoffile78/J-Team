@@ -16,7 +16,8 @@ namespace main_master
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            require_login();
+
             build_data();
 
             
@@ -55,11 +56,6 @@ namespace main_master
 
             if (Page.IsValid) {
 
-               
-
-
-
-
 
                 System.IO.Stream fs = give_image_upload.PostedFile.InputStream;
                 System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
@@ -80,6 +76,36 @@ namespace main_master
 
 
             }
+
+
+        }
+
+
+        protected void preview_project_button_click(object sender, EventArgs e) {
+
+            if (Page.IsValid)
+            {
+
+                System.IO.Stream fs = give_image_upload.PostedFile.InputStream;
+                System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
+                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                Session.Add("image_array", bytes);
+                string str = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+
+
+                Session.Add("title", give_title_textbox.Text);
+                Session.Add("description", give_desc_textbox.Text);
+                Session.Add("image", str);
+                Session.Add("last_tab", "new-tab");
+                Session.Add("last_radio", "project_radio");
+                Session.Add("board", 1);
+
+                Response.Redirect("new_post.aspx");
+
+
+            }
+
 
 
         }
@@ -185,6 +211,16 @@ namespace main_master
             reader.Close();
             convert_rows_to_string_and_publish(ref all_rows);
 
+
+        }
+        protected void require_login()
+        {
+
+            if (Session["uid"] == null)
+            {
+                Response.Redirect("/login.aspx");
+
+            }
 
         }
 

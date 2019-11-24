@@ -1,13 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="main_master.eagleboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
-    <style>
-        .clickable-row:hover {
-            background-color: lightpink;
-            cursor: pointer;
-        }
-    </style>
-
+    
+    <link rel="stylesheet" type="text/css" href="/css/select_josh_styles.css">
     <title>Eagle Board</title>
 
 
@@ -129,13 +124,9 @@
 
                             </div>
                             <div class="form-group">
-                                <label for="give_image_label" class="col-2 col-form-label">Images</label>
+                                <label for="give_image_label" class="col-2 col-form-label">Image</label>
 
                                 <asp:FileUpload runat="server" ID="give_image_upload" class="col" />
-                                <asp:Literal runat="server" ID="test1"></asp:Literal>
-
-
-
 
                                 <small class="form-text text-muted text-center">Upload images of your item(optional).<br />
                                     Please keep file sizes less than 5MB.</small>
@@ -154,32 +145,40 @@
                     <!--    Below is the container for the new post page of Eagle Project                    -->
                     <div class="tab-pane fade" id="new_project" role="tabpanel" aria-labelledby="pills-project-tab">
                         <div class="container">
-
                             <div class="form-group">
-                                <label for="project_title_label" class="col-2 col-form-label">Title</label>
+                                <label for="project_title_textbox" class="col-2 col-form-label">Title</label>
                                 <div class="col">
-                                    <input class="form-control" type="text" value="" id="project_title_label">
+
+                                    <asp:TextBox ID="project_title_textbox" class="col" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" validationgroup="project" ID="RequiredFieldValidator5" ControlToValidate="project_title_textbox" ErrorMessage="Posting require a Title." ForeColor="#CC3300"></asp:RequiredFieldValidator>
+
                                 </div>
-                                <small class="form-text text-muted text-center">Write a brief but descriptive title for your listing.</small>
+
+                                <small class="form-text text-muted text-center">Write a brief but descriptive title for your project.</small>
+
                             </div>
-
                             <div class="form-group">
-                                <label for="project_desc_label" class="col-2 col-form-label">Description</label>
+                                <label for="project_desc_textbox" class="col-2 col-form-label">Description</label>
                                 <div class="col">
-                                    <textarea class="form-control" id="project_desc_label" rows="3"></textarea>
+                                    <asp:TextBox ID="project_desc_textbox" class="col" Rows="3" runat="server" TextMode="MultiLine"></asp:TextBox>
+                                    <asp:RequiredFieldValidator runat="server" validationgroup="project" ID="RequiredFieldValidator6" ControlToValidate="project_desc_textbox" ErrorMessage="Posts require a description." ForeColor="#CC3300"></asp:RequiredFieldValidator>
                                 </div>
-                                <small class="form-text text-muted text-center">Provide a description of your project. What are your goals? What skills are you seeking?</small>
+
+                                <small class="form-text text-muted text-center">Provide a description of your project. </small>
+
                             </div>
-
                             <div class="form-group">
-                                <label for="project_image_label" class="col-2 col-form-label">Images</label>
-                                <div class="col">
-                                    <input type="file" class="form-control-file" id="project_image_label" aria-describedby="fileHelp" multiple>
-                                </div>
-                                <small class="form-text text-muted text-center">Upload images of your project(optional).<br />
-                                    Please keep file sizes less than 5MB</small>
+                                <label for="project_image_upload" class="col-2 col-form-label">Image</label>
+
+                                <asp:FileUpload runat="server" ID="project_image_upload" class="col" />
+
+                                <small class="form-text text-muted text-center">Upload an image relevant to your project(optional).<br />
+                                    Please keep file sizes less than 5MB.</small>
                                 <br />
-                                <input class="col" type='button' value='Preview Posting' id='preview_project_button' />
+
+
+                                <asp:Button ID="preview_project_button" validationgroup="give" class="col" runat="server" OnClick="preview_project_button_click" Text="Preview Post" />
+
 
                             </div>
                         </div>

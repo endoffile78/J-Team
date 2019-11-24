@@ -209,7 +209,7 @@ create table [poll_options]
     [Text]     nvarchar(200) NOT NULL,
 
     CONSTRAINT [PK_poll_options] PRIMARY KEY CLUSTERED ([Option_ID] ASC),
-    CONSTRAINT [FK_1010] FOREIGN KEY ([BpostID]) REFERENCES [Board_Post]([BpostID]),
+    CONSTRAINT [FK_1010] FOREIGN KEY ([BpostID]) REFERENCES [Board_Post]([BpostID])
 
   );
 

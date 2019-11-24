@@ -17,17 +17,17 @@ namespace main_master.Board
         protected Guid post_id;
         List<string> option_list;
         List<Guid> id_list;
-        Guid m;
         byte board;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            require_login();
             
             IList<string> seg = Request.GetFriendlyUrlSegments();
 
             if (!Guid.TryParse(seg[0], out post_id)) {
 
-                Response.Redirect("http://google.com");//TODO fix
+                Response.Redirect("/Board/404.aspx");
             
             }
 
@@ -39,7 +39,7 @@ namespace main_master.Board
             if (!reader.Read())
             {
                 reader.Close();
-                Response.Redirect("PostNotFound.aspx");
+                Response.Redirect("404.aspx");
                 return;
             }
 
@@ -91,7 +91,9 @@ namespace main_master.Board
 
         protected void build_poll_radios()
         {
-            if (!has_voted()) {
+
+            if (!has_voted())
+            {
                 if (option_list[0] != "") { option1.Text = option_list[0]; option1.Visible = true; }
                 if (option_list[1] != "") { option2.Text = option_list[1]; option2.Visible = true; }
                 if (option_list[2] != "") { option3.Text = option_list[2]; option3.Visible = true; }
@@ -104,17 +106,13 @@ namespace main_master.Board
                 if (option_list[9] != "") { option10.Text = option_list[9]; option10.Visible = true; }
                 submit_vote.Visible = true;
             }
-
-
+            else { 
+            //show some sort of graph
             
-
-
-
             
-
             
-
-
+            
+            }
 
         }
 
@@ -124,17 +122,31 @@ namespace main_master.Board
             p.Add(new SqlParameter("@post_id", post_id));
             p.Add(new SqlParameter("uid", (Guid)Session["uid"]));
             SqlDataReader reader = SqlUtil.ExecuteReader("select * from [poll_options] inner join [votes] on [poll_options].Option_ID=[Votes].Option_ID where [poll_options].BpostID=@post_id and [votes].ID_Num=@uid", p);
-
             while (reader.Read()) {
-
+                Boolean report;
                 if (reader.GetValue(0) != null)
-                    Response.Write("something");
-            
+                {
+
+                    report = true;
+                    reader.Close();
+                    
+
+                }
+                else {
+                    report = false;
+                    reader.Close();
+                   
+                }
+
+                return report;
             
             }
-            Response.Write("nothing");
+
             reader.Close();
             return false;
+
+            
+            
 
 
 
@@ -165,9 +177,18 @@ namespace main_master.Board
             else
                 if (option10.Checked) { p.Add(new SqlParameter("@Option_ID", id_list[9])); SqlUtil.ExecuteNonQuery("insert into [Votes] values (@VoteID,@Option_ID,@ID_Num)", p); }
 
+            Response.Redirect(Request.RawUrl);
+
+
+        }
+
+        protected void require_login() {
+
+            if (Session["uid"] == null) {
+                Response.Redirect("/login.aspx");
             
-
-
+            }
+        
         }
 
        

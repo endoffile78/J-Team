@@ -81,9 +81,11 @@
     <Content Include="Blog\User.aspx" />
     <Content Include="Blog\UserNotFound.aspx" />
     <Content Include="Blog\View.aspx" />
+    <Content Include="Board\404.aspx" />
     <Content Include="Board\new_post.aspx" />
     <Content Include="Board\View.aspx" />
     <Content Include="css\Gallery_Post_Form.css" />
+    <Content Include="css\select_josh_styles.css" />
     <Content Include="css\style5.css" />
     <Content Include="Board\Main.aspx" />
     <Content Include="Gallery\Archive.aspx" />
@@ -140,6 +142,13 @@
       <DependentUpon>UserNotFound.aspx</DependentUpon>
     </Compile>
     <Compile Include="Blog\UserProfile.cs" />
+    <Compile Include="Board\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Board\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Board\new_post.aspx.cs">
       <DependentUpon>new_post.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

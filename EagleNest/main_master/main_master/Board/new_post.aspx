@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/new_main_master.Master" AutoEventWireup="true" CodeBehind="new_post.aspx.cs" Inherits="main_master.Board.new_post" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="content_place_holder_head" runat="server">
+    <link rel="stylesheet" type="text/css" href="/css/select_josh_styles.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="branding" runat="server">
 </asp:Content>
@@ -43,7 +44,7 @@
         </div>
         <div class="row  justify-content-center">
             <div class="col-9 text-center">
-                <asp:Image runat="server" ID="new_post_image" />
+                <asp:Image runat="server" ID="new_post_image" Style="width: 100%;" />
             </div>
         </div>
 

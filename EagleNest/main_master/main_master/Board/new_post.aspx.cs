@@ -13,7 +13,7 @@ namespace main_master.Board
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            require_login();
             new_post_title.Text = Session["title"].ToString();
            new_post_description.Text = Session["description"].ToString();
             if ((Session["image"].ToString().Length>0)) {
@@ -123,6 +123,16 @@ namespace main_master.Board
 
 
 
+
+        }
+        protected void require_login()
+        {
+
+            if (Session["uid"] == null)
+            {
+                Response.Redirect("/login.aspx");
+
+            }
 
         }
 
