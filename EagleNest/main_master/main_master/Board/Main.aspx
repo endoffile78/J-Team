@@ -177,7 +177,7 @@
                                 <br />
 
 
-                                <asp:Button ID="preview_project_button" validationgroup="give" class="col" runat="server" OnClick="preview_project_button_click" Text="Preview Post" />
+                                <asp:Button ID="preview_project_button" validationgroup="project" class="col" runat="server" OnClick="preview_project_button_click" Text="Preview Post" />
 
 
                             </div>
@@ -267,7 +267,7 @@
                 </div>
 
             </div>
-
+            
 
         </div>
     </form>

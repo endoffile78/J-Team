@@ -64,11 +64,13 @@ namespace main_master.Board
 
 
                 foreach (string o in options) {
+                    if (o != "") { 
                     parameters.Clear();
                     parameters.Add(new SqlParameter("@Text", o));
                     parameters.Add(new SqlParameter("@BpostID", g));
                     parameters.Add(new SqlParameter("@option_id", Guid.NewGuid()));
                     SqlUtil.ExecuteNonQuery(("insert into [poll_options] values (@option_id, @BpostID, @Text)"), parameters);
+                    }
                 }
             
             

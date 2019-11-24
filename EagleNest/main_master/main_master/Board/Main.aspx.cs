@@ -86,7 +86,7 @@ namespace main_master
             if (Page.IsValid)
             {
 
-                System.IO.Stream fs = give_image_upload.PostedFile.InputStream;
+                System.IO.Stream fs = project_image_upload.PostedFile.InputStream;
                 System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
                 Byte[] bytes = br.ReadBytes((Int32)fs.Length);
                 Session.Add("image_array", bytes);

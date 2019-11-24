@@ -96,6 +96,91 @@
                 </div></div>
             <asp:Button ID="submit_vote"   class= "col" runat="server" OnClick="submit_vote_click" Text="Submit Vote" Visible="false" />
 
+
+        <br />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_bar1" Style="background-color: royalblue; width: 30%; border-top-right-radius: 7px; border-bottom-right-radius: 7px; height: 18px;" CssClass="col" />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_desc1" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_percent1" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_votes1" />
+        <br />
+        <br />
+
+        <asp:Label runat="server" Visible="false" id="poll_option_bar2" Style="background-color: royalblue; width: 30%; border-top-right-radius: 7px; border-bottom-right-radius: 7px; height: 18px;" CssClass="col" />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_desc2" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_percent2" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_votes2" />
+        <br />
+        <br />
+
+
+        <asp:Label runat="server" Visible="false" id="poll_option_bar3" Style="background-color: royalblue; width: 30%; border-top-right-radius: 7px; border-bottom-right-radius: 7px; height: 18px;" CssClass="col" />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_desc3" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_percent3" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_votes3" />
+        <br />
+        <br />
+
+        <asp:Label runat="server" Visible="false" id="poll_option_bar4" Style="background-color: royalblue; width: 30%; border-top-right-radius: 7px; border-bottom-right-radius: 7px; height: 18px;" CssClass="col" />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_desc4" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_percent4" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_votes4" />
+        <br />
+        <br />
+
+        <asp:Label runat="server" Visible="false" id="poll_option_bar5" Style="background-color: royalblue; width: 30%; border-top-right-radius: 7px; border-bottom-right-radius: 7px; height: 18px;" CssClass="col" />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_desc5" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_percent5" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_votes5" />
+        <br />
+        <br />
+
+        <asp:Label runat="server" Visible="false" id="poll_option_bar6" Style="background-color: royalblue; width: 30%; border-top-right-radius: 7px; border-bottom-right-radius: 7px; height: 18px;" CssClass="col" />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_desc6" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_percent6" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_votes6" />
+        <br />
+        <br />
+
+        <asp:Label runat="server" Visible="false" id="poll_option_bar7" Style="background-color: royalblue; width: 30%; border-top-right-radius: 7px; border-bottom-right-radius: 7px; height: 18px;" CssClass="col" />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_desc7" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_percent7" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_votes7" />
+        <br />
+        <br />
+
+        <asp:Label runat="server" Visible="false" id="poll_option_bar8" Style="background-color: royalblue; width: 30%; border-top-right-radius: 7px; border-bottom-right-radius: 7px; height: 18px;" CssClass="col" />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_desc8" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_percent8" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_votes8" />
+        <br />
+        <br />
+
+        <asp:Label runat="server" Visible="false" id="poll_option_bar9" Style="background-color: royalblue; width: 30%; border-top-right-radius: 7px; border-bottom-right-radius: 7px; height: 18px;" CssClass="col" />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_desc9" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_percent9" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_votes9" />
+        <br />
+        <br />
+
+        
+        <asp:Label runat="server" Visible="false" id="poll_option_bar10" Style="background-color: royalblue; width: 30%; border-top-right-radius: 7px; border-bottom-right-radius: 7px; height: 18px;" CssClass="col" />
+        <br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_desc10" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_percent10" /><br />
+        <asp:Label runat="server" Visible="false" ID="poll_option_votes10" />
+        <br />
+        <br />
+
              
         
 
