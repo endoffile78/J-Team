@@ -8,10 +8,13 @@
     <div class="container">
         <h1 class="text-center">Edit</h1>
         <form runat="server">
-            <label for="Title">Title:</label>
-            <asp:TextBox class="form-control" ID="title" type="text" placeholder="Title" runat="server" />
-            <label for="Body">Body</label>
-            <asp:TextBox class="form-control" ID="Body" TextMode="MultiLine" Rows="8" type="text" placeholder="Body" runat="server" />
+            <label for="Title">Title:&nbsp;&nbsp; </label>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="title" ErrorMessage="RequiredFieldValidator" ForeColor="Red">Title is a required field.</asp:RequiredFieldValidator>
+&nbsp;<asp:TextBox class="form-control" ID="title" type="text" placeholder="Title" runat="server" />
+            <label for="Body">Body
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Body" ErrorMessage="RequiredFieldValidator" ForeColor="Red">Body is a required field.</asp:RequiredFieldValidator>
+            </label>
+            &nbsp;<asp:TextBox class="form-control" ID="Body" TextMode="MultiLine" Rows="8" type="text" placeholder="Body" runat="server" />
             <asp:Button class="btn btn-primary" ID="Submit" Text="Submit" OnClick="Submit_Click" runat="server" />
         </form>
     </div>
