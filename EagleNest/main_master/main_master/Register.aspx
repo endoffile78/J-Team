@@ -46,6 +46,7 @@
                 &nbsp;<asp:TextBox class="form-control" ID="password2" name="email" type="password" placeholder="Password" runat="server" />
             </div>
             <asp:Button class="btn btn-primary" ID="submit" Text="Submit" runat="server" OnClick="submit_Click" />
+            <asp:Label ID="Error" style="color: red;" runat="server" />
         </form>
     </div>
 </asp:Content>
