@@ -45,7 +45,6 @@ namespace main_master.Blog
 
             reader.Close();
 
-
             parameters.Clear();
             parameters.Add(new SqlParameter("uid", uid));
 
@@ -91,17 +90,20 @@ namespace main_master.Blog
 
             r.Close();
 
-            parameters.Clear();
-            parameters.Add(new SqlParameter("profile_uid", uid));
-            parameters.Add(new SqlParameter("uid", Session["uid"]));
-
-            r = SqlUtil.ExecuteReader("SELECT * FROM BlogFollowers WHERE Following = @profile_uid AND Follower = @uid", parameters);
-            if (r.Read())
+            if (Session["loggedIn"] != null)
             {
-                followingUser = true;
-            }
+                parameters.Clear();
+                parameters.Add(new SqlParameter("profile_uid", uid));
+                parameters.Add(new SqlParameter("uid", Session["uid"]));
 
-            r.Close();
+                r = SqlUtil.ExecuteReader("SELECT * FROM BlogFollowers WHERE Following = @profile_uid AND Follower = @uid", parameters);
+                if (r.Read())
+                {
+                    followingUser = true;
+                }
+
+                r.Close();
+            }
         }
 
         protected void follow_Click(object sender, EventArgs e)
