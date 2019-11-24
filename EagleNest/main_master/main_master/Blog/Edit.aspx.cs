@@ -17,6 +17,11 @@ namespace main_master.Blog
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["loggedIn"] == null)
+            {
+                Response.Redirect(ResolveUrl("~/Login.aspx"));
+            }
+
             IList<string> segments = Request.GetFriendlyUrlSegments();
             blogID = segments[0];
 
@@ -34,6 +39,12 @@ namespace main_master.Blog
                 if (!reader.Read())
                 {
                     Response.Redirect(ResolveUrl("PostNotFound.aspx"));
+                }
+
+                if (Session["uid"].ToString() != reader["ID_Num"].ToString())
+                {
+                    reader.Close();
+                    Response.Redirect("Main.aspx");
                 }
 
                 title.Text = reader["Title"].ToString();

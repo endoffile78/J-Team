@@ -15,8 +15,7 @@ namespace main_master
         {
             if (Session["loggedIn"] == null)
             {
-                Response.Redirect("Main.aspx");
-                return;
+                Response.Redirect("Login.aspx");
             }
 
             if (!IsPostBack)

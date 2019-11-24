@@ -13,9 +13,9 @@ namespace main_master.Blog
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["loggedIn"] == null) //TODO: tell the user they need to login
+            if (Session["loggedIn"] == null)
             {
-                Response.Redirect("Main.aspx");
+                Response.Redirect(ResolveUrl("~/Login.aspx"));
             }
         }
 
