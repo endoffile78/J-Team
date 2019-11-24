@@ -17,6 +17,7 @@ namespace main_master.Blog
         protected string title;
         protected string author_name;
         protected Guid author_uid;
+        protected DateTime date;
         protected string body;
         protected string[] tags;
         protected bool author = false;
@@ -48,6 +49,7 @@ namespace main_master.Blog
             body = reader["Body"].ToString();
             author_name = reader["Fname"] +  " " + reader["Lname"];
             author_uid = Guid.Parse(reader["ID_Num"].ToString());
+            date = DateTime.Parse(reader["Date"].ToString());
 
             if (Session["uid"] != null)
             {
@@ -81,8 +83,9 @@ namespace main_master.Blog
             parameters.Add(new SqlParameter("uid", Session["uid"]));
             parameters.Add(new SqlParameter("name", Name.Text));
             parameters.Add(new SqlParameter("comment", Comment.Text));
+            parameters.Add(new SqlParameter("date", DateTime.Now));
 
-            SqlUtil.ExecuteNonQuery("INSERT INTO Post_Comment (BlogID, ID_Num, Name, Date, Comment) VALUES (@blogid, @uid, @name, GETDATE(), @comment)", parameters);
+            SqlUtil.ExecuteNonQuery("INSERT INTO Post_Comment (BlogID, ID_Num, Name, Date, Comment) VALUES (@blogid, @uid, @name, @date, @comment)", parameters);
         }
     }
 }

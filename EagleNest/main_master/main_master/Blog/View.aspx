@@ -7,6 +7,7 @@
     <div class="text-center">
         <h1><%= title %></h1>
         <h4><a class="text-muted" href='<%= ResolveUrl("User/" + author_uid.ToString()) %>'><%= author_name %></a></h4>
+        <h5>Posted: <%= date.ToString() %></h5>
         <h5>Tags: <a href="#">tag1</a> <a href="#">tag2</a></h5>
         <% if (Session["loggedIn"] != null && author) { %>
         <a href='<%= ResolveUrl("Edit/" + blogID) %>'>Edit</a>
