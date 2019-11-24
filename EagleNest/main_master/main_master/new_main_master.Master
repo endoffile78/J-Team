@@ -55,6 +55,31 @@
                 <asp:ContentPlaceHolder ID="navigation" runat="server">
                 </asp:ContentPlaceHolder>
 
+                <li>
+                    <a href="#exploreSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
+                        <i class="fas fa-copy"></i>
+                        Explore
+                    </a>
+                </li>
+
+                <ul class="collapse list-unstyled bg-danger" id="exploreSubmenu">
+                    <li>
+                        <a href='<%= ResolveUrl("~/Blog/Main.aspx") %>' class="bg-danger">Eagle Blog</a>
+                    </li>
+                    <li>
+                        <a href='<%= ResolveUrl("~/Gallery/Main.aspx") %>' class="bg-danger">Eagle Gallery</a>
+                    </li>
+                    <li>
+                        <a href='<%= ResolveUrl("~/Intern/Main.aspx") %>' class="bg-danger">Eagle Intern</a>
+                    </li>
+                    <li>
+                        <a href='<%= ResolveUrl("~/Connect/Main.aspx") %>' class="bg-danger">Eagle Connect</a>
+                    </li>
+                    <li>
+                        <a href='<%= ResolveUrl("~/Board/Main.aspx") %>' class="bg-danger">Eagle Board</a>
+                    </li>
+                </ul>
+
                 <% if (Session["loggedIn"] == null) { %>
                 <li>
                     <a href='<%= ResolveUrl("~/Login.aspx") %>'>Login</a>
@@ -98,30 +123,6 @@
                 </ul>
                 <% } %>
                 <% } %>
-                <li>
-                    <a href="#exploreSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle bg-danger">
-                        <i class="fas fa-copy"></i>
-                        Explore
-                    </a>
-                </li>
-
-                <ul class="collapse list-unstyled bg-danger" id="exploreSubmenu">
-                    <li>
-                        <a href='<%= ResolveUrl("~/Blog/Main.aspx") %>' class="bg-danger">Eagle Blog</a>
-                    </li>
-                    <li>
-                        <a href='<%= ResolveUrl("~/Gallery/Main.aspx") %>' class="bg-danger">Eagle Gallery</a>
-                    </li>
-                    <li>
-                        <a href='<%= ResolveUrl("~/Intern/Main.aspx") %>' class="bg-danger">Eagle Intern</a>
-                    </li>
-                    <li>
-                        <a href='<%= ResolveUrl("~/Connect/Main.aspx") %>' class="bg-danger">Eagle Connect</a>
-                    </li>
-                    <li>
-                        <a href='<%= ResolveUrl("~/Board/Main.aspx") %>' class="bg-danger">Eagle Board</a>
-                    </li>
-                </ul>
             </ul>
         </nav>
 
