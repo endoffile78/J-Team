@@ -40,7 +40,7 @@
                 <% foreach (var user in following) { %>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><a href='<%= ResolveUrl("User/" + user.uid) %>'><%= user.name %></h5>
+                        <h5 class="card-title"><a href='<%= ResolveUrl("User/" + user.uid) %>'><%= user.name %></a></h5>
                     </div>
                 </div>
                 <% } %>
@@ -51,7 +51,7 @@
                 <% foreach (var user in followers) { %>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><a href='<%= ResolveUrl("User/" + user.uid) %>'><%= user.name %></h5>
+                        <h5 class="card-title"><a href='<%= ResolveUrl("User/" + user.uid) %>'><%= user.name %></a></h5>
                     </div>
                 </div>
                 <% } %>
