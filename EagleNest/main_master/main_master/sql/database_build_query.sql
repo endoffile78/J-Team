@@ -431,6 +431,20 @@ CREATE NONCLUSTERED INDEX [fkIdx_180] ON [Post_Comment]
 
 --GO
 
+CREATE TABLE [PostType]
+(
+  [Type]        int NOT NULL ,
+  [Description] varchar(100) NOT NULL ,
+
+  CONSTRAINT [PK_Post_Type] PRIMARY KEY CLUSTERED ([Type] ASC)
+);
+
+INSERT INTO PostType ([Type], Description) VALUES (0, 'Gallery');
+INSERT INTO PostType ([Type], Description) VALUES (1, 'Board');
+INSERT INTO PostType ([Type], Description) VALUES (2, 'Blog');
+INSERT INTO PostType ([Type], Description) VALUES (3, 'Intern');
+INSERT INTO PostType ([Type], Description) VALUES (4, 'Connect');
+
 CREATE TABLE [Moderation]
 (
  [Id]         uniqueidentifier DEFAULT NEWSEQUENTIALID(),
@@ -447,17 +461,3 @@ CREATE TABLE [Moderation]
  CONSTRAINT [FK_USERID] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
  CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
-
-CREATE TABLE [PostType]
-(
-  [Type]        int NOT NULL ,
-  [Description] varchar(100) NOT NULL ,
-
-  CONSTRAINT [PK_Post_Type] PRIMARY KEY CLUSTERED ([Type] ASC)
-);
-
-INSERT INTO PostType ([Type], Description) VALUES (0, 'Gallery');
-INSERT INTO PostType ([Type], Description) VALUES (1, 'Board');
-INSERT INTO PostType ([Type], Description) VALUES (2, 'Blog');
-INSERT INTO PostType ([Type], Description) VALUES (3, 'Intern');
-INSERT INTO PostType ([Type], Description) VALUES (4, 'Connect');
