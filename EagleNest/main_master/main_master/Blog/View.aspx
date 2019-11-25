@@ -14,7 +14,7 @@
             <% if (author) { %>
             <a href='<%= ResolveUrl("Edit/" + blogID) %>'>Edit</a>
             <% } %>
-            <a href="">Report</a>
+            <a href='<%= ResolveUrl("~/Report/blog/" + blogID) %>'>Report</a>
             <% } %>
         </div>
         <p style="color: black;">
@@ -46,6 +46,9 @@
             <div class="card-body">
                 <h5 class="card-title"><%= comment.name %></h5>
                 <p class="card-text"><%= comment.comment %></p>
+            </div>
+            <div class="card-footer">
+                <a href="">Report</a>
             </div>
         </div>
         <% } %>

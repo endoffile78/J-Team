@@ -114,8 +114,10 @@
     <Content Include="Logout.aspx" />
     <Content Include="Main.aspx" />
     <Content Include="Moderation\Main.aspx" />
+    <Content Include="Moderation\Status.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="Report.aspx" />
     <Content Include="sql\droptables.sql" />
     <Content Include="sql\database_build_query.sql" />
     <Content Include="sql\pop_users.sql" />
@@ -219,6 +221,14 @@
     <Compile Include="Moderation\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Moderation\Report.cs" />
+    <Compile Include="Moderation\Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderation\Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -232,6 +242,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
     </Compile>
     <Compile Include="sql\SqlUtil.cs" />
     <Compile Include="sql\access_database.cs" />

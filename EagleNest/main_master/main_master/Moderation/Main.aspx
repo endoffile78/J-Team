@@ -17,6 +17,29 @@
         <div class="text-center">
             <h1>Moderation</h1>
         </div>
-
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Post Type</th>
+                    <th scope="col">Reporter</th>
+                    <th scope="col">Comment</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% foreach (var report in reports) { %>
+                <tr>
+                    <th scope="row"><%= report.post_type_str %></th>
+                    <td><%= report.reporter_name %></td>
+                    <td><%= report.comment %></td>
+                    <td><%= report.date.ToString() %></td>
+                    <td><a href='<%= ResolveUrl(report.link) %>'>View</a></td>
+                    <td><a href='<%= ResolveUrl("Status/" + report.id) %>'>Change Status</a></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
     </div>
 </asp:Content>
