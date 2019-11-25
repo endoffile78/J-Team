@@ -433,7 +433,8 @@ CREATE NONCLUSTERED INDEX [fkIdx_180] ON [Post_Comment]
 
 CREATE TABLE [Moderation]
 (
- [Id]         uniqueidentifier NOT NULL ,
+ [Id]         uniqueidentifier DEFAULT NEWSEQUENTIALID(),
+ [PostId]     uniqueidentifier NOT NULL ,
  [Type]       int NOT NULL ,
  [ID_Num]     uniqueidentifier NOT NULL ,
  [Date]       datetime NOT NULL ,
@@ -441,7 +442,8 @@ CREATE TABLE [Moderation]
  [Mod_Status] int DEFAULT 0 ,
 
 
- CONSTRAINT [FK_PostType] FOREIGN KEY ([Type]) REFERENCES [PostType]([Type])
+ CONSTRAINT [PK_ID] PRIMARY KEY CLUSTERED ([Id] ASC),
+ CONSTRAINT [FK_PostType] FOREIGN KEY ([Type]) REFERENCES [PostType]([Type]),
  CONSTRAINT [FK_USERID] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
  CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
