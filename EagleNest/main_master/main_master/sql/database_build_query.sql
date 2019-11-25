@@ -148,12 +148,10 @@ CREATE TABLE [Gallery_Post]
  [Image]       nvarchar(400) NOT NULL ,
  [Tags]        nvarchar(400) NULL ,
  [Hidden]      bit DEFAULT 0 ,
- [Mod_Status]  int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Gallery_Post] PRIMARY KEY CLUSTERED ([GpostID] ASC),
  CONSTRAINT [FK_240] FOREIGN KEY ([ID_Num])  REFERENCES [dbo].[User_Main]([ID_Num]),
- CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -185,12 +183,10 @@ CREATE TABLE [Board_Post]
  [Tags]        nvarchar(400) NULL ,
  [Attachments] image NULL,
  [Hidden]      bit DEFAULT 0 ,
- [Mod_Status] int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Board_Post] PRIMARY KEY CLUSTERED ([BpostID] ASC),
  CONSTRAINT [FK_193] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
- CONSTRAINT [FK_ModStatus1] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -273,12 +269,10 @@ CREATE TABLE [Job_Posting]
  [Date]				datetime NOT NULL ,
  [Benifits]        nvarchar(400) NULL ,
  [Hidden]          bit DEFAULT 0 ,
- [Mod_Status] int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Job_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC),
  --CONSTRAINT [FK_99] FOREIGN KEY ([ID_Num])  REFERENCES [User_SAF]([ID_Num]),
- CONSTRAINT [FK_ModStatus2] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -328,12 +322,10 @@ CREATE TABLE [Intern_Posting]
  [Image]           nvarchar(400) NULL ,
  [Date]				datetime NOT NULL ,
  [Hidden]          bit DEFAULT 0,
- [Mod_Status] int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Intern_Posting] PRIMARY KEY CLUSTERED ([ID_Num] ASC),
  CONSTRAINT [FK_104] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
- CONSTRAINT [FK_ModStatus3] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -385,12 +377,10 @@ CREATE TABLE [Blog_Post]
  [Attachment] nvarchar(400) NULL ,
  [Date]       datetime NOT NULL ,
  [Hidden]     bit DEFAULT 0,
- [Mod_Status] int DEFAULT 0 ,
 
 
  CONSTRAINT [PK_Blog_Post] PRIMARY KEY CLUSTERED ([BlogID] ASC),
  CONSTRAINT [FK_165] FOREIGN KEY ([ID_Num]) REFERENCES [User_Main]([ID_Num]),
- CONSTRAINT [FK_ModStatus4] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -426,12 +416,10 @@ CREATE TABLE [Post_Comment]
  [Date]       datetime NOT NULL ,
  [Comment]    nvarchar(300) NOT NULL ,
  [Hidden]     bit DEFAULT 0 ,
- [Mod_Status] int DEFAULT 0 ,
 
 
  CONSTRAINT [FK_180] FOREIGN KEY ([BlogID])  REFERENCES [Blog_Post]([BlogID]),
  CONSTRAINT [FK_184] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
- CONSTRAINT [FK_ModStatus5] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
 );
 --GO
 
@@ -442,3 +430,32 @@ CREATE NONCLUSTERED INDEX [fkIdx_180] ON [Post_Comment]
  )
 
 --GO
+
+CREATE TABLE [Moderation]
+(
+ [Id]         uniqueidentifier NOT NULL ,
+ [Type]       int NOT NULL ,
+ [ID_Num]     uniqueidentifier NOT NULL ,
+ [Date]       datetime NOT NULL ,
+ [Comment]    nvarchar(300) NOT NULL ,
+ [Mod_Status] int DEFAULT 0 ,
+
+
+ CONSTRAINT [FK_PostType] FOREIGN KEY ([Type]) REFERENCES [PostType]([Type])
+ CONSTRAINT [FK_USERID] FOREIGN KEY ([ID_Num])  REFERENCES [User_Main]([ID_Num]),
+ CONSTRAINT [FK_ModStatus] FOREIGN KEY ([Mod_Status]) REFERENCES [Mod_Statuses]([Status])
+);
+
+CREATE TABLE [PostType]
+(
+  [Type]        int NOT NULL ,
+  [Description] varchar(100) NOT NULL ,
+
+  CONSTRAINT [PK_Post_Type] PRIMARY KEY CLUSTERED ([Type] ASC)
+);
+
+INSERT INTO PostType ([Type], Description) VALUES (0, 'Gallery');
+INSERT INTO PostType ([Type], Description) VALUES (1, 'Board');
+INSERT INTO PostType ([Type], Description) VALUES (2, 'Blog');
+INSERT INTO PostType ([Type], Description) VALUES (3, 'Intern');
+INSERT INTO PostType ([Type], Description) VALUES (4, 'Connect');

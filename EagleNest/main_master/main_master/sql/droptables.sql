@@ -14,3 +14,5 @@ drop table if exists dbo.BlogFollowers;
 drop table if exists dbo.Mod_Statuses;
 drop table if exists dbo.User_Main;
 drop table if exists dbo.User_Type;
+drop table if exists dbo.Moderation;
+drop table if exists dbo.PostType;
